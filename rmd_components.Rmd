@@ -1,0 +1,15 @@
+---
+title: "Components of R Markdown"
+subtitle: "yaml, code chunks, & inline variables"
+output:
+  xaringan::moon_reader:
+    nature:
+      ratio: "16:10"
+      beforeInit: "addons/macros.js"
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: yes
+    css: [default, default-fonts, addons/custom.css]
+    yolo: false
+---
+

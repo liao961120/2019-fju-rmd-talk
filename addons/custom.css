@@ -1,0 +1,49 @@
+.red {color:red;}
+.gray {color:#808080;}
+.grey {color:#808080;}
+.much-smaller {font-size:0.7em;}
+.smaller {font-size:0.85em;}
+.little-smaller {font-size:0.92em;}
+.little-larger {font-size:1.15em;}
+.larger {font-size:1.35em;}
+.shadow {
+    border-radius: 15px;
+    box-shadow: 4.2px 4.5px 2.5px rgba(65, 65, 65, 0.737);
+}
+
+
+.remark-code {
+  height: auto;
+  max-height: 450px;
+  overflow: auto;
+  
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+
+::-webkit-scrollbar {
+    width: 6.5px;  /* remove scrollbar space */
+    height: 6.5px;
+    /* background: transparent;  optional: just make scrollbar invisible */
+}
+::-webkit-scrollbar-thumb {
+    background: #A9A9A9;
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+
+.footnote {bottom: 2em;}
+
+
+.hold-img {
+  display: inline;
+}
+
+.title-slide > .bg-text {
+  text-shadow: 1.2px 1.2px rgba(65, 65, 65, 0.837);
+}

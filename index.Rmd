@@ -1,0 +1,75 @@
+---
+title: "Introduction to R Markdown"
+subtitle: ""
+author: "廖永賦<br><br>"
+date: "`r format(Sys.Date(), '%B %e, %Y')`<br><br><a href='http://bit.ly/TravisRmd' style='font-size:0.7em;'>bit.ly/TravisRmd</a>"
+output:
+  xaringan::moon_reader:
+    nature:
+      ratio: "16:10"
+      beforeInit: "addons/macros.js"
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: yes
+    css: [default, chocolate, chocolate-fonts, addons/custom.css]
+    yolo: false
+    seal: false 
+---
+
+
+class: title-slide
+.bg-text[
+.little-larger[
+# Introduction to R Markdown
+### Chocolate Theme
+]
+<hr />
+.little-larger[
+`r format(Sys.Date(), '%B %e, %Y')`  
+廖永賦  
+[bit.ly/TravisRmd](http://bit.ly/TravisRmd)
+]
+]
+
+
+
+
+<!--
+開場：
+
+-->
+
+---
+
+class: inverse, center, middle
+
+# R Markdown Basics
+
+---
+
+```{r child = 'what_is_md.Rmd'}
+```
+
+---
+
+```{r child = 'rmd_components.Rmd'}
+```
+
+---
+
+```{r child = 'host_rmd_on_web.Rmd'}
+```
+
+---
+
+```{r child = 'pdf_report.Rmd'}
+```
+
+---
+
+class: inverse, center, middle
+
+# Applications
+
+---
+

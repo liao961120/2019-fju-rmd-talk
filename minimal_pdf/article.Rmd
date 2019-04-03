@@ -1,0 +1,87 @@
+---
+title: "A Minimal R Markdown Example for Chinese PDF Output"
+subtitle: "歡迎進入惱人的 $LaTeX$ 世界"
+author: "Yongfu Liao"
+date: "`r Sys.Date()`"
+abstract: |
+  輸出的 PDF 文件，目錄是自動產生。摘要則是寫在 R Markdown 的 yaml header 中而非內文。使用 PDF 輸出的功能得要戰戰兢兢，因為 $LaTeX$ 噴錯是很恐怖的一件事。
+### ↓↓↓ options for PDF output ↓↓↓
+linestretch: 1.25
+indent: no 
+geometry: a4paper, left=1.18in, right=1.18in, top=1.18in, bottom=0.787in
+### ↑↑↑ options for PDF output ↑↑↑
+output:
+  bookdown::pdf_document2:
+    latex_engine: xelatex
+    number_sections: yes
+    toc: yes
+    toc_depth: 2
+    includes:
+      in_header: header.tex # important, cant compile chinese without this
+  bookdown::html_document2:
+    toc: yes
+    number_sections: no
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+
+\blfootnote{此段文字顯示於 footer region 內，並且開頭沒有標記。若要使用一般含有編號的註腳，請使用 Markdown 語法。}
+
+
+\pagenumbering{gobble}
+\newpage 
+\pagenumbering{arabic}
+
+
+# $LaTeX$ 設定：`header.tex` {#header-tex}
+
+$LaTeX$ 是一套非常精確的排版系統，換句話說，它**非常喜歡噴錯**，而且 Debug 它是非常痛苦的一件事。因此，這邊直接提供了 `header.tex`，讓使用者能盡量不去接觸到 $LaTeX$ 的設定。當然，若您希望能修改生成文件中的一些顯示設定，或是 compile 成 PDF 時出錯，很可能需要修改 `header.tex` 中的設定。
+
+`header.tex` 中的所有指令皆已有註解 (`%` 開頭的字串) 說明。以下屬性需在 `header.tex` 中設定：
+
+## 字體與字型
+
+若不想設定字體，而直接使用電腦預設字體，可將 `header.tex` 中的字體設定部份註解掉。
+
+- 字體大小：`\usepackage[fontsize=12pt]{scrextend}`，預設為 `12pt`
+- 字型：
+    - **一般字體 (中文)**：`\setCJKmainfont[ Path=fonts/, AutoFakeBold=1.5, AutoFakeSlant=.4]{bkai00mp.ttf}`
+        此設定較為複雜。預設的字體位在 `fonts/bkai00mp.ttf`。若想使用電腦內建的字體，可至 Word 查找該字體名稱。例如，假設使用的是電腦內的標楷體，可將上述設定修改為 `\setCJKmainfont[ Path=fonts/, AutoFakeBold=1.5, AutoFakeSlant=.4]{標楷體}`
+    - **等寬字體 (中文)**：`\setCJKmonofont[ Path = fonts/ ]{NotoSansMonoCJKtc.otf}`
+        與上方類似的邏輯，可將 `NotoSansMonoCJKtc.otf` 修改成電腦內建的字體。
+
+## 段落
+
+段落間的距離：`\setlength{\parskip}{0.45cm}`，預設為 `0.45cm`
+
+
+## 標題名稱
+
+由於 $LaTeX$ 的標題預設是中文的，`header.tex` 內的指令將其翻譯成中文，例如將 "abstract" 翻譯成 「摘要」： `\renewcommand{\abstractname}{摘要}`
+
+## `header.tex` 之外的設定
+
+其它 PDF 輸出的相關設定可直接在 `.Rmd` 的 yaml 中進行設定，
+
+- 行距：`linestretch: 1.25`
+- 英文字體：`mainfont: `。這裡必須使用系統內建字體。
+
+# R Markdown 內文
+
+因為 $LaTeX$ 的複雜度關係，有時必須在 R Markdown 文件中插入一些 $LaTeX$ 指令，才能使輸出的文件比較賞心悅目。例如，上方的使用的 $LaTeX$ 指令
+
+```tex
+\pagenumbering{gobble}
+\newpage 
+\pagenumbering{arabic}
+```
+
+其功能依序為：
+
+1. `\pagenumbering{gobble}`: 取消頁碼顯示，也不計算頁碼。
+1. `\newpage`: 從此行之後顯示在新的一頁。
+1. `\pagenumbering{arabic}`: 開啟頁碼顯示，並以阿拉伯數字的形式顯示。由於前面使用 `\pagenumbering{gobble}`，因此在 `\pagenumbering{arabic}` 之後的頁碼是從 1 開始計算。

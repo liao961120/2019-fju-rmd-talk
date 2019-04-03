@@ -1,0 +1,17 @@
+---
+title: "Introduction to Markdown"
+subtitle: "網路時代下的寫作"
+author: "Yongfu Liao<br><br>"
+date: "`r format(Sys.Date(), '%B %e, %Y')`<br><br><a href='http://bit.ly/TravisRmd' style='font-size:0.7em;'>bit.ly/TravisRmd</a>"
+output:
+  xaringan::moon_reader:
+    nature:
+      ratio: "16:10"
+      beforeInit: "addons/macros.js"
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: yes
+    css: [default, default-fonts, addons/custom.css]
+    yolo: false
+---
+
