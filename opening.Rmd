@@ -1,0 +1,49 @@
+---
+title: "Opening"
+output:
+  xaringan::moon_reader:
+    nature:
+      ratio: "16:10"
+      beforeInit: ["addons/macros.js", "https://platform.twitter.com/widgets.js"]
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: yes
+    css: [default, chocolate, chocolate-fonts, addons/custom.css]
+    yolo: false
+    seal: false 
+---
+
+--
+
+![](img/creativity.png)
+
+---
+
+### 臺灣語言使用調查
+
+![](https://bit.ly/2HYAREe)
+
+
+---
+
+### 臺灣語言使用調查
+
+```{r out.width='85%'}
+include_graphics("img/twlangsurvey.png")
+```
+
+
+.smaller[
+[twlangsurvey.github.io](https://twlangsurvey.github.io)
+]
+
+---
+
+.pull-left[
+<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Frbloggers%2Fposts%2F10156317490404891&width=350&show_text=true&appId=1961749304147449&height=430" width="350" height="430" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+]
+
+.pull-right[
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Visualizing Language Loss in Taiwan: Create an “Age-Sex Pyramid of Language” with ggplot2 <a href="https://t.co/i42IjrxeVs">https://t.co/i42IjrxeVs</a> <a href="https://twitter.com/hashtag/rstats?src=hash&amp;ref_src=twsrc%5Etfw">#rstats</a> <a href="https://twitter.com/hashtag/DataScience?src=hash&amp;ref_src=twsrc%5Etfw">#DataScience</a></p>&mdash; R-bloggers (@Rbloggers) <a href="https://twitter.com/Rbloggers/status/1097152533037019136?ref_src=twsrc%5Etfw">February 17, 2019</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+]

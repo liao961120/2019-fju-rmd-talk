@@ -7,7 +7,7 @@ output:
   xaringan::moon_reader:
     nature:
       ratio: "16:10"
-      beforeInit: "addons/macros.js"
+      beforeInit: ["addons/macros.js", "https://platform.twitter.com/widgets.js"]
       highlightStyle: github
       highlightLines: true
       countIncrementalSlides: yes
@@ -15,6 +15,12 @@ output:
     yolo: false
     seal: false 
 ---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, fig.align = 'center')
+library(knitr)
+```
+
 
 
 class: title-slide
@@ -31,8 +37,10 @@ class: title-slide
 ]
 ]
 
+---
 
-
+```{r child='opening.Rmd'}
+```
 
 <!--
 開場：
