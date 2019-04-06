@@ -42,16 +42,27 @@ class: title-slide
 ```{r child='opening.Rmd'}
 ```
 
-<!--
-開場：
-
--->
-
 ---
 
-class: inverse, center, middle
+## Objectives
 
-# R Markdown Basics
+.larger[
+1. Rmd ➜ HTML ➜ share through `URL`
+
+1. Rmd ➜ PDF
+]
+
+```{r}
+include_graphics('img/rmd_flow.png')
+```
+
+
+???
+接下來，我要正式進入 R Markdown 的介紹了。透過今天對 R Markdown 的介紹，我希望能達成兩個目標：
+
+1. 第一，大家在今天結束前能夠透過 R Markdown 輸出網頁，並透過網址分享給別人。
+1. 第二，大家有能力以 R Markdown 取代 Word 撰寫紙本作業或報告，並且輸出成 PDF 檔。
+
 
 ---
 
@@ -79,5 +90,4 @@ class: inverse, center, middle
 
 # Applications
 
----
 

@@ -1,4 +1,5 @@
 .red {color:red;}
+.r {color:red;}
 .gray {color:#808080;}
 .grey {color:#808080;}
 .much-smaller {font-size:0.7em;}
@@ -14,13 +15,14 @@
 
 .remark-code {
   height: auto;
-  max-height: 450px;
+  max-height: 600px;
   overflow: auto;
-  
+  white-space: pre-wrap;
 }
 
 a:hover {
-  text-decoration: underline;
+  text-decoration: none;
+  font-size: 1.1em;
 }
 
 
@@ -46,4 +48,14 @@ a:hover {
 
 .title-slide > .bg-text {
   text-shadow: 1.2px 1.2px rgba(65, 65, 65, 0.837);
+}
+
+.right{
+  display:inline;
+  float: right;
+}
+
+.left{
+  display:inline;
+  float: left;
 }

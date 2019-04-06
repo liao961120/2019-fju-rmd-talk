@@ -1,0 +1,60 @@
+# Some Markdown Syntax
+
+## Basic Syntax
+
+### Paragraphs & New Lines
+
+This is the first paragraph. You can **switch to a new line without starting a new paragraph** by ending the line with two white spaces.  
+This is a new line in the same paragraph.
+Only switching to the new line won't work. Remember to leave two white spaces at the end of the previous line.
+
+This is the second paragraph. You can use footnote syntax^[這裡可以寫下註解。].
+
+
+### Hyper Links
+
+[Click me](https://www.google.com)  to go to Google.
+
+
+### Images
+
+![Markdown Logo](https://raw.githubusercontent.com/dcurtis/markdown-mark/master/png/66x40.png)
+
+
+### Text formatting
+
+Write *italic*, **bold**, and ***bold-italic*** text.
+
+
+### Lists
+
+1. Numbered  List
+1. The number is automatically added
+	- Unnumbered sublist
+	- Cool
+	    1. nested numbered list
+	    1. cool huh?
+
+
+5. You can acutually start with any number you like, such as 5.
+5. This item should start with 6.
+
+
+### Code & Code Chunk
+
+`code is written inside two backticks`.
+
+A code chunk is specified by three backticks:
+
+```
+This is a code chunk without syntax highlighting.
+```
+
+#### Syntax Highlighting
+
+```python
+x = 1 + 1
+
+def foo():
+	print('foo is a function')
+```
