@@ -2,7 +2,6 @@
 title: "Introduction to R Markdown"
 subtitle: ""
 author: "廖永賦<br><br>"
-date: "`r format(Sys.Date(), '%B %e, %Y')`<br><br><a href='http://bit.ly/2019fjuRmd' style='font-size:0.7em;'>bit.ly/2019fjuRmd</a>"
 output:
   xaringan::moon_reader:
     nature:
@@ -34,7 +33,7 @@ class: title-slide
 .little-larger[
 `r format(Sys.Date(), '%B %e, %Y')`  
 廖永賦  
-[bit.ly/TravisRmd](http://bit.ly/TravisRmd)
+[bit.ly/2019fjuRmd](https://bit.ly/2019fjuRmd)
 ]
 ]
 
