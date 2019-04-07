@@ -457,7 +457,7 @@ output:
 
 <br>
 
-- 輸出 HTML 文件 ([檢視](https://github.com/liao961120/2019-fju-rmd-talk/blob/master/minimal_html), [下載](https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/liao961120/2019-fju-rmd-talk/blob/master/minimal_html/))
+- 輸出 HTML 文件 ([檢視](https://github.com/liao961120/2019-fju-rmd-talk/blob/master/minimal_html), [下載](https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/liao961120/2019-fju-rmd-talk/tree/master/minimal_html))
 
 - 輸出 PDF 文件 ([檢視](https://github.com/liao961120/2019-fju-rmd-talk/tree/master/minimal_pdf), [下載](https://liao961120.github.io/2019-fju-rmd-talk/minimal_pdf.zip))
 
