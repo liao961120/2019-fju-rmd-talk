@@ -1,3 +1,5 @@
 *.html
 *_files
 LiberationSerif*
+*.sh
+docs/build_idx.R
