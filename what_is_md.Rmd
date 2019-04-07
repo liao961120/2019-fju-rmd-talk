@@ -136,18 +136,3 @@ md_syntax <- paste(md_syntax, collapse = '\n')
 
 `r asis_output(md_syntax)`
 
----
-
-## (Pandoc) Markdown: 解決「紙本 vs. 網頁」的衝突
-
-
-<img src='img/pandoc.png' style='float:right;width:38%;'>
-
-|          | 所見即所得                                     | 所見即所思                       |
-|----------|------------------------------------------------|----------------------------------|
-| **紙本** | MS Word                                        | $\LaTeX$,<br>Markdown (近年目標)  |
-| **網頁** | 部落格文章撰寫後台<br>(e.g. WordPress, Medium) | HTML,<br>Markdown (初創目的) |
-
-.footnote[
-[pandoc.org/try](https://pandoc.org/try/)
-]

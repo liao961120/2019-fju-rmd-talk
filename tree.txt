@@ -1,0 +1,6 @@
+slide.Rmd 所在之資料夾/
+│
+├── slide.Rmd
+└── img
+    └── world_night.jpg
+

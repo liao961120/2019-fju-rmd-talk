@@ -7,6 +7,7 @@
 .little-smaller {font-size:0.92em;}
 .little-larger {font-size:1.15em;}
 .larger {font-size:1.35em;}
+.much-larger {font-size:1.65em;}
 .shadow {
     border-radius: 15px;
     box-shadow: 4.2px 4.5px 2.5px rgba(65, 65, 65, 0.737);

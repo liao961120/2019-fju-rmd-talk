@@ -5,12 +5,13 @@ author: "Yongfu Liao"
 date: "`r Sys.Date()`"
 abstract: |
   輸出的 PDF 文件，目錄是自動產生。摘要則是寫在 R Markdown 的 yaml header 中而非內文。使用 PDF 輸出的功能得要戰戰兢兢，因為 $LaTeX$ 噴錯是很恐怖的一件事。
-### ↓↓↓ options for PDF output ↓↓↓
-linestretch: 1.25
+linestretch: 1.5
 indent: no 
 geometry: a4paper, left=1.18in, right=1.18in, top=1.18in, bottom=0.787in
-### ↑↑↑ options for PDF output ↑↑↑
 output:
+  bookdown::html_document2:
+    toc: yes
+    number_sections: no
   bookdown::pdf_document2:
     latex_engine: xelatex
     number_sections: yes
@@ -18,9 +19,6 @@ output:
     toc_depth: 2
     includes:
       in_header: header.tex # important, cant compile chinese without this
-  bookdown::html_document2:
-    toc: yes
-    number_sections: no
 ---
 
 ```{r setup, include=FALSE}

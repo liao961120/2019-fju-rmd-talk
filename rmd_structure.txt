@@ -1,0 +1,19 @@
+---
+title: A minimal R Markdown Document
+author: John Doe
+output: bookdown::html_document2
+---
+
+# Markdown
+
+I'm writing with *Markdown syntax*.
+
+```{r}
+today <- Sys.Date()
+paste('Using R Markdown on', today)
+```
+
+## Inline R Code
+
+Variables computed in code chunks can be placed inline:  
+`r today`
