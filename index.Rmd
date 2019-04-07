@@ -2,7 +2,7 @@
 title: "Introduction to R Markdown"
 subtitle: ""
 author: "廖永賦<br><br>"
-date: "`r format(Sys.Date(), '%B %e, %Y')`<br><br><a href='http://bit.ly/TravisRmd' style='font-size:0.7em;'>bit.ly/TravisRmd</a>"
+date: "`r format(Sys.Date(), '%B %e, %Y')`<br><br><a href='http://bit.ly/2019fjuRmd' style='font-size:0.7em;'>bit.ly/2019fjuRmd</a>"
 output:
   xaringan::moon_reader:
     nature:

@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Introduction to R Markdown</title>
+    <meta charset="utf-8">
+    <meta name="author" content="廖永賦" />
+    <link href="index_files/remark-css-0.0.1/default.css" rel="stylesheet" />
+    <link href="index_files/remark-css-0.0.1/chocolate.css" rel="stylesheet" />
+    <link href="index_files/remark-css-0.0.1/chocolate-fonts.css" rel="stylesheet" />
+    <link rel="stylesheet" href="addons/custom.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+
+
+
+
+
+
+class: title-slide
+.bg-text[
+.little-larger[
+# Introduction to R Markdown
+### Chocolate Theme
+]
+&lt;hr /&gt;
+.little-larger[
+April  8, 2019  
+廖永賦  
+[bit.ly/TravisRmd](http://bit.ly/TravisRmd)
+]
+]
+
+---
+
+
+
+
+&lt;img src="img/creativity.png" width="90%" style="display: block; margin: auto 0 auto auto;" /&gt;
+
+---
+
+### 透過 R Markdown 分享至網路
+
+&lt;img src='img/twlangsurvey.png' style='display:inline;width:48%;float:left;'&gt;
+&lt;img src='img/travel_the_world.png' style='display:inline;width:50%;float:right;'&gt;
+
+
+.footnote[.smaller[
+左：[twlangsurvey.github.io](https://twlangsurvey.github.io)
+
+右：[rlads2017g1.github.io/presentation](https://rlads2017g1.github.io/presentation) 
+]]
+
+---
+
+## Objectives
+
+.larger[
+1. Rmd ➜ HTML ➜ share through `URL`
+
+1. Rmd ➜ PDF
+]
+
+&lt;img src="img/rmd_flow.png" width="1577" style="display: block; margin: auto;" /&gt;
+
+
+???
+接下來，我要正式進入 R Markdown 的介紹了。透過今天對 R Markdown 的介紹，我希望能達成兩個目標：
+
+1. 第一，大家在今天結束前能夠透過 R Markdown 輸出網頁，並透過網址分享給別人。
+1. 第二，大家有能力以 R Markdown 取代 Word 撰寫紙本作業或報告，並且輸出成 PDF 檔。
+
+
+---
+
+
+
+
+class: inverse, center, middle
+
+# What is Markdown?
+
+???
+所以 R Markdown 是什麼？基本上，R Markdown 就是一套寫作的工具。那在了解 R Markdown 是什麼之前，我們需要先知道 Markdown 是什麼。所以我就先從一點點，關於人類寫作工具的歷史開始。
+
+---
+
+## 兩種媒介：紙本 vs. 網頁
+
+
+---
+
+## 兩種排版方式：WYSIWYM vs. WYSIWYG
+
+### 標記式語言 (What You See Is What You .r[Mean], WYSIWY.r[M])
+
+.pull-left[
+#### 編輯 (純文字)
+
+```html
+這是&lt;b&gt;粗體字&lt;/b&gt;
+
+這是&lt;i&gt;斜體字&lt;/i&gt;
+```
+]
+
+.pull-right[
+#### 輸出顯示
+
+這是&lt;b&gt;粗體字&lt;/b&gt;
+
+這是&lt;i&gt;斜體字&lt;/i&gt;
+]
+
+---
+
+## 排版方式：WYSIWYM vs. WYSIWYG
+
+### 圖形化界面 (What You See Is What You .r[Get], WYSIWY.r[G])
+
+.pull-left[
+#### 編輯 (圖形化界面)
+
+&lt;img src="img/medium_edit.gif" width="100%" style="display: block; margin: auto;" /&gt;
+]
+
+.pull-right[
+#### 輸出顯示
+
+&lt;img src="img/medium_post.png" width="100%" style="display: block; margin: auto;" /&gt;
+]
+
+---
+
+## 圖形化界面 vs. 標記式語言
+
+| | 圖形化界面 | 標記式語言 |
+| -- | --- | --- |
+| 優點 | 易學易用 | 檔案管理容易 |
+| 缺點 | 檔案管理不便 | 語法過於複雜，&lt;br&gt;難以專心於寫作內容 |
+
+
+### 檔案管理不變
+
+&gt; Q: 請在這 200 份**文件**中，找出所有內文含有「三年五班 王小明」的文件
+
+- Word?
+
+- 純文字檔
+    ```bash
+    grep -r '三年五班 王小明' *.md
+    ```
+
+---
+background-image: url("https://liao961120.github.io/slides/img/emo/boredom-small.png")
+background-size: 100px
+background-position: 90% 8%
+
+## 標記式語言：太複雜了
+
+&lt;img src='img/html_raw.png' style='display:inline;width:53%;align:left'&gt;
+&lt;img src='img/html_rendered.png' style='display:inline;width:46%;align:right'&gt;
+
+---
+
+## Markdown: 極簡的標記式語言
+
+&lt;img src="https://collabin.netlify.com/yongfu/write-in-rmd/md2html.png" style="display: block; margin: auto;" /&gt;
+
+
+---
+
+## 玩玩看 Markdown (見下頁語法)
+
+&lt;img src="img/markdown_demo.gif" style="display: block; margin: auto;" /&gt;
+
+.footnote[.smaller[
+[jbt.github.io/markdown-editor](https://jbt.github.io/markdown-editor)
+]]
+
+---
+
+
+
+````markdown
+# Some Markdown Syntax
+
+## Basic Syntax
+
+### Paragraphs &amp; New Lines
+
+This is the first paragraph. You can **switch to a new line without starting a new paragraph** by ending the line with two white spaces.  
+This is a new line in the same paragraph.
+Only switching to the new line won't work. Remember to leave two white spaces at the end of the previous line.
+
+This is the second paragraph. You can use footnote syntax^[這裡可以寫下註解。].
+
+
+### Hyper Links
+
+[Click me](https://www.google.com)  to go to Google.
+
+
+### Images
+
+![Markdown Logo](https://raw.githubusercontent.com/dcurtis/markdown-mark/master/png/66x40.png)
+
+
+### Text formatting
+
+Write *italic*, **bold**, and ***bold-italic*** text.
+
+
+### Lists
+
+1. Numbered  List
+1. The number is automatically added
+	- Unnumbered sublist
+	- Cool
+	    1. nested numbered list
+	    1. cool huh?
+
+
+5. You can acutually start with any number you like, such as 5.
+5. This item should start with 6.
+
+
+### Code &amp; Code Chunk
+
+`code is written inside two backticks`.
+
+A code chunk is specified by three backticks:
+
+```
+This is a code chunk without syntax highlighting.
+```
+
+#### Syntax Highlighting
+
+```python
+x = 1 + 1
+
+def foo():
+	print('foo is a function')
+```
+````
+
+
+---
+
+
+
+
+
+
+class: inverse, center, middle
+
+# Components of R Markdown
+
+---
+
+## What is R Markdown?
+
+
+.center[.much-larger[
+&lt;code&gt;
+R Markdown = knit**.r[r]**  +  Pandoc **.r[Markdown]**
+&lt;/code&gt;
+]]
+
+--
+
+&lt;br&gt;
+
+.larger[
+- **`knitr`**: A tool for embedding R code &amp; execution results into a Markdown document.
+
+- **`Pandoc`**: A Tool for conversion between multiple document formats.
+]
+---
+
+## Pandoc Markdown: 解決「紙本 vs. 網頁」的衝突
+
+
+&lt;img src='img/pandoc.png' style='float:right;width:38%;'&gt;
+
+|          | 所見即所得                                     | 所見即所思                       |
+|----------|------------------------------------------------|----------------------------------|
+| **紙本** | MS Word                                        | `\(\LaTeX\)`,&lt;br&gt;Markdown (近年目標)  |
+| **網頁** | 部落格文章撰寫後台&lt;br&gt;(e.g. WordPress, Medium) | HTML,&lt;br&gt;Markdown (初創目的) |
+
+.footnote[
+[pandoc.org/try](https://pandoc.org/try/)
+]
+
+---
+
+## Structure of an R Markdown Document
+
+
+
+.left-column[
+### Whole Document
+]
+
+.right-column[
+````md
+---
+title: A minimal R Markdown Document
+author: John Doe
+output: bookdown::html_document2
+---
+
+# Markdown
+
+I'm writing with *Markdown syntax*.
+
+```{r}
+today &lt;- Sys.Date()
+paste('Using R Markdown on', today)
+```
+
+## Inline R Code
+
+Variables computed in code chunks can be placed inline:  
+`r today`
+````
+]
+
+
+
+---
+
+## Structure of an R Markdown Document
+
+.left-column[
+### Whole Document
+### .little-smaller[YAML Frontmatter&lt;br&gt;(metadata)]
+]
+
+.right-column[
+````md
+*---
+*title: A minimal R Markdown Document
+*author: John Doe
+*output: bookdown::html_document2
+*---
+
+# Markdown
+
+I'm writing with *Markdown syntax*.
+
+```{r}
+today &lt;- Sys.Date()
+paste('Using R Markdown on', today)
+```
+
+## Inline R Code
+
+Variables computed in code chunks can be placed inline:  
+`r today`
+````
+]
+
+---
+
+## Structure of an R Markdown Document
+
+.left-column[
+### Whole Document
+### .little-smaller[YAML Frontmatter&lt;br&gt;(metadata)]
+### Markdown
+]
+
+.right-column[
+````md
+---
+title: A minimal R Markdown Document
+author: John Doe
+output: bookdown::html_document2
+---
+
+*# Markdown
+*
+*I'm writing with *Markdown syntax*.
+
+```{r}
+today &lt;- Sys.Date()
+paste('Using R Markdown on', today)
+```
+
+*## Inline R Code
+*
+*Variables computed in code chunks can be placed inline:  
+`r today`
+````
+]
+
+---
+
+## Structure of an R Markdown Document
+
+.left-column[
+### Whole Document
+### .little-smaller[YAML Frontmatter&lt;br&gt;(metadata)]
+### Markdown
+### .little-smaller[knitr Code Chunks&lt;br&gt;(Executable)]
+]
+
+.right-column[
+````md
+---
+title: A minimal R Markdown Document
+author: John Doe
+output: bookdown::html_document2
+---
+
+# Markdown
+
+I'm writing with *Markdown syntax*.
+
+*```{r}
+*today &lt;- Sys.Date()
+*paste('Using R Markdown on', today)
+*```
+
+## Inline R Code
+
+Variables computed in code chunks can be placed inline:  
+*`r today`
+````
+]
+
+---
+
+
+
+## 3 種 Code Chunks
+
+1. Markdown (不會執行)
+  ````Rmd
+*```r
+print("This will NOT be printed!")
+```
+````
+
+1. knitr Code Chunk (Executable)
+  ````Rmd
+*```{r}
+print("This will be printed!")
+```
+````
+
+1. Inline R Code Chunk (Executable)
+
+  &lt;code class='hljs Rmd'&gt;
+  &amp;#96;r "This will be printed!"&amp;#96;
+  &lt;/code&gt;
+
+
+---
+
+## knitr Code Chunk
+
+.left-column[
+### Chunk Options
+]
+
+.right-column[
+
+
+
+````Rmd
+```{r chunk-label, echo=FALSE, dev="png"}
+x &lt;- 1 + 1
+```
+````
+
+- `echo`: show R source code?
+
+- `eval`: Run code chunk?
+
+- `include`: include the chunk output in the final output document?
+
+- `out.width='90%'`: 輸出圖片佔 90% 頁面寬度
+
+]
+
+.footnote[.little-larger[
+[`knitr` 說明文件](https://yihui.name/knitr/options/)
+]]
+
+---
+
+## knitr Code Chunk
+
+.left-column[
+### Chunk Options
+]
+
+.right-column[
+
+
+
+#### Global Chunk options
+
+````Rmd
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+````
+      
+&lt;img src="img/global_chunk_opts.gif" width="95%" style="display: block; margin: auto;" /&gt;
+
+]
+
+---
+
+## knitr Code Chunk
+
+.left-column[
+### Chunk Options
+### .little-smaller[例: 統計圖]
+]
+
+.right-column[
+
+輸出**統計圖**，並
+
+1. 隱藏原始碼: `echo=FALSE`
+1. 調整圖片寬度：`out.width="35%"`
+1. 調整圖片比例 (寬:高 = 6:4)：`fig.dim=c(6, 4)`
+
+
+
+````Rmd
+```{r iris-plot, echo=FALSE, out.width="35%", fig.dim=c(6, 4)}
+library(ggplot2)
+ggplot(data = iris) +
+  geom_point(aes(Sepal.Length, Petal.Width, color = Species))
+```
+````
+
+**Output:**
+
+&lt;img src="index_files/figure-html/unnamed-chunk-20-1.png" width="35%" style="display: block; margin: auto;" /&gt;
+
+]
+
+---
+
+## knitr Code Chunk
+
+.left-column[
+### Chunk Options
+### .little-smaller[例: 統計圖]
+### .little-smaller[例: 表格]
+]
+
+.right-column[
+將 `data.frame` 輸出成**表格**
+
+
+
+````Rmd
+```{r echo=FALSE}
+data &lt;- iris[1:5, 1:3]
+knitr::kable(data, align = "c", format = "markdown",
+             caption = "表格說明文字"
+```
+````
+
+**Output:**
+
+
+| Sepal.Length | Sepal.Width | Petal.Length |
+|:------------:|:-----------:|:------------:|
+|     5.1      |     3.5     |     1.4      |
+|     4.9      |     3.0     |     1.4      |
+|     4.7      |     3.2     |     1.3      |
+|     4.6      |     3.1     |     1.5      |
+|     5.0      |     3.6     |     1.4      |
+
+]
+
+
+---
+
+## knitr Code Chunk
+
+.left-column[
+### Chunk Options
+### .little-smaller[例: 統計圖]
+### .little-smaller[例: 表格]
+### .little-smaller[例: 外部圖片]
+]
+
+.right-column[
+
+使用**外部**，而非 R 所產生之圖片
+
+
+
+
+````Rmd
+```{r world, echo=TRUE, out.width="40%", fig.cap="圖片說明文字"}
+knitr::include_graphics("img/world_night.jpg")
+```
+````
+
+**Output:**
+
+
+```r
+knitr::include_graphics('img/world_night.jpg')
+```
+
+&lt;div class="figure" style="text-align: center"&gt;
+&lt;img src="img/world_night.jpg" alt="圖片說明文字" width="40%" /&gt;
+&lt;p class="caption"&gt;圖片說明文字&lt;/p&gt;
+&lt;/div&gt;
+
+
+]
+
+
+---
+
+## knitr Code Chunk
+
+.left-column[
+### Chunk Options
+### .little-smaller[例: 統計圖]
+### .little-smaller[例: 表格]
+### .little-smaller[例: 外部圖片]
+]
+
+.right-column[
+
+#### .larger[相對路徑 vs. 絕對路徑]
+
+- Current Working Directory：**`.Rmd` 所在的資料夾**
+
+- **盡量使用相對路徑**：外部檔案路徑都是.r[**相對 `.Rmd` 而言**]
+
+    ```yml
+    slide.Rmd 所在之資料夾/
+    │
+    ├── slide.Rmd
+    └── img/
+    *    └── world_night.jpg
+    ```
+
+```r
+include_graphics('img/world_night.jpg')            # Good
+
+include_graphics('img\\world_night.jpg')           # Bad !!!
+include_graphics('C:/.../img/world_night.jpg')     # Bad !!!
+include_graphics('C:\\...\\img\\world_night.jpg')  # Worst !!!
+```
+]
+
+???
+Windows 的檔案路徑是用反斜線 (`\`) 表示分隔，但所有非 Windows 的電腦是用正斜線表示。在 R 當中使用正協線表示路徑能在所有作業系統下運行。
+
+---
+
+## knitr Code Chunk
+
+.left-column[
+### Chunk Options
+### .little-smaller[例: 統計圖]
+### .little-smaller[例: 表格]
+### .little-smaller[例: 外部圖片]
+### Your Turn
+]
+
+.right-column[
+
+#### .larger[練習時間]
+
+1. 下載 [`code_chunk_prac.zip`](https://liao961120.github.io/2019-fju-rmd-talk/code_chunk_prac.zip)
+
+1. 修改 `code_chunk_prac.Rmd` 中的內容，  
+使輸出&lt;sup&gt;\*&lt;/sup&gt;結果與[此網頁](https://bit.ly/2FUQPvP)相同
+
+1. 參考答案寫在 `code_chunk_prac_solu.Rmd`
+
+]
+
+
+.footnote[
+[\*]: 以 RStudio 開啟 `.Rmd` ➜ 點擊 &lt;img src='img/knitr.png' style='display:inline;height:1em;'&gt; (`Knit`)
+]
+---
+
+## YAML Frontmatter
+
+.pull-left[
+#### Pandoc 模板變項
+    
+```yml
+title: 'A title'
+date: 'r Sys.Date()'
+author: 'Somebody'
+bibliography: ref.bib
+csl: apa.csl
+```
+
+&lt;br&gt;
+
+- 不同輸出格式 (模板)，可供設定之變項不盡相同
+    - `geometry`, `linestretch` 僅對於 PDF 輸出的文件有效果
+
+- 可用**動態變項** (inline R Code) 作為輸入
+    - 今天是 &amp;#96;&lt;code&gt;r Sys.Date()&lt;/code&gt;&amp;#96;  
+    今天是 2019-04-08
+]
+
+.pull-right[
+#### 輸出格式
+    
+```yml
+output:
+  bookdown::html_document2:
+    toc: yes
+    number_sections: no
+  bookdown::pdf_document2:
+    toc: yes
+    number_sections: no
+```
+
+&lt;br&gt;
+
+- **.r[縮排]**結構必須一致: 每層皆使用 **2 格空白**
+
+- 可同時設定多個輸出格式
+]
+
+---
+
+## YAML 好複雜？
+
+.center[.larger[
+沒錯，不要去記它，.r[**複製貼上就好**]
+]]
+
+&lt;br&gt;
+
+- 輸出 HTML 文件 ([檢視](https://github.com/liao961120/2019-fju-rmd-talk/blob/master/minimal_html), [下載](https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/liao961120/2019-fju-rmd-talk/blob/master/minimal_html/))
+
+- 輸出 PDF 文件 ([檢視](https://github.com/liao961120/2019-fju-rmd-talk/tree/master/minimal_pdf), [下載](https://liao961120.github.io/2019-fju-rmd-talk/minimal_pdf.zip))
+
+
+---
+
+
+
+
+
+
+class: inverse, center, middle
+
+# Hosting HTML Files on Web
+
+---
+
+## Updog
+
+&lt;img src='img/updog.gif' style='float:right;width:65%;margin-right:-50px'&gt;
+
+#### 註冊 Updog
+
+1. Visit [updog.co](https://updog.co/)
+1. `Get Started`
+1. `Sign in with Google / Dropbox`
+1. 輸入 `site name`
+
+#### R Markdown ➜ HTML ➜ Updog 網頁
+
+1. 下載 [`minimal_html`](https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/liao961120/2019-fju-rmd-talk/blob/master/minimal_html/)
+
+1. RStudio:   
+.smaller[`html_article.Rmd` ➜ `html_article.html`]
+
+1. 將 `html_article.html` 上傳至  
+雲端硬碟: `Updog/&lt;site-name&gt;`
+
+1. 等 30 秒左右，就可以在  
+.smaller[[https://`&lt;site-name&gt;`.updog.co/html_article.html]()]  
+看到輸出的 HTML 了
+
+
+
+---
+
+
+## [GitHub](https://github.com) &lt;img src='img/GitHub-Mark.png' style='display:inline;width:0.7em;'&gt; (A Better Option)
+
+
+&lt;img src='https://octodex.github.com/images/vinyltocat.png' style='float:right;width:42%'&gt;
+
+- &lt;s&gt;世界最大男性社交網站&lt;/s&gt;
+
+- 原始碼託管 (只要開源，完全免費)
+
+- 許多軟體開發相關的實用、免費服務
+
+- 架設網頁
+
+
+
+.footnote[
+[透過 GitHub 架設靜態網頁](https://liao961120.github.io/2018/04/20/gsheet_survey.html#靜態網頁-設置)
+]
+
+---
+
+
+
+
+---
+
+class: inverse, center, middle
+
+# Applications
+
+---
+
+輸出一本書 (含 PDF 與 HTML) ([檢視](https://github.com/yihui/bookdown-crc), [下載](https://github.com/yihui/bookdown-crc/archive/master.zip))
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script src="addons/macros.js"></script>
+<script src="https://platform.twitter.com/widgets.js"></script>
+<script>var slideshow = remark.create({
+"ratio": "16:10",
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": true
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();</script>
+
+<script>
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
