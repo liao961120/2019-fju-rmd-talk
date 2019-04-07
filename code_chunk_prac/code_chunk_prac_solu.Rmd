@@ -40,7 +40,7 @@ kable(x = table_data, format = 'markdown',
 1. 圖片寬度為文件寬度的 50%
 1. 為圖片加上說明文字 (figure caption)
 
-```{r echo=TRUE, out.width='50%', fig.cap='`ggplot2` 與 `iris` 數據'}
+```{r echo=TRUE, out.width='50%', fig.cap='ggplot2 與 iris 數據'}
 ggplot(data = iris) +
   geom_point(aes(x = Sepal.Length,
                  y = Petal.Width,

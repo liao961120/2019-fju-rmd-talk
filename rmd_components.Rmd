@@ -393,7 +393,7 @@ Windows 的檔案路徑是用反斜線 (`\`) 表示分隔，但所有非 Windows
 
 #### .larger[練習時間]
 
-1. 下載 [`code_chunk_prac.zip`](https://bit.ly/2I3o43r)
+1. 下載 [`code_chunk_prac.zip`](https://liao961120.github.io/2019-fju-rmd-talk/code_chunk_prac.zip)
 
 1. 修改 `code_chunk_prac.Rmd` 中的內容，  
 使輸出<sup>\*</sup>結果與[此網頁](https://bit.ly/2FUQPvP)相同
@@ -461,3 +461,8 @@ output:
 
 <br>
 
+- 輸出 HTML 文件
+
+- 輸出 PDF 文件 ([下載](https://liao961120.github.io/2019-fju-rmd-talk/minimal_pdf.zip))
+
+- 輸出一本書 (含 PDF 與 HTML) ([檢視](https://github.com/yihui/bookdown-crc), [下載](https://github.com/yihui/bookdown-crc/archive/master.zip))
