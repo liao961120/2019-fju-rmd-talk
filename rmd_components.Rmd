@@ -5,12 +5,13 @@ output:
   xaringan::moon_reader:
     nature:
       ratio: "16:10"
-      beforeInit: "addons/macros.js"
+      beforeInit: ["addons/macros.js", "https://platform.twitter.com/widgets.js"]
       highlightStyle: github
       highlightLines: true
       countIncrementalSlides: yes
-    css: [default, default-fonts, addons/custom.css]
+    css: [default, chocolate, chocolate-fonts, addons/custom.css]
     yolo: false
+    seal: false 
 ---
 
 ```{r setup, include=FALSE}
@@ -20,6 +21,7 @@ knitr::opts_chunk$set(
 	warning = FALSE
 )
 library(knitr)
+knitr_ico <- "<img src='img/knitr.png' style='display:inline;height:1em;'>"
 ```
 
 
@@ -47,7 +49,7 @@ R Markdown = knit**.r[r]**  +  Pandoc **.r[Markdown]**
 <br>
 
 .larger[
-- **`knitr`**: Embedding R code & results computed from it in a Markdown document.
+- **`knitr`**: A tool for embedding R code & execution results into a Markdown document.
 
 - **`Pandoc`**: A Tool for conversion between multiple document formats.
 ]
@@ -193,9 +195,9 @@ rmd_code_chunk <- toprint(rmd_code_chunk)
 
 ]
 
-.footnote[
-[說明文件](https://yihui.name/knitr/options/)
-]
+.footnote[.little-larger[
+[`knitr` 說明文件](https://yihui.name/knitr/options/)
+]]
 
 ---
 
@@ -388,9 +390,22 @@ Windows 的檔案路徑是用反斜線 (`\`) 表示分隔，但所有非 Windows
 ]
 
 .right-column[
-1. 
+
+#### .larger[練習時間]
+
+1. 下載 [`code_chunk_prac.zip`](https://bit.ly/2I3o43r)
+
+1. 修改 `code_chunk_prac.Rmd` 中的內容，  
+使輸出<sup>\*</sup>結果與[此網頁](https://bit.ly/2FUQPvP)相同
+
+1. 參考答案寫在 `code_chunk_prac_solu.Rmd`
+
 ]
 
+
+.footnote[
+[\*]: 以 RStudio 開啟 `.Rmd` ➜ 點擊 `r knitr_ico` (`Knit`)
+]
 ---
 
 ## YAML Frontmatter
@@ -408,7 +423,7 @@ csl: apa.csl
 
 <br>
 
-- 不同模板，可供設定之變項不盡相同
+- 不同輸出格式 (模板)，可供設定之變項不盡相同
     - `geometry`, `linestretch` 僅對於 PDF 輸出的文件有效果
 
 - 可用**動態變項** (inline R Code) 作為輸入
@@ -434,6 +449,15 @@ output:
 - **.r[縮排]**結構必須一致: 每層皆使用 **2 格空白**
 
 - 可同時設定多個輸出格式
-    - 第一個： 點擊 <img src='img/knitr.png' style='display:inline;height:1em;'> 後所輸出之格式
 ]
+
+---
+
+## YAML 好複雜？
+
+.center[.larger[
+沒錯，不要去記它，.r[**複製貼上就好**]
+]]
+
+<br>
 

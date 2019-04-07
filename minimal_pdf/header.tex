@@ -1,5 +1,3 @@
-%加這個就可以設定字體
-\usepackage{fontspec}
 %使用xeCJK，其他的還有CJK或是xCJK
 \usepackage{xeCJK}
 %使用 LaTeX bm{boldmath}
@@ -13,6 +11,9 @@
 %設定段落之間的距離
 \setlength{\parskip}{0.45cm}
 
+%加這個就可以設定字體
+\usepackage{fontspec}
+
 % 設定英文字體
 %\setmainfont[Path=fonts/,
 % BoldFont={LiberationSerif-Bold.ttf}, 
@@ -25,6 +26,7 @@
 % 粗體字型: BoldFont
 \setCJKmainfont[Path=fonts/,AutoFakeBold=1.5,AutoFakeSlant=.4]{bkai00mp.ttf}
 \setCJKmonofont[Path = fonts/]{NotoSansMonoCJKtc.otf}
+
 %若字體沒有粗體字型，將上面一行註解掉，改用下方這行
 %\setCJKmainfont[AutoFakeBold=1.5,AutoFakeSlant=.4]{AR PL KaitiM Big5}
 

@@ -1,0 +1,17 @@
+---
+title: "bookdown: R Markdown 的擴充"
+subtitle: "Making R Markdown Suitable for Academic Writing"
+author: "Yongfu Liao"
+date: "`r Sys.Date()`"
+output:
+  bookdown::html_document2:
+    toc: yes
+    number_sections: no
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+
