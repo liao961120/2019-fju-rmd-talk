@@ -91,4 +91,6 @@ class: inverse, center, middle
 
 # Applications
 
+---
 
+輸出一本書 (含 PDF 與 HTML) ([檢視](https://github.com/yihui/bookdown-crc), [下載](https://github.com/yihui/bookdown-crc/archive/master.zip))

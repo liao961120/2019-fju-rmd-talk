@@ -24,8 +24,7 @@ library(knitr)
 
 ```{r echo=TRUE}
 table_data <- iris[1:5, 1:3]
-kable(x = table_data, format = 'markdown',
-      align = 'c', caption = 'R 內建資料 `iris`')
+kable(x = table_data, align = 'c', caption = 'R 內建資料 iris')
 ```
 
 

@@ -1,17 +1,85 @@
 ---
-title: "bookdown: R Markdown 的擴充"
+title: "bookdown: 擴充 R Markdown"
 subtitle: "Making R Markdown Suitable for Academic Writing"
 author: "Yongfu Liao"
 date: "`r Sys.Date()`"
 output:
   bookdown::html_document2:
+    theme: readable
     toc: yes
-    number_sections: no
+    toc_float: yes
+    number_sections: yes
+    css: style.css
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = FALSE, out.width = '50%', fig.align = 'c')
+```
+
+
+# Text Reference {#text-ref}
+
+(ref:iris-plot-caption) 使用 `ggplot2` 繪製 `iris` 數據。這段文字用於 figure caption 可使用 **R Markdown 語法**，甚至 inline code chunk。此圖繪製於 `r Sys.Date()`。
+
+```{r iris-plot, fig.cap='(ref:iris-plot-caption)'}
+library(ggplot2)
+ggplot(data = iris) +
+  geom_point(aes(Sepal.Length, Petal.Width, color = Species))
+```
+
+
+同樣的邏輯也可應用於表格上：
+
+(ref:iris-table-caption) 這是使用 `bookdown` **Text Reference** 產生的 table caption。
+
+```{r iris-table}
+knitr::kable(iris[1:5, 1:3], caption = '(ref:iris-table-caption)')
 ```
 
 
 
+# Cross Reference
+
+章節、圖片、表格，皆可透過 `bookdown` 的特殊語法 `\@ref(label)` 在文章任意處建立超連結。要建立超連結前，需要先有 ID。
+
+`\@ref(label)` 中的 **`label`** 依據使用的是章節、圖片或表格[^reference]會有所不同：
+
+- 章節：`ID`
+
+- 圖片：`fig:code-chunk-label`
+
+- 表格：`tab:code-chunk-label`
+
+
+## 章節 ID {#section-ref}
+
+為章節建立 ID 的方式很簡單，只要在標題後面加上 `{#<id>}` 即可
+
+```markdown
+## 章節 ID {#section-ref}
+```
+
+## 圖片與表格 ID {#table-fig-ref}
+
+圖片與表格的 ID 即是生成它們的 R code chunk 的 label -- ````{r label}`。
+
+
+## 於文章他處引用章節、圖片與表格
+
+透過 
+
+- `\@ref(id)` 連結 Section \@ref(section-ref)
+
+- `\@ref(fig:iris-plot)` 連結 Fig. \@ref(fig:iris-plot)
+
+- `\@ref(tab:iris-table)` 連結 Table \@ref(tab:iris-table)
+
+
+# 參考資料 {-}
+
+- https://bookdown.org/yihui/bookdown/markdown-extensions-by-bookdown.html
+
+- https://bookdown.org/yihui/bookdown/cross-references.html
+
+
+[^reference]: 此外，`bookdown` 還提供了[數學公式與定理的引用](https://bookdown.org/yihui/bookdown/markdown-extensions-by-bookdown.html#equations)。

@@ -24,7 +24,7 @@ library(knitr)
 
 ```{r}
 table_data <- iris[1:5, 1:3]
-kable(x = table_data, format = 'markdown', align = 'r')
+kable(x = table_data, align = 'r')
 ```
 
 
