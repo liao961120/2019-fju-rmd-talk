@@ -3,7 +3,6 @@
   <head>
     <title>Introduction to R Markdown</title>
     <meta charset="utf-8">
-    <meta name="author" content="廖永賦" />
     <link href="index_files/remark-css-0.0.1/default.css" rel="stylesheet" />
     <link href="index_files/remark-css-0.0.1/chocolate.css" rel="stylesheet" />
     <link href="index_files/remark-css-0.0.1/chocolate-fonts.css" rel="stylesheet" />
@@ -17,15 +16,22 @@
 
 
 
+background-image: linear-gradient(to bottom, rgba(0,0,0,0.2) 30%, rgba(0,0,0,0.2) 100%),  url(https://liao961120.github.io/slides/img/bg/coffee-blur.jpg)
+background-position: center;
+background-size: cover;
+
 class: title-slide
+
 .bg-text[
-.little-larger[
+.larger[
 # Introduction to R Markdown
-### Chocolate Theme
 ]
+
+### .s[A Tool Enabling You to Create, Write, &amp; Share Ideas]
+
 &lt;hr /&gt;
 .little-larger[
-April  8, 2019  
+April 11, 2019  
 廖永賦  
 [bit.ly/2019fjuRmd](https://bit.ly/2019fjuRmd)
 ]
@@ -54,6 +60,14 @@ April  8, 2019
 
 ---
 
+class: center, middle, inverse
+background-color: black
+
+# Part Ⅰ
+# .larger[R Markdown Basics]
+
+---
+
 ## Objectives
 
 .larger[
@@ -71,8 +85,9 @@ April  8, 2019
 1. 第一，大家在今天結束前能夠透過 R Markdown 輸出網頁，並透過網址分享給別人。
 1. 第二，大家有能力以 R Markdown 取代 Word 撰寫紙本作業或報告，並且輸出成 PDF 檔。
 
-
 ---
+
+
 
 
 
@@ -87,7 +102,6 @@ class: inverse, center, middle
 ---
 
 ## 兩種媒介：紙本 vs. 網頁
-
 
 ---
 
@@ -115,7 +129,7 @@ class: inverse, center, middle
 
 ---
 
-## 排版方式：WYSIWYM vs. WYSIWYG
+## 兩種排版方式：WYSIWYM vs. WYSIWYG
 
 ### 圖形化界面 (What You See Is What You .r[Get], WYSIWY.r[G])
 
@@ -135,22 +149,35 @@ class: inverse, center, middle
 
 ## 圖形化界面 vs. 標記式語言
 
-| | 圖形化界面 | 標記式語言 |
+|    | 圖形化界面 | 標記式語言 |
 | -- | --- | --- |
 | 優點 | 易學易用 | 檔案管理容易 |
-| 缺點 | 檔案管理不便 | 語法過於複雜，&lt;br&gt;難以專心於寫作內容 |
+| 缺點 | 檔案合併困難&lt;br&gt;檔案管理不便 | 語法過於複雜， &lt;br&gt;難以專心於寫作內容 |
 
+--
 
-### 檔案管理不變
+.pull-left[
+#### 檔案合併 (共編合著)
+
+&lt;img src="img/MSword.png" width="1743" style="display: block; margin: auto;" /&gt;
+
+「你做了什麼」被隱藏了
+
+]
+
+--
+
+.pull-right[
+#### 檔案管理不變
 
 &gt; Q: 請在這 200 份**文件**中，找出所有內文含有「三年五班 王小明」的文件
-
-- Word?
 
 - 純文字檔
     ```bash
     grep -r '三年五班 王小明' *.md
     ```
+]
+
 
 ---
 background-image: url("https://liao961120.github.io/slides/img/emo/boredom-small.png")
@@ -162,6 +189,10 @@ background-position: 90% 8%
 &lt;img src='img/html_raw.png' style='display:inline;width:53%;align:left'&gt;
 &lt;img src='img/html_rendered.png' style='display:inline;width:46%;align:right'&gt;
 
+--
+
+&lt;img src='https://media.giphy.com/media/fy0gLJtIkZj8I/giphy.gif' style='display:block;position:absolute;top:0%;right:0;left:auto;width:100%'&gt;
+
 ---
 
 ## Markdown: 極簡的標記式語言
@@ -171,81 +202,100 @@ background-position: 90% 8%
 
 ---
 
-## 玩玩看 Markdown (見下頁語法)
+## 玩玩看 Markdown
 
-&lt;img src="img/markdown_demo.gif" style="display: block; margin: auto;" /&gt;
+Copy Markdown example [here](https://raw.githubusercontent.com/liao961120/2019-fju-rmd-talk/master/md_syntax.txt)
 
-.footnote[.smaller[
-[jbt.github.io/markdown-editor](https://jbt.github.io/markdown-editor)
-]]
+&lt;a href='https://jbt.github.io/markdown-editor'&gt;&lt;img src='img/markdown_demo.gif'&gt;&lt;/a&gt;
 
 ---
 
+## Markdown: Too simplified?
+
+### Two Solutions
+
+1. Markdown + HTML Syntax
+
+1. Markdown Extensions
+
+- 優缺點？
+
+--
+
+### Pandoc Markdown
+
+- **Pandoc**: A Tool for conversion between multiple document formats
+  
+  - [pandoc.org/try](https://pandoc.org/try/)
+
+- **Pandoc Markdown**: Markdown extensions by Pandoc
 
 
-````markdown
-# Some Markdown Syntax
+???
+優缺點：  
+這邊要回到一開始講到，關於文字工作者所面臨的「紙本與網頁」之間的抉擇。Markdown 作為一種極簡約的標記式語言，這點讓它有潛力解決紙本與網頁之間的矛盾，因為簡單的標記式語言，可以被轉換成更複雜的標記式
+語言，但是反之不然。所以 Markdown 可以轉換成 HTML，這本來就是它被發明的目的；這代表，Markdown 也可以被轉換成其它 HTML 以外的標記式語言，例如，LaTeX。
 
-## Basic Syntax
+這正是 Pandoc 這個工具出現的原因
 
-### Paragraphs &amp; New Lines
+`--`
 
-This is the first paragraph. You can **switch to a new line without starting a new paragraph** by ending the line with two white spaces.  
-This is a new line in the same paragraph.
-Only switching to the new line won't work. Remember to leave two white spaces at the end of the previous line.
+Pandoc 是一個用於在各種標記式語言和文件格式之間轉換的工具，譬如說，它可以將 Markdown 轉換成 HTML, LaTeX 和 Word 文件。Pandoc 也可以將這些格式逆向轉換成 Markdown，但就像前面所說的，這種轉換並不完美，因為複雜的標記式語言要轉換成比較簡單的標記式語言，勢必要丟掉很多無法被轉換的資訊。
 
-This is the second paragraph. You can use footnote syntax^[這裡可以寫下註解。].
+至於 Pandoc Markdown 則是 Pandoc 自己定義的 Markdown 格式。它大幅的擴充 Markdown 語法，讓 Markdown 可用於撰寫排版更加精緻的文件。
 
+---
 
-### Hyper Links
+background-image: url("img/pandoc.png")
+background-size: 280px
+background-position: 93% 5%
 
-[Click me](https://www.google.com)  to go to Google.
+## Pandoc Markdown&lt;br&gt;.smaller[.much-smaller[.g[解決「紙本 vs. 網頁」的衝突]]]
+ 
 
+&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
 
-### Images
-
-![Markdown Logo](https://raw.githubusercontent.com/dcurtis/markdown-mark/master/png/66x40.png)
-
-
-### Text formatting
-
-Write *italic*, **bold**, and ***bold-italic*** text.
-
-
-### Lists
-
-1. Numbered  List
-1. The number is automatically added
-	- Unnumbered sublist
-	- Cool
-	    1. nested numbered list
-	    1. cool huh?
+|     | 所見即所得  | 所見即所思    |
+|-----|----------|----------|
+| **紙本** | MS Word | `\(\LaTeX\)`,&lt;br&gt;Markdown (近年目標)  |
+| **網頁** | 部落格文章撰寫後台&lt;br&gt;(e.g. WordPress, Medium) | HTML,&lt;br&gt;Markdown (初創目的) |
 
 
-5. You can acutually start with any number you like, such as 5.
-5. This item should start with 6.
+???
+更重要的是，Pandoc Markdown 多數的語法能夠同時完美地轉換成 HTML 和 LaTeX 這兩種標記式語言。這基本上解決了「網頁與紙本的矛盾」，因為寫作者可以只要用 Pandoc Markdown 撰寫文件，需要**發布在網路**上時就將文件輸出成 HTML，需要**列印**時就將文件輸出成 LaTeX 再生成 PDF。
 
+這個表格比較了幾種常見的排版工具的特性。我這邊總結一下。我認為 Markdown 是這些工具之中最好的排版工具，原因有兩點：
 
-### Code &amp; Code Chunk
+1. 第一，做為一種「所見即所思」的排版工具，Markdown 沒有其它圖形化界面排版工具的缺點。同時，由於 Markdown 是非常簡約的標記式語言，它不像過去惡名昭彰的標記式語言擁有太過複雜的語法，干擾人們寫作的過程。
+1. 第二，使用 Markdown 可以解決紙本和網頁的矛盾
 
-`code is written inside two backticks`.
+---
 
-A code chunk is specified by three backticks:
+## Markdown Extentions by Pandoc .ms[(Partial)]
 
-```
-This is a code chunk without syntax highlighting.
-```
+- Footnotes
 
-#### Syntax Highlighting
+- [Bibliographies and Citations](https://rmarkdown.rstudio.com/authoring_bibliographies_and_citations.html)
+    - [Citation Style Language (`.csl`)](https://citationstyles.org)
 
-```python
-x = 1 + 1
+- LaTeX Math:
+  
+  - 
+  ```latex
+  e^{ \frac{ -(x - \mu)^2 }{2 \sigma} }
+  ```
+  
+  - Wrap LaTeX math code in a pair of `$` or `$$`:
+  
+      - `output: `\(e^{ \frac{ -(x - \mu)^2 }{2 \sigma} }\)``  
+      - output: `\(e^{ \frac{ -(x - \mu)^2 }{2 \sigma} }\)`
 
-def foo():
-	print('foo is a function')
-```
-````
+.footnote[
+[R Markdown's Markdown Syntax](https://bookdown.org/yihui/rmarkdown/markdown-syntax.html) (Pandoc Markdown)
 
+[Markdown extensions by bookdown](https://bookdown.org/yihui/bookdown/markdown-extensions-by-bookdown.html)
+
+]
 
 ---
 
@@ -275,24 +325,8 @@ R Markdown = knit**.r[r]**  +  Pandoc **.r[Markdown]**
 
 .larger[
 - **`knitr`**: A tool for embedding R code &amp; execution results into a Markdown document.
-
-- **`Pandoc`**: A Tool for conversion between multiple document formats.
 ]
----
 
-## Pandoc Markdown: 解決「紙本 vs. 網頁」的衝突
-
-
-&lt;img src='img/pandoc.png' style='float:right;width:38%;'&gt;
-
-|          | 所見即所得                                     | 所見即所思                       |
-|----------|------------------------------------------------|----------------------------------|
-| **紙本** | MS Word                                        | `\(\LaTeX\)`,&lt;br&gt;Markdown (近年目標)  |
-| **網頁** | 部落格文章撰寫後台&lt;br&gt;(e.g. WordPress, Medium) | HTML,&lt;br&gt;Markdown (初創目的) |
-
-.footnote[
-[pandoc.org/try](https://pandoc.org/try/)
-]
 
 ---
 
@@ -300,9 +334,6 @@ R Markdown = knit**.r[r]**  +  Pandoc **.r[Markdown]**
 
 
 
-.left-column[
-### Whole Document
-]
 
 .right-column[
 ````md
@@ -335,7 +366,6 @@ Variables computed in code chunks can be placed inline:
 ## Structure of an R Markdown Document
 
 .left-column[
-### Whole Document
 ### .little-smaller[YAML Frontmatter&lt;br&gt;(metadata)]
 ]
 
@@ -368,7 +398,6 @@ Variables computed in code chunks can be placed inline:
 ## Structure of an R Markdown Document
 
 .left-column[
-### Whole Document
 ### .little-smaller[YAML Frontmatter&lt;br&gt;(metadata)]
 ### Markdown
 ]
@@ -402,7 +431,6 @@ paste('Using R Markdown on', today)
 ## Structure of an R Markdown Document
 
 .left-column[
-### Whole Document
 ### .little-smaller[YAML Frontmatter&lt;br&gt;(metadata)]
 ### Markdown
 ### .little-smaller[knitr Code Chunks&lt;br&gt;(Executable)]
@@ -535,17 +563,20 @@ knitr::opts_chunk$set(echo = FALSE)
 
 
 ````Rmd
-```{r iris-plot, echo=FALSE, out.width="35%", fig.dim=c(6, 4)}
+```{r iris-plot, echo=FALSE, out.width="35%", fig.dim=c(7, 3.5)}
 library(ggplot2)
 ggplot(data = iris) +
   geom_point(aes(Sepal.Length, Petal.Width, color = Species))
 ```
 ````
+]
 
+--
+
+.right-column[
 **Output:**
 
 &lt;img src="index_files/figure-html/unnamed-chunk-20-1.png" width="35%" style="display: block; margin: auto;" /&gt;
-
 ]
 
 ---
@@ -570,7 +601,11 @@ knitr::kable(data, align = "c", format = "markdown",
              caption = "表格說明文字"
 ```
 ````
+]
 
+--
+
+.right-column[
 **Output:**
 
 
@@ -604,11 +639,15 @@ knitr::kable(data, align = "c", format = "markdown",
 
 
 ````Rmd
-```{r world, echo=TRUE, out.width="40%", fig.cap="圖片說明文字"}
+```{r world, echo=TRUE, out.width="38%", fig.cap="圖片說明文字"}
 knitr::include_graphics("img/world_night.jpg")
 ```
 ````
+]
 
+--
+
+.right-column[
 **Output:**
 
 
@@ -617,13 +656,11 @@ knitr::include_graphics('img/world_night.jpg')
 ```
 
 &lt;div class="figure" style="text-align: center"&gt;
-&lt;img src="img/world_night.jpg" alt="圖片說明文字" width="40%" /&gt;
+&lt;img src="img/world_night.jpg" alt="圖片說明文字" width="38%" /&gt;
 &lt;p class="caption"&gt;圖片說明文字&lt;/p&gt;
 &lt;/div&gt;
 
-
 ]
-
 
 ---
 
@@ -715,7 +752,7 @@ csl: apa.csl
 
 - 可用**動態變項** (inline R Code) 作為輸入
     - 今天是 &amp;#96;&lt;code&gt;r Sys.Date()&lt;/code&gt;&amp;#96;  
-    今天是 2019-04-08
+    今天是 2019-04-11
 ]
 
 .pull-right[
@@ -801,18 +838,20 @@ class: inverse, center, middle
 
 &lt;img src='https://octodex.github.com/images/vinyltocat.png' style='float:right;width:42%'&gt;
 
-- &lt;s&gt;世界最大男性社交網站&lt;/s&gt;
-
-- 原始碼託管 (只要開源，完全免費)
+- 原始碼版本控制 (備份)、專案規劃與管理、合作開發
+    - 轉個彎之後 ...  
+    [寫論文](https://github.com/sih4sing5hong5/huan1-ik8_lun7-bun5)、[課程管理](https://happygitwithr.com/classroom-overview.html)
 
 - 許多軟體開發相關的實用、免費服務
 
 - 架設網頁
 
+- &lt;s&gt;世界最大男性社交網站&lt;/s&gt;
 
 
 .footnote[
-[透過 GitHub 架設靜態網頁](https://liao961120.github.io/2018/04/20/gsheet_survey.html#靜態網頁-設置)
+[透過 GitHub 架設靜態網頁](https://liao961120.github.io/2018/04/20/gsheet_survey.html#靜態網頁-設置)  
+學習資源：[Happy Git and GitHub for the useR](https://happygitwithr.com)
 ]
 
 ---
@@ -820,11 +859,195 @@ class: inverse, center, middle
 
 
 
----
+
 
 class: inverse, center, middle
 
-# Applications
+# 輸出 PDF 文件
+
+---
+
+background-color: black
+background-image: url("img/thanos.gif"), linear-gradient(to bottom, rgba(0,0,0, 1) 100%, rgba(0,0,0, 1) 100%)
+background-size: contain, 100% 100%, cover
+
+---
+
+## 一條崎嶇的道路
+
+.center[.much-larger[
+`.Rmd` ➜ knitr ➜ `.md` ➜ Pandoc ➜ `.tex` ➜
+`\(\color{red}{\LaTeX}\)` ➜ `.pdf`
+]]
+
+- 安裝 `\(\LaTeX\)`
+
+- 麻煩的中文字 (xelatex, 字體檔)
+
+--
+
+- 2018 之後的人生比較輕鬆
+
+&lt;img src='https://d33wubrfki0l68.cloudfront.net/15c2850da53a2f8d8a1a30aa003bda21155e16ec/db869/images/logo-tinytex.png' style='display:inline;float:right;width:10em;padding-right:70px;'&gt;
+
+---
+
+## 安裝 tinytex (TinyTeX)
+
+.pull-left[
+
+1. .s[(**Windows 7/10**)] 下載並解壓縮 TinyTeX:  
+.s[[TinyTeX-win10.7z](http://bit.ly/TinyTeX-win10-7z) (72 MB) 或   
+[TinyTeX-win10.zip](http://bit.ly/TinyTeX-win10-zip) (108 MB)]
+
+2. 
+```r
+install.packages('tinytex')
+tinytex::use_tinytex()
+```
+
+3. 選取解壓縮後的 `TinyTeX` 資料夾&lt;sup&gt;＊&lt;/sup&gt;
+
+4. .s[(多試幾次)] 關閉再重新打開 RStudio，輸入
+
+  ```r
+  tinytex:::tinytex_root()
+  #&gt; if failed, i.e returning: [1] ""
+  #&gt; then try again
+  ```
+]
+
+.footnote[.s[
+[＊]: 解壓縮之後，如果有兩個 `TinyTeX` 資料夾，選擇**內層**的那個。
+]]
+
+--
+
+.pull-right[
+1. .s[(**Mac** .ms[or] 步驟 4. 失敗)] 直接安裝 TinyTeX
+  
+  ```r
+  install.packages('tinytex')
+  tinytex::install_tinytex()
+  ```
+
+- 這種方式比較耗費時間
+
+    - 參考 [Using TinyTeX from a Flash Drive](https://yihui.name/en/2018/08/tinytex-flash-drive) 打包 TinyTeX
+.s[(左欄方式)]
+
+]
+
+???
+如果不想每次用新電腦都重新安裝一次，可以參考這篇文章，說明將 TinyTeX 儲存於隨身碟
+
+---
+
+## 小心設定 .s[(因為中文字)]
+
+.pull-left[
+
+#### YAML Frontmatter
+
+```yaml
+title: "YAML for PDF Document"
+author: "廖永賦\\thanks{作者資訊}"
+documentclass: article
+geometry: a4paper
+linestretch: 1.35
+links-as-notes: true
+output:
+  bookdown::pdf_document2:
+*   latex_engine: xelatex
+    number_sections: no
+    toc: no
+*   includes:
+*     in_header: header.tex
+```
+]
+
+--
+
+.pull-right[
+#### `header.tex`
+
+```tex
+*\usepackage{fontspec}
+*\usepackage{xeCJK}
+\usepackage{float}
+\usepackage[fontsize=12pt]{scrextend}
+\setlength{\parskip}{0.35cm}
+
+*\setCJKmainfont{標楷體}
+*\setCJKmonofont{Noto Sans Mono CJK TC}
+*\XeTeXlinebreaklocale "zh"
+*\XeTeXlinebreakskip = 0pt plus 1pt
+
+\renewcommand{\figurename}{圖}
+\renewcommand{\tablename}{表}
+\renewcommand{\contentsname}{目錄}
+\renewcommand{\listfigurename}{圖目錄}
+\renewcommand{\listtablename}{表目錄}
+\renewcommand{\appendixname}{附錄}
+\renewcommand{\abstractname}{摘要}
+
+\renewcommand{\textfraction}{0.05}
+\renewcommand{\topfraction}{0.8}
+\renewcommand{\bottomfraction}{0.8}
+\renewcommand{\floatpagefraction}{0.75}
+```
+]
+
+---
+
+## 更簡單的方式：.s[R Markdown .s[模板]]
+
+.pull-left[
+#### 1. 安裝 `rmdtk`
+
+```r
+install.packages('remotes')
+remotes::install_github('liao961120/rmdtk')
+rmdtk::download_fonts()
+```
+
+#### 2. 匯入模板
+
+
+##### 指令
+```r
+rmarkdown::draft('my_new_doc',
+  template = 'CJKdocument', package = 'rmdtk')
+```
+
+
+##### RStuido GUI .ms[(見右)]:
+
+.ms[File → New File → R Markdown → From Template → **Portable CJK Document for HTML &amp; PDF**] 
+
+]
+
+&lt;img src='img/import_template.gif' style='display:block;position:absolute;top:28%;right:-30px;width:55%'&gt;
+
+---
+
+background-image: linear-gradient(to bottom, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0.4) 100%), url("https://bit.ly/2VCakjd")
+background-position: center
+background-size: contain, 100% 100%, cover
+
+
+.footnote[
+.ml[.ml[
+**接著就可以 ![:scale 1.1em](img/knitr.png) `.Rmd` 了**]]
+]
+
+---
+
+class: center, middle, inverse
+background-color: black
+
+# Part Ⅱ
+# .larger[Applications]
 
 ---
 
@@ -838,7 +1061,7 @@ class: inverse, center, middle
 "ratio": "16:10",
 "highlightStyle": "github",
 "highlightLines": true,
-"countIncrementalSlides": true
+"countIncrementalSlides": false
 });
 if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
   window.dispatchEvent(new Event('resize'));

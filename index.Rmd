@@ -1,7 +1,5 @@
 ---
 title: "Introduction to R Markdown"
-subtitle: ""
-author: "廖永賦<br><br>"
 output:
   xaringan::moon_reader:
     nature:
@@ -22,12 +20,20 @@ options(knitr.duplicate.label = 'allow')
 ```
 
 
+
+background-image: linear-gradient(to bottom, rgba(0,0,0,0.2) 30%, rgba(0,0,0,0.2) 100%),  url(https://liao961120.github.io/slides/img/bg/coffee-blur.jpg)
+background-position: center;
+background-size: cover;
+
 class: title-slide
+
 .bg-text[
-.little-larger[
+.larger[
 # Introduction to R Markdown
-### Chocolate Theme
 ]
+
+### .s[A Tool Enabling You to Create, Write, & Share Ideas]
+
 <hr />
 .little-larger[
 `r format(Sys.Date(), '%B %e, %Y')`  
@@ -40,6 +46,14 @@ class: title-slide
 
 ```{r child='opening.Rmd'}
 ```
+
+---
+
+class: center, middle, inverse
+background-color: black
+
+# Part Ⅰ
+# .larger[R Markdown Basics]
 
 ---
 
@@ -61,7 +75,6 @@ include_graphics('img/rmd_flow.png')
 
 1. 第一，大家在今天結束前能夠透過 R Markdown 輸出網頁，並透過網址分享給別人。
 1. 第二，大家有能力以 R Markdown 取代 Word 撰寫紙本作業或報告，並且輸出成 PDF 檔。
-
 
 ---
 
@@ -85,9 +98,11 @@ include_graphics('img/rmd_flow.png')
 
 ---
 
-class: inverse, center, middle
+class: center, middle, inverse
+background-color: black
 
-# Applications
+# Part Ⅱ
+# .larger[Applications]
 
 ---
 

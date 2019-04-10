@@ -60,16 +60,18 @@ class: inverse, center, middle
 
 <img src='https://octodex.github.com/images/vinyltocat.png' style='float:right;width:42%'>
 
-- <s>世界最大男性社交網站</s>
-
-- 原始碼託管 (只要開源，完全免費)
+- 原始碼版本控制 (備份)、專案規劃與管理、合作開發
+    - 轉個彎之後 ...  
+    [寫論文](https://github.com/sih4sing5hong5/huan1-ik8_lun7-bun5)、[課程管理](https://happygitwithr.com/classroom-overview.html)
 
 - 許多軟體開發相關的實用、免費服務
 
 - 架設網頁
 
+- <s>世界最大男性社交網站</s>
 
 
 .footnote[
-[透過 GitHub 架設靜態網頁](https://liao961120.github.io/2018/04/20/gsheet_survey.html#靜態網頁-設置)
+[透過 GitHub 架設靜態網頁](https://liao961120.github.io/2018/04/20/gsheet_survey.html#靜態網頁-設置)  
+學習資源：[Happy Git and GitHub for the useR](https://happygitwithr.com)
 ]

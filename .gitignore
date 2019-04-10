@@ -3,3 +3,4 @@
 LiberationSerif*
 *.sh
 docs/build_idx.R
+build_slide.R

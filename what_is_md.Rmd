@@ -57,7 +57,7 @@ class: inverse, center, middle
 
 ---
 
-## 排版方式：WYSIWYM vs. WYSIWYG
+## 兩種排版方式：WYSIWYM vs. WYSIWYG
 
 ### 圖形化界面 (What You See Is What You .r[Get], WYSIWY.r[G])
 
@@ -123,6 +123,10 @@ background-position: 90% 8%
 <img src='img/html_raw.png' style='display:inline;width:53%;align:left'>
 <img src='img/html_rendered.png' style='display:inline;width:46%;align:right'>
 
+--
+
+<img src='https://media.giphy.com/media/fy0gLJtIkZj8I/giphy.gif' style='display:block;position:absolute;top:0%;right:0;left:auto;width:100%'>
+
 ---
 
 ## Markdown: 極簡的標記式語言
@@ -138,22 +142,93 @@ include_graphics('https://collabin.netlify.com/yongfu/write-in-rmd/md2html.png')
 
 Copy Markdown example [here](https://raw.githubusercontent.com/liao961120/2019-fju-rmd-talk/master/md_syntax.txt)
 
-```{r}
-include_graphics('img/markdown_demo.gif')
-```
+<a href='https://jbt.github.io/markdown-editor'><img src='img/markdown_demo.gif'></a>
 
-.footnote[.smaller[
-[jbt.github.io/markdown-editor](https://jbt.github.io/markdown-editor)  
-[R Markdown's Markdown Syntax](https://bookdown.org/yihui/rmarkdown/markdown-syntax.html) (Pandoc Markdown)  
+---
+
+## Markdown: Too simplified?
+
+### Two Solutions
+
+1. Markdown + HTML Syntax
+
+1. Markdown Extensions
+
+- 優缺點？
+
+--
+
+### Pandoc Markdown
+
+- **Pandoc**: A Tool for conversion between multiple document formats
+  
+  - [pandoc.org/try](https://pandoc.org/try/)
+
+- **Pandoc Markdown**: Markdown extensions by Pandoc
+
+
+???
+優缺點：  
+這邊要回到一開始講到，關於文字工作者所面臨的「紙本與網頁」之間的抉擇。Markdown 作為一種極簡約的標記式語言，這點讓它有潛力解決紙本與網頁之間的矛盾，因為簡單的標記式語言，可以被轉換成更複雜的標記式
+語言，但是反之不然。所以 Markdown 可以轉換成 HTML，這本來就是它被發明的目的；這代表，Markdown 也可以被轉換成其它 HTML 以外的標記式語言，例如，LaTeX。
+
+這正是 Pandoc 這個工具出現的原因
+
+`--`
+
+Pandoc 是一個用於在各種標記式語言和文件格式之間轉換的工具，譬如說，它可以將 Markdown 轉換成 HTML, LaTeX 和 Word 文件。Pandoc 也可以將這些格式逆向轉換成 Markdown，但就像前面所說的，這種轉換並不完美，因為複雜的標記式語言要轉換成比較簡單的標記式語言，勢必要丟掉很多無法被轉換的資訊。
+
+至於 Pandoc Markdown 則是 Pandoc 自己定義的 Markdown 格式。它大幅的擴充 Markdown 語法，讓 Markdown 可用於撰寫排版更加精緻的文件。
+
+---
+
+background-image: url("img/pandoc.png")
+background-size: 280px
+background-position: 93% 5%
+
+## Pandoc Markdown<br>.smaller[.much-smaller[.g[解決「紙本 vs. 網頁」的衝突]]]
+ 
+
+<br><br><br><br><br>
+
+|     | 所見即所得  | 所見即所思    |
+|-----|----------|----------|
+| **紙本** | MS Word | $\LaTeX$,<br>Markdown (近年目標)  |
+| **網頁** | 部落格文章撰寫後台<br>(e.g. WordPress, Medium) | HTML,<br>Markdown (初創目的) |
+
+
+???
+更重要的是，Pandoc Markdown 多數的語法能夠同時完美地轉換成 HTML 和 LaTeX 這兩種標記式語言。這基本上解決了「網頁與紙本的矛盾」，因為寫作者可以只要用 Pandoc Markdown 撰寫文件，需要**發布在網路**上時就將文件輸出成 HTML，需要**列印**時就將文件輸出成 LaTeX 再生成 PDF。
+
+這個表格比較了幾種常見的排版工具的特性。我這邊總結一下。我認為 Markdown 是這些工具之中最好的排版工具，原因有兩點：
+
+1. 第一，做為一種「所見即所思」的排版工具，Markdown 沒有其它圖形化界面排版工具的缺點。同時，由於 Markdown 是非常簡約的標記式語言，它不像過去惡名昭彰的標記式語言擁有太過複雜的語法，干擾人們寫作的過程。
+1. 第二，使用 Markdown 可以解決紙本和網頁的矛盾
+
+---
+
+## Markdown Extentions by Pandoc .ms[(Partial)]
+
+- Footnotes
+
+- [Bibliographies and Citations](https://rmarkdown.rstudio.com/authoring_bibliographies_and_citations.html)
+    - [Citation Style Language (`.csl`)](https://citationstyles.org)
+
+- LaTeX Math:
+  
+  - 
+  ```latex
+  e^{ \frac{ -(x - \mu)^2 }{2 \sigma} }
+  ```
+  
+  - Wrap LaTeX math code in a pair of `$` or `$$`:
+  
+      - `output: $e^{ \frac{ -(x - \mu)^2 }{2 \sigma} }$`  
+      - output: $e^{ \frac{ -(x - \mu)^2 }{2 \sigma} }$
+
+.footnote[
+[R Markdown's Markdown Syntax](https://bookdown.org/yihui/rmarkdown/markdown-syntax.html) (Pandoc Markdown)
+
 [Markdown extensions by bookdown](https://bookdown.org/yihui/bookdown/markdown-extensions-by-bookdown.html)
 
-]]
-
-<!--
-<iframe src="https://pandao.github.io/editor.md/en.html" width=100% height=550px">
-<p>Your browser does not support iframes.</p>
-</iframe>
--->
-
-
-
+]

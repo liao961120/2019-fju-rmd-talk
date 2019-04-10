@@ -46,47 +46,8 @@ R Markdown = knit**.r[r]**  +  Pandoc **.r[Markdown]**
 
 .larger[
 - **`knitr`**: A tool for embedding R code & execution results into a Markdown document.
-
-- **`Pandoc`**: A Tool for conversion between multiple document formats.
-]
----
-
-## Pandoc Markdown<br>.smaller[.much-smaller[.g[解決「紙本 vs. 網頁」的衝突]]] <img src='img/pandoc.png' style='float:right;width:38%;'>
-
-<br>
-
-|     | 所見即所得  | 所見即所思    |
-|-----|----------|----------|
-| **紙本** | MS Word | $\LaTeX$,<br>Markdown (近年目標)  |
-| **網頁** | 部落格文章撰寫後台<br>(e.g. WordPress, Medium) | HTML,<br>Markdown (初創目的) |
-
-<br>
-
-.larger[
-- [pandoc.org/try](https://pandoc.org/try/)
 ]
 
-
----
-
-## Markdown Extentions by Pandoc
-
-- Footnotes
-
-- [Bibliographies and Citations](https://rmarkdown.rstudio.com/authoring_bibliographies_and_citations.html)
-    - [Citation Style Language (`.csl`)](https://citationstyles.org)
-
-- LaTeX Math:
-  
-  - 
-  ```latex
-  e^{ \frac{ -(x - \mu)^2 }{2 \sigma} }
-  ```
-  
-  - Wrap LaTeX math code in a pair of `$` or `$$`:
-  
-      - `output: $e^{ \frac{ -(x - \mu)^2 }{2 \sigma} }$`  
-      - output: $e^{ \frac{ -(x - \mu)^2 }{2 \sigma} }$
 
 ---
 
