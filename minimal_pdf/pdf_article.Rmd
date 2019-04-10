@@ -43,12 +43,12 @@ $LaTeX$ 是一套非常精確的排版系統，換句話說，它**非常喜歡�
 
 ## 字型與字體
 
-此份文件使用 `fonts/` 當中的字體 (`bkai00mp.ttf` 與 `NotoSansMonoCJKtc.otf`) 產生中文 PDF。因此，若此 `.Rmd` 與 `fonts/` 資料夾的相對路徑改變，會無法輸出文件。若不想受限於字體的 dependencies，請依據下方說明，修改 `header.tex` 中的指令。
+此份文件使用 `fonts/` 當中的字體 (`kaiti.ttf` 與 `NotoSansMonoCJKtc.otf`) 產生中文 PDF。因此，若此 `.Rmd` 與 `fonts/` 資料夾的相對路徑改變，會無法輸出文件。若不想受限於字體的 dependencies，請依據下方說明，修改 `header.tex` 中的指令。
 
 - 字體大小：`\usepackage[fontsize=12pt]{scrextend}`，預設為 `12pt`
 - 字型：
-    - **一般字體 (中文)**：`\setCJKmainfont[ Path=fonts/, AutoFakeBold=1.5, AutoFakeSlant=.4]{bkai00mp.ttf}`
-        此設定較為複雜。字型檔案位在 `fonts/bkai00mp.ttf`。若想使用電腦內建的字體，可至 Word 查找該字體名稱。例如，假設使用的是已安裝於電腦的標楷體，可將上述設定修改為 `\setCJKmainfont{標楷體}`；若使用此設定時，粗體、斜體字沒有效果，請將指令改為 `\setCJKmainfont[AutoFakeBold=1.5, AutoFakeSlant=.4]{標楷體}`。
+    - **一般字體 (中文)**：`\setCJKmainfont[ Path=fonts/, AutoFakeBold=1.5, AutoFakeSlant=.4]{kaiti.ttf}`
+        此設定較為複雜。字型檔案位在 `fonts/kaiti.ttf`。若想使用電腦內建的字體，可至 Word 查找該字體名稱。例如，假設使用的是已安裝於電腦的標楷體，可將上述設定修改為 `\setCJKmainfont{標楷體}`；若使用此設定時，粗體、斜體字沒有效果，請將指令改為 `\setCJKmainfont[AutoFakeBold=1.5, AutoFakeSlant=.4]{標楷體}`。
     - **等寬字體 (中文)**：`\setCJKmonofont[ Path = fonts/ ]{NotoSansMonoCJKtc.otf}`
         與上方修改方式相同，可將 `NotoSansMonoCJKtc.otf` 修改成電腦內建的字體。
 

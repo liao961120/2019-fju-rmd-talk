@@ -8,23 +8,58 @@ This is the first paragraph. You can **switch to a new line without starting a n
 This is a new line in the same paragraph.
 Only switching to the new line won't work. Remember to leave two white spaces at the end of the previous line.
 
-This is the second paragraph. You can use footnote syntax^[這裡可以寫下註解。].
-
-
-### Hyper Links
-
-[Click me](https://www.google.com)  to go to Google.
-
-
-### Images
-
-![Markdown Logo](https://raw.githubusercontent.com/dcurtis/markdown-mark/master/png/66x40.png)
-
+This is the second paragraph. You can use footnote syntax.
 
 ### Text formatting
 
+
+#### Bold & Italics
+
 Write *italic*, **bold**, and ***bold-italic*** text.
 
+
+#### Code & Code Chunk
+
+`code is written inside two backticks`.
+
+A code chunk is specified by three backticks:
+
+```
+This is a code chunk without syntax highlighting.
+```
+
+##### Syntax Highlighting
+
+```python
+x = 1 + 1
+
+def foo():
+	print('foo is a function')
+```
+
+#### Block Quotes
+
+> "I thoroughly disapprove of duels. If a man should challenge me,
+  I would take him kindly and forgivingly by the hand and lead him
+  to a quiet place and kill him."
+>
+> --- Mark Twain
+
+
+### Hyper Links & Images
+
+[Click me](https://www.google.com)  to go to Google.
+
+![Markdown Logo](https://raw.githubusercontent.com/dcurtis/markdown-mark/master/png/66x40.png)
+
+### Markdown Table
+
+|     |  欄1 |  欄2 |
+|-----|------|------|
+| 列1 | 1, 1 | 1, 2 |
+| 列2 | 2, 1 | 2, 2 |
+
+省力好辦法：[Online Markdown table generator](https://www.tablesgenerator.com/markdown_tables)
 
 ### Lists
 
@@ -40,21 +75,4 @@ Write *italic*, **bold**, and ***bold-italic*** text.
 5. This item should start with 6.
 
 
-### Code & Code Chunk
 
-`code is written inside two backticks`.
-
-A code chunk is specified by three backticks:
-
-```
-This is a code chunk without syntax highlighting.
-```
-
-#### Syntax Highlighting
-
-```python
-x = 1 + 1
-
-def foo():
-	print('foo is a function')
-```

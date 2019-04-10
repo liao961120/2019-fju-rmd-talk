@@ -1,19 +1,23 @@
 ---
 title: "Introduction to Markdown"
 subtitle: "網路時代下的寫作"
-author: "Yongfu Liao<br><br>"
-date: "`r format(Sys.Date(), '%B %e, %Y')`<br><br><a href='http://bit.ly/TravisRmd' style='font-size:0.7em;'>bit.ly/TravisRmd</a>"
 output:
   xaringan::moon_reader:
     nature:
       ratio: "16:10"
-      beforeInit: "addons/macros.js"
+      beforeInit: ["addons/macros.js", "https://platform.twitter.com/widgets.js"]
       highlightStyle: github
       highlightLines: true
-      countIncrementalSlides: yes
-    css: [default, default-fonts, addons/custom.css]
+      countIncrementalSlides: no
+    css: [default, chocolate, chocolate-fonts, addons/custom.css]
     yolo: false
+    seal: false 
 ---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(knitr)
+```
 
 
 class: inverse, center, middle
@@ -26,7 +30,6 @@ class: inverse, center, middle
 ---
 
 ## 兩種媒介：紙本 vs. 網頁
-
 
 ---
 
@@ -78,22 +81,37 @@ include_graphics('img/medium_post.png')
 
 ## 圖形化界面 vs. 標記式語言
 
-| | 圖形化界面 | 標記式語言 |
+|    | 圖形化界面 | 標記式語言 |
 | -- | --- | --- |
 | 優點 | 易學易用 | 檔案管理容易 |
-| 缺點 | 檔案管理不便 | 語法過於複雜，<br>難以專心於寫作內容 |
+| 缺點 | 檔案合併困難<br>檔案管理不便 | 語法過於複雜， <br>難以專心於寫作內容 |
 
+--
 
-### 檔案管理不變
+.pull-left[
+#### 檔案合併 (共編合著)
+
+```{r}
+include_graphics('img/MSword.png')
+```
+
+「你做了什麼」被隱藏了
+
+]
+
+--
+
+.pull-right[
+#### 檔案管理不變
 
 > Q: 請在這 200 份**文件**中，找出所有內文含有「三年五班 王小明」的文件
-
-- Word?
 
 - 純文字檔
     ```bash
     grep -r '三年五班 王小明' *.md
     ```
+]
+
 
 ---
 background-image: url("https://liao961120.github.io/slides/img/emo/boredom-small.png")
@@ -116,23 +134,26 @@ include_graphics('https://collabin.netlify.com/yongfu/write-in-rmd/md2html.png')
 
 ---
 
-## 玩玩看 Markdown (見下頁語法)
+## 玩玩看 Markdown
+
+Copy Markdown example [here](https://raw.githubusercontent.com/liao961120/2019-fju-rmd-talk/master/md_syntax.txt)
 
 ```{r}
 include_graphics('img/markdown_demo.gif')
 ```
 
 .footnote[.smaller[
-[jbt.github.io/markdown-editor](https://jbt.github.io/markdown-editor)
+[jbt.github.io/markdown-editor](https://jbt.github.io/markdown-editor)  
+[R Markdown's Markdown Syntax](https://bookdown.org/yihui/rmarkdown/markdown-syntax.html) (Pandoc Markdown)  
+[Markdown extensions by bookdown](https://bookdown.org/yihui/bookdown/markdown-extensions-by-bookdown.html)
+
 ]]
 
----
+<!--
+<iframe src="https://pandao.github.io/editor.md/en.html" width=100% height=550px">
+<p>Your browser does not support iframes.</p>
+</iframe>
+-->
 
-```{r}
-md_syntax <- readLines('md_syntax.txt')
-md_syntax <- c('````markdown', md_syntax, '````')
-md_syntax <- paste(md_syntax, collapse = '\n')
-```
 
-`r asis_output(md_syntax)`
 

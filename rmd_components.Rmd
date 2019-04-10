@@ -51,19 +51,42 @@ R Markdown = knit**.r[r]**  +  Pandoc **.r[Markdown]**
 ]
 ---
 
-## Pandoc Markdown: 解決「紙本 vs. 網頁」的衝突
+## Pandoc Markdown<br>.smaller[.much-smaller[.g[解決「紙本 vs. 網頁」的衝突]]] <img src='img/pandoc.png' style='float:right;width:38%;'>
 
+<br>
 
-<img src='img/pandoc.png' style='float:right;width:38%;'>
-
-|          | 所見即所得                                     | 所見即所思                       |
-|----------|------------------------------------------------|----------------------------------|
-| **紙本** | MS Word                                        | $\LaTeX$,<br>Markdown (近年目標)  |
+|     | 所見即所得  | 所見即所思    |
+|-----|----------|----------|
+| **紙本** | MS Word | $\LaTeX$,<br>Markdown (近年目標)  |
 | **網頁** | 部落格文章撰寫後台<br>(e.g. WordPress, Medium) | HTML,<br>Markdown (初創目的) |
 
-.footnote[
-[pandoc.org/try](https://pandoc.org/try/)
+<br>
+
+.larger[
+- [pandoc.org/try](https://pandoc.org/try/)
 ]
+
+
+---
+
+## Markdown Extentions by Pandoc
+
+- Footnotes
+
+- [Bibliographies and Citations](https://rmarkdown.rstudio.com/authoring_bibliographies_and_citations.html)
+    - [Citation Style Language (`.csl`)](https://citationstyles.org)
+
+- LaTeX Math:
+  
+  - 
+  ```latex
+  e^{ \frac{ -(x - \mu)^2 }{2 \sigma} }
+  ```
+  
+  - Wrap LaTeX math code in a pair of `$` or `$$`:
+  
+      - `output: $e^{ \frac{ -(x - \mu)^2 }{2 \sigma} }$`  
+      - output: $e^{ \frac{ -(x - \mu)^2 }{2 \sigma} }$
 
 ---
 
@@ -87,9 +110,6 @@ rmd_structure2 <- toprint(rmd_structure2)
 rmd_structuremd <- toprint(rmd_structuremd)
 ```
 
-.left-column[
-### Whole Document
-]
 
 .right-column[
 `r asis_output(rmd_structure)`
@@ -102,7 +122,6 @@ rmd_structuremd <- toprint(rmd_structuremd)
 ## Structure of an R Markdown Document
 
 .left-column[
-### Whole Document
 ### .little-smaller[YAML Frontmatter<br>(metadata)]
 ]
 
@@ -115,7 +134,6 @@ rmd_structuremd <- toprint(rmd_structuremd)
 ## Structure of an R Markdown Document
 
 .left-column[
-### Whole Document
 ### .little-smaller[YAML Frontmatter<br>(metadata)]
 ### Markdown
 ]
@@ -129,7 +147,6 @@ rmd_structuremd <- toprint(rmd_structuremd)
 ## Structure of an R Markdown Document
 
 .left-column[
-### Whole Document
 ### .little-smaller[YAML Frontmatter<br>(metadata)]
 ### Markdown
 ### .little-smaller[knitr Code Chunks<br>(Executable)]
@@ -243,22 +260,25 @@ code <- c('library(ggplot2)',
           'ggplot(data = iris) +',
           '  geom_point(aes(Sepal.Length, Petal.Width, color = Species))')
 rmd_code_chunk <- c('````Rmd',
-                    '```{r iris-plot, echo=FALSE, out.width="35%", fig.dim=c(6, 4)}', code,
+                    '```{r iris-plot, echo=FALSE, out.width="35%", fig.dim=c(7, 3.5)}', code,
                     '```', '````')
 rmd_code_chunk <- toprint(rmd_code_chunk)
 ```
 
 `r rmd_code_chunk`
+]
 
+--
+
+.right-column[
 **Output:**
 
-```{r out.width="35%", fig.dim=c(6, 4)}
+```{r out.width="35%", fig.dim=c(7, 3.5)}
 library(ggplot2)
 ggplot(data = iris) +
   geom_point(aes(Sepal.Length, Petal.Width,
                  color = Species))
 ```
-
 ]
 
 ---
@@ -285,7 +305,11 @@ rmd_code_chunk <- toprint(rmd_code_chunk)
 ```
 
 `r rmd_code_chunk`
+]
 
+--
+
+.right-column[
 **Output:**
 
 ```{r}
@@ -316,23 +340,25 @@ knitr::kable(data, align = 'c', format = 'markdown',
 ```{r}
 code <- 'knitr::include_graphics("img/world_night.jpg")'
 rmd_code_chunk <- c('````Rmd',
-                    '```{r world, echo=TRUE, out.width="40%", fig.cap="圖片說明文字"}',
+                    '```{r world, echo=TRUE, out.width="38%", fig.cap="圖片說明文字"}',
                     code,
                     '```', '````')
 rmd_code_chunk <- toprint(rmd_code_chunk)
 ```
 
 `r rmd_code_chunk`
+]
 
+--
+
+.right-column[
 **Output:**
 
-```{r world, echo=TRUE, out.width='40%', fig.cap='圖片說明文字'}
+```{r world, echo=TRUE, out.width='38%', fig.cap='圖片說明文字'}
 knitr::include_graphics('img/world_night.jpg')
 ```
 
-
 ]
-
 
 ---
 

@@ -9,7 +9,7 @@ output:
       beforeInit: ["addons/macros.js", "https://platform.twitter.com/widgets.js"]
       highlightStyle: github
       highlightLines: true
-      countIncrementalSlides: yes
+      countIncrementalSlides: no
     css: [default, chocolate, chocolate-fonts, addons/custom.css]
     yolo: false
     seal: false 
@@ -20,7 +20,6 @@ knitr::opts_chunk$set(echo = FALSE, fig.align = 'center')
 library(knitr)
 options(knitr.duplicate.label = 'allow')
 ```
-
 
 
 class: title-slide
