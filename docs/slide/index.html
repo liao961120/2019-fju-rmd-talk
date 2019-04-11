@@ -16,9 +16,9 @@
 
 
 
-background-image: linear-gradient(to bottom, rgba(0,0,0,0.2) 30%, rgba(0,0,0,0.2) 100%),  url(https://liao961120.github.io/slides/img/bg/coffee-blur.jpg)
-background-position: center;
-background-size: cover;
+background-image: linear-gradient(to bottom, rgba(0,0,0,0.2) 30%, rgba(0,0,0,0.2) 100%), url(https://liao961120.github.io/slides/img/bg/coffee-blur.jpg)
+background-position: center
+background-size: cover
 
 class: title-slide
 
@@ -31,9 +31,9 @@ class: title-slide
 
 &lt;hr /&gt;
 .little-larger[
-April 11, 2019  
+April 22, 2019  
 廖永賦  
-[bit.ly/2019fjuRmd](https://bit.ly/2019fjuRmd)
+[bit.ly/fju-rmd](http://bit.ly/fju-rmd)
 ]
 ]
 
@@ -220,6 +220,30 @@ Copy Markdown example [here](https://raw.githubusercontent.com/liao961120/2019-f
 
 - 優缺點？
 
+
+???
+
+#### Two Solutions
+剛剛試用過 Markdown 的語法之後，你們可能會覺得 Markdown 太過於簡略，導致它無法應付需要更細緻排版的需求。Markdown 本身的語法確實無法應付這種情況，但有兩種方式可以解決這個問題。
+
+1. 第一就是 Markdown 可以與 HTML 的語法混用。這是完全沒有問題的，因為要在網頁上顯示 Markdown，本來就會先將它轉換成 HTML 語法。
+
+1. 第二就是擴充 Markdown 本身的語法。所以事實上，市面上有很多種 Markdown 語法在流通，各種 Markdown 之間語法上會有些微的差距。
+
+- 優缺點
+
+那這兩種解決 Markdown 語法過於簡略的方式，其實有各自的優缺點。第二項的缺點很明顯，就是，當一個東西有各種不同版本時，會造成使用上的麻煩。簡單來說，你無法用一致的 Markdown 語法，橫行於各個平台之上。
+
+至於第一項，在撰寫網頁的脈絡下，並沒有什麼缺點。但是如果回到前面所說的，關於「紙本與網頁」之間的矛盾這件事上，將 Markdown 與 HTML 混用基本上就是，放棄了「紙本」而選擇了「網頁」作為發表作品的媒介。
+
+Markdown 作為一種極簡約的標記式語言，這點讓它有潛力解決紙本與網頁之間的矛盾，因為簡單的標記式語言，可以被轉換成更複雜的標記式語言，但是反之不然。  
+所以 Markdown 可以轉換成比較複雜、以**網頁呈現為目的**的 HTML；  
+那既然可以轉換成 HTML，為什麼不把 Markdown 轉換成**以紙本印刷為目的**的標記式語言呢？
+
+這正是 Pandoc 這個工具出現的原因
+
+`--`
+
 --
 
 ### Pandoc Markdown
@@ -232,15 +256,10 @@ Copy Markdown example [here](https://raw.githubusercontent.com/liao961120/2019-f
 
 
 ???
-優缺點：  
-這邊要回到一開始講到，關於文字工作者所面臨的「紙本與網頁」之間的抉擇。Markdown 作為一種極簡約的標記式語言，這點讓它有潛力解決紙本與網頁之間的矛盾，因為簡單的標記式語言，可以被轉換成更複雜的標記式
-語言，但是反之不然。所以 Markdown 可以轉換成 HTML，這本來就是它被發明的目的；這代表，Markdown 也可以被轉換成其它 HTML 以外的標記式語言，例如，LaTeX。
 
-這正是 Pandoc 這個工具出現的原因
-
-`--`
-
-Pandoc 是一個用於在各種標記式語言和文件格式之間轉換的工具，譬如說，它可以將 Markdown 轉換成 HTML, LaTeX 和 Word 文件。Pandoc 也可以將這些格式逆向轉換成 Markdown，但就像前面所說的，這種轉換並不完美，因為複雜的標記式語言要轉換成比較簡單的標記式語言，勢必要丟掉很多無法被轉換的資訊。
+#### Pandoc Markdown
+Pandoc 是一個用於「在各種標記式語言和文件格式之間」轉換的工具。  
+譬如說，它可以將 Markdown 轉換成 HTML, LaTeX 和 Word 文件。Pandoc 也可以將這些格式逆向轉換成 Markdown，但就像前面所說的，這種轉換並不完美，因為複雜的標記式語言要轉換成比較簡單的標記式語言，勢必要丟掉很多無法被轉換的資訊。
 
 至於 Pandoc Markdown 則是 Pandoc 自己定義的 Markdown 格式。它大幅的擴充 Markdown 語法，讓 Markdown 可用於撰寫排版更加精緻的文件。
 
@@ -262,7 +281,7 @@ background-position: 93% 5%
 
 
 ???
-更重要的是，Pandoc Markdown 多數的語法能夠同時完美地轉換成 HTML 和 LaTeX 這兩種標記式語言。這基本上解決了「網頁與紙本的矛盾」，因為寫作者可以只要用 Pandoc Markdown 撰寫文件，需要**發布在網路**上時就將文件輸出成 HTML，需要**列印**時就將文件輸出成 LaTeX 再生成 PDF。
+更重要的是，Pandoc Markdown 多數的語法能夠同時完美地轉換成 HTML 和 LaTeX 這兩種標記式語言。這基本上解決了「網頁與紙本的矛盾」，因為寫作者可以只用 Pandoc Markdown 撰寫文件，需要**發布在網路**上時就將文件輸出成 HTML，需要**列印**時就將文件輸出成 LaTeX 再生成 PDF。
 
 這個表格比較了幾種常見的排版工具的特性。我這邊總結一下。我認為 Markdown 是這些工具之中最好的排版工具，原因有兩點：
 
@@ -278,7 +297,7 @@ background-position: 93% 5%
 - [Bibliographies and Citations](https://rmarkdown.rstudio.com/authoring_bibliographies_and_citations.html)
     - [Citation Style Language (`.csl`)](https://citationstyles.org)
 
-- LaTeX Math:
+- Math Expressions:
   
   - 
   ```latex
@@ -291,11 +310,24 @@ background-position: 93% 5%
       - output: `\(e^{ \frac{ -(x - \mu)^2 }{2 \sigma} }\)`
 
 .footnote[
-[R Markdown's Markdown Syntax](https://bookdown.org/yihui/rmarkdown/markdown-syntax.html) (Pandoc Markdown)
+[1]: [R Markdown's Markdown Syntax](https://bookdown.org/yihui/rmarkdown/markdown-syntax.html) (Pandoc Markdown)
 
-[Markdown extensions by bookdown](https://bookdown.org/yihui/bookdown/markdown-extensions-by-bookdown.html)
+[2]: [Markdown extensions by bookdown](https://bookdown.org/yihui/bookdown/markdown-extensions-by-bookdown.html)
 
 ]
+
+
+???
+
+那這邊列出了一小部份 Pandoc Markdown 所提供的語法，  
+譬如說，它提供了「註解」的語法、  
+自動插入引用文獻的語法 (那這個功能對於學術報告的撰寫很重要)、  
+另外，還有提供 LaTeX 撰寫數學公式的語法 (基本上，我覺得 LaTeX 這套標記式語言太過複雜，沒什麼好處。那我能想到它唯一的好處，就是它撰寫數學公式非常的方便。舉個例子來說，你要用 Word 打出常態分配的公式，需要花上多少時間？那這對 LaTeX 來說，如果你熟悉它撰寫數學的邏輯的話，其實很快。)
+
+這邊之所以會提到 Pandoc Markdown 的原因是因為，  
+R Markdown 所使用的 Markdown 語法其實就是 Pandoc Markdown。  
+那投影片下方的第一個連結是 Pandoc Markdown 的語法簡介。  
+第二個連結是，等一下會介紹的，一個擴充 R Markdown 的套件，所增加的 Markdown 語法
 
 ---
 
@@ -576,7 +608,7 @@ ggplot(data = iris) +
 .right-column[
 **Output:**
 
-&lt;img src="index_files/figure-html/unnamed-chunk-20-1.png" width="35%" style="display: block; margin: auto;" /&gt;
+&lt;img src="index_files/figure-html/unnamed-chunk-21-1.png" width="35%" style="display: block; margin: auto;" /&gt;
 ]
 
 ---
@@ -728,7 +760,8 @@ Windows 的檔案路徑是用反斜線 (`\`) 表示分隔，但所有非 Windows
 
 
 .footnote[
-[\*]: 以 RStudio 開啟 `.Rmd` ➜ 點擊 &lt;img src='img/knitr.png' style='display:inline;height:1em;'&gt; (`Knit`)
+[\*]: 以 RStudio 開啟 `.Rmd` ➜ 點擊 &lt;img src='img/knitr.png' style='display:inline;height:1em;'&gt; (`Knit`) or  
+`rmarkdown::render('path/to/code_chunk_prac.Rmd')`
 ]
 ---
 
@@ -747,13 +780,15 @@ csl: apa.csl
 
 &lt;br&gt;
 
-- 不同輸出格式 (模板)，可供設定之變項不盡相同
+- 不同格式 (模板)，可供設定之變項不盡相同
     - `geometry`, `linestretch` 僅對於 PDF 輸出的文件有效果
 
 - 可用**動態變項** (inline R Code) 作為輸入
     - 今天是 &amp;#96;&lt;code&gt;r Sys.Date()&lt;/code&gt;&amp;#96;  
     今天是 2019-04-11
 ]
+
+--
 
 .pull-right[
 #### 輸出格式
@@ -772,7 +807,10 @@ output:
 
 - **.r[縮排]**結構必須一致: 每層皆使用 **2 格空白**
 
-- 可同時設定多個輸出格式
+- 可同時設定多個輸出格式  
+![:scale 65%](img/knit_multiple.gif)
+
+
 ]
 
 ---
@@ -1047,11 +1085,104 @@ class: center, middle, inverse
 background-color: black
 
 # Part Ⅱ
-# .larger[Applications]
+# .l[Applications &lt;br&gt;.s[.ms[(Advanced Topics)]]]
+
+---
+
+
+
+
+
+
+## Objectives
+
+- 純概念、不實際操作
+
+- 學習資源
+
+- 放輕鬆
+
+
+---
+
+class: inverse, center, middle
+
+# Advanced R Markdown &lt;br&gt;.s[.ms[(文獻引用為例)]]
+
+---
+
+## Bibliographies &amp; Citations
+
+---
+
+class: inverse, center, middle
+
+# R Markdown Ecosystem
+
+---
+
+## 書籍撰寫 (bookdown)
+
+- bookdown book
+
+---
+
+## 網站 (R Markdown Websites)
+
+- Multiple `.Rmd` files
+
+
+---
+
+## 部落格 (blogdown)
+
+- GitHub + Netlify .ms[or] GitHub + GitHub Pages
+
+- Require: HTML/CSS
+
+- Collabin
 
 ---
 
 輸出一本書 (含 PDF 與 HTML) ([檢視](https://github.com/yihui/bookdown-crc), [下載](https://github.com/yihui/bookdown-crc/archive/master.zip))
+
+
+
+
+&lt;!-- Ending --&gt;
+
+---
+
+background-image: url(https://liao961120.github.io/slides/img/pictures/cabin.jpg)
+background-position: center
+background-size: cover
+
+class: center, inverse
+
+--
+
+# .l[Thank You]
+
+---
+
+background-image: linear-gradient(to bottom, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0.8) 100%), url(https://liao961120.github.io/slides/img/pictures/cabin.jpg)
+background-position: center
+background-size: cover
+
+&lt;img src='https://liao961120.github.io/img/icon-trans-sbg.png' style='display:block;position:absolute;left:70%;top:43%;width:20%'&gt;
+
+&lt;br&gt;&lt;br&gt;&lt;br&gt;
+
+# Contact Info
+
+.larger[
+**Yongfu Liao**
+
+- &lt;https://liao961120.github.io&gt;
+
+- ![:scale 1em](img/GitHub-Mark.png) [liao961120](https://github.com/liao961120)
+
+]
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
