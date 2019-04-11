@@ -1,0 +1,69 @@
+---
+title: "Applications"
+subtitle: ""
+output:
+  xaringan::moon_reader:
+    nature:
+      ratio: "16:10"
+      beforeInit: ["addons/macros.js", "https://platform.twitter.com/widgets.js"]
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: no
+    css: [default, chocolate, chocolate-fonts, addons/custom.css]
+    yolo: false
+    seal: false 
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(knitr)
+```
+
+
+## Objectives
+
+- 純概念、不實際操作
+
+- 學習資源
+
+- 放輕鬆
+
+
+---
+
+class: inverse, center, middle
+
+# Advanced R Markdown <br>.s[.ms[(文獻引用為例)]]
+
+---
+
+## Bibliographies & Citations
+
+---
+
+class: inverse, center, middle
+
+# R Markdown Ecosystem
+
+---
+
+## 書籍撰寫 (bookdown)
+
+- bookdown book
+
+---
+
+## 網站 (R Markdown Websites)
+
+- Multiple `.Rmd` files
+
+
+---
+
+## 部落格 (blogdown)
+
+- GitHub + Netlify .ms[or] GitHub + GitHub Pages
+
+- Require: HTML/CSS
+
+- Collabin

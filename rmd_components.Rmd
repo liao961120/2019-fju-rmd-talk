@@ -387,7 +387,8 @@ Windows 的檔案路徑是用反斜線 (`\`) 表示分隔，但所有非 Windows
 
 
 .footnote[
-[\*]: 以 RStudio 開啟 `.Rmd` ➜ 點擊 `r knitr_ico` (`Knit`)
+[\*]: 以 RStudio 開啟 `.Rmd` ➜ 點擊 `r knitr_ico` (`Knit`) or  
+`rmarkdown::render('path/to/code_chunk_prac.Rmd')`
 ]
 ---
 
@@ -406,13 +407,15 @@ csl: apa.csl
 
 <br>
 
-- 不同輸出格式 (模板)，可供設定之變項不盡相同
+- 不同格式 (模板)，可供設定之變項不盡相同
     - `geometry`, `linestretch` 僅對於 PDF 輸出的文件有效果
 
 - 可用**動態變項** (inline R Code) 作為輸入
     - 今天是 &#96;<code>r Sys.Date()</code>&#96;  
     今天是 `r Sys.Date()`
 ]
+
+--
 
 .pull-right[
 #### 輸出格式
@@ -431,7 +434,10 @@ output:
 
 - **.r[縮排]**結構必須一致: 每層皆使用 **2 格空白**
 
-- 可同時設定多個輸出格式
+- 可同時設定多個輸出格式  
+![:scale 65%](img/knit_multiple.gif)
+
+
 ]
 
 ---
