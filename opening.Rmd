@@ -22,12 +22,6 @@ include_graphics('img/creativity.png')
 
 ### 透過 R Markdown 分享至網路
 
-<img src='img/twlangsurvey.png' style='display:inline;width:48%;float:left;'>
-<img src='img/travel_the_world.png' style='display:inline;width:50%;float:right;'>
+<a href='https://twlangsurvey.github.io'><img src='img/twlangsurvey.gif' style='display:inline;width:48%;float:left;'></a>
+<a href='https://rlads2017g1.github.io/presentation'><img src='img/flexdashboard.gif' style='display:inline;width:50%;float:right;'></a>
 
-
-.footnote[.smaller[
-左：[twlangsurvey.github.io](https://twlangsurvey.github.io)
-
-右：[rlads2017g1.github.io/presentation](https://rlads2017g1.github.io/presentation) 
-]]

@@ -15,5 +15,4 @@ paste('Using R Markdown on', today)
 
 ## Inline R Code
 
-Variables computed in code chunks can be placed inline:  
-`r today`
+Variables computed in code chunks can be placed inline: `r today`

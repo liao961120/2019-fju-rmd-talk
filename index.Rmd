@@ -6,6 +6,7 @@ output:
       ratio: "16:10"
       beforeInit: ["addons/macros.js", "https://platform.twitter.com/widgets.js"]
       highlightStyle: github
+      highlightSpans: false
       highlightLines: true
       countIncrementalSlides: no
     css: [default, chocolate, chocolate-fonts, addons/custom.css]
@@ -106,14 +107,10 @@ background-color: black
 
 ---
 
+
+
 ```{r child='applications.Rmd'}
 ```
-
----
-
-輸出一本書 (含 PDF 與 HTML) ([檢視](https://github.com/yihui/bookdown-crc), [下載](https://github.com/yihui/bookdown-crc/archive/master.zip))
-
-
 
 
 <!-- Ending -->

@@ -114,7 +114,20 @@ rmd_structuremd <- toprint(rmd_structuremd)
 ]
 
 .right-column[
-`r asis_output(rmd_structure2)`
+```{r}
+doc_vec <- readLines('rmd_structure.txt')
+first_line <- paste0('<pre><code class="md hljs markdown remark-code">', doc_vec[1])
+rmd_structure <- c(first_line, doc_vec[-1], '</code></pre>')
+
+rmd_structure[11:14] <- paste0('<div class="remark-code-line remark-code-line-highlighted">', rmd_structure[11:14], '</div>')
+rmd_structure[16] <- paste0('<div class="remark-code-line"><span class="hljs-section">',
+                            rmd_structure[16], '</span></div>')
+rmd_structure[18] <- '<div class="remark-code-line">Variables computed in code chunks can be placed inline: <span class="remark-code-span-highlighted">`r today`</span></div>'
+
+rmd_structure <- toprint(rmd_structure)
+```
+
+`r asis_output(rmd_structure)`
 ]
 
 ---
