@@ -48,15 +48,9 @@ April 22, 2019
 
 ### 透過 R Markdown 分享至網路
 
-&lt;img src='img/twlangsurvey.png' style='display:inline;width:48%;float:left;'&gt;
-&lt;img src='img/travel_the_world.png' style='display:inline;width:50%;float:right;'&gt;
+&lt;a href='https://twlangsurvey.github.io'&gt;&lt;img src='img/twlangsurvey.gif' style='display:inline;width:48%;float:left;'&gt;&lt;/a&gt;
+&lt;a href='https://rlads2017g1.github.io/presentation'&gt;&lt;img src='img/flexdashboard.gif' style='display:inline;width:50%;float:right;'&gt;&lt;/a&gt;
 
-
-.footnote[.smaller[
-左：[twlangsurvey.github.io](https://twlangsurvey.github.io)
-
-右：[rlads2017g1.github.io/presentation](https://rlads2017g1.github.io/presentation) 
-]]
 
 ---
 
@@ -386,8 +380,7 @@ paste('Using R Markdown on', today)
 
 ## Inline R Code
 
-Variables computed in code chunks can be placed inline:  
-`r today`
+Variables computed in code chunks can be placed inline: `r today`
 ````
 ]
 
@@ -420,8 +413,7 @@ paste('Using R Markdown on', today)
 
 ## Inline R Code
 
-Variables computed in code chunks can be placed inline:  
-`r today`
+Variables computed in code chunks can be placed inline: `r today`
 ````
 ]
 
@@ -453,8 +445,7 @@ paste('Using R Markdown on', today)
 
 *## Inline R Code
 *
-*Variables computed in code chunks can be placed inline:  
-`r today`
+*Variables computed in code chunks can be placed inline: `r today`
 ````
 ]
 
@@ -469,8 +460,9 @@ paste('Using R Markdown on', today)
 ]
 
 .right-column[
-````md
----
+
+
+&lt;pre&gt;&lt;code class="md hljs markdown remark-code"&gt;---
 title: A minimal R Markdown Document
 author: John Doe
 output: bookdown::html_document2
@@ -480,16 +472,15 @@ output: bookdown::html_document2
 
 I'm writing with *Markdown syntax*.
 
-*```{r}
-*today &lt;- Sys.Date()
-*paste('Using R Markdown on', today)
-*```
+&lt;div class="remark-code-line remark-code-line-highlighted"&gt;```{r}&lt;/div&gt;
+&lt;div class="remark-code-line remark-code-line-highlighted"&gt;today &lt;- Sys.Date()&lt;/div&gt;
+&lt;div class="remark-code-line remark-code-line-highlighted"&gt;paste('Using R Markdown on', today)&lt;/div&gt;
+&lt;div class="remark-code-line remark-code-line-highlighted"&gt;```&lt;/div&gt;
 
-## Inline R Code
+&lt;div class="remark-code-line"&gt;&lt;span class="hljs-section"&gt;## Inline R Code&lt;/span&gt;&lt;/div&gt;
 
-Variables computed in code chunks can be placed inline:  
-*`r today`
-````
+&lt;div class="remark-code-line"&gt;Variables computed in code chunks can be placed inline: &lt;span class="remark-code-span-highlighted"&gt;`r today`&lt;/span&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;
 ]
 
 ---
@@ -608,7 +599,7 @@ ggplot(data = iris) +
 .right-column[
 **Output:**
 
-&lt;img src="index_files/figure-html/unnamed-chunk-21-1.png" width="35%" style="display: block; margin: auto;" /&gt;
+&lt;img src="index_files/figure-html/unnamed-chunk-22-1.png" width="35%" style="display: block; margin: auto;" /&gt;
 ]
 
 ---
@@ -785,7 +776,7 @@ csl: apa.csl
 
 - 可用**動態變項** (inline R Code) 作為輸入
     - 今天是 &amp;#96;&lt;code&gt;r Sys.Date()&lt;/code&gt;&amp;#96;  
-    今天是 2019-04-11
+    今天是 2019-04-12
 ]
 
 --
@@ -1094,24 +1085,113 @@ background-color: black
 
 
 
+
+
 ## Objectives
+
 
 - 純概念、不實際操作
 
+- 放輕鬆
+
 - 學習資源
 
-- 放輕鬆
+--
+
+&lt;img src='img/jump-off.gif' style='display:block;position:absolute;left:25%;top:32%;width:75%'&gt;
+
 
 
 ---
 
 class: inverse, center, middle
 
-# Advanced R Markdown &lt;br&gt;.s[.ms[(文獻引用為例)]]
+# Advanced Topic: &lt;br&gt;.s[Bibliographies &amp; Citations]
 
 ---
 
 ## Bibliographies &amp; Citations
+
+.pull-left[
+
+#### .l[Prerequisites]
+
+1. BibTeX: `ref.bib` .ms[(1 entry)]
+
+    &lt;pre&gt;&lt;code class='bib hljs nix remark-code'&gt;@article{&lt;span class="remark-code-span-highlighted"&gt;leung2008&lt;/span&gt;,
+      title = {Multicultural Experience Enhances Creativity},
+      year = {2008},
+      journal = {American Psychologist},
+      author = {Leung, Angela Ka-yee and Maddux, William W.},
+    }
+    &lt;/code&gt;&lt;/pre&gt;
+
+1. 文獻引用格式: `apa.csl`
+
+  .s[下載：[Official CSL Repo](https://github.com/citation-style-language/styles), [Zotero Style Repo](https://www.zotero.org/styles)]
+]
+
+
+--
+
+.pull-right[
+
+#### .l[Workflow]
+
+1. **書目管理軟體**整理文獻  
+.s[
+(推薦 [Zotero](https://www.zotero.org) + [Better BibTeX extension](https://retorque.re/zotero-better-bibtex)&lt;sup&gt;＊&lt;/sup&gt;)
+]
+
+1. 透過**書目管理軟體**匯出 `.bib` 檔
+
+1. 使用 [Citation Syntax](https://rmarkdown.rstudio.com/authoring_bibliographies_and_citations.html#citation_syntax) 插入引用文獻  
+(or 使用 [`citr` 套件](https://github.com/crsh/citr) 幫助你)
+    
+  &lt;pre&gt;&lt;code class='md hljs markdown remark-code'&gt;Leung says blah blah &lt;span class="remark-code-span-highlighted"&gt;[-@leung2008]&lt;/span&gt;.
+  &lt;/code&gt;&lt;/pre&gt;
+
+.footnote[.s[
+[.s[＊]]: .s[(就我所知)] Zotero 是目前唯二[可控制 `.bib` 檔之 citekey pattern](https://retorque.re/zotero-better-bibtex/citation-keys) 的免費書目管理軟體。
+
+[Zotero + R Markdown Tutorial](https://ikashnitsky.github.io/2019/zotero)
+]]
+
+]
+
+---
+
+## Bibliographies &amp; Citations .ms[(Cont.)]
+
+### Two Systems .ms[(again)]
+
+.pull-left[
+
+- [Pandoc citeproc](https://github.com/jgm/pandoc-citeproc)
+    - Support: HTML &amp; PDF (LaTeX)
+    
+    - YAML Frontmatter
+    
+    ```yml
+    *bibliography: ref.bib
+    *csl: apa.csl
+    output: bookdown::html_document2
+    ```
+]
+
+.pull-right[
+- `\(\LaTeX\)` citation package (`biblatex` or `natbib`)
+    - Support: PDF (LaTeX) only
+    
+    - YAML Frontmatter  
+    
+    ```yml
+    *bibliography: ref.bib
+    output:
+      bookdown::pdf_document2:
+    *   citation_package: natbib
+    ```
+]
 
 ---
 
@@ -1121,32 +1201,61 @@ class: inverse, center, middle
 
 ---
 
+background-image: url(https://bookdown.org/yihui/bookdown/images/cover.jpg)
+background-size: 20%
+background-position: 85% 40%
+
 ## 書籍撰寫 (bookdown)
 
-- bookdown book
+- [bookdown book](https://bookdown.org/yihui/bookdown) ([PDF](https://bookdown.org/yihui/bookdown/bookdown.pdf)): 學習 R Markdown 的好資源
+
+--
+
+- 同時輸出 [GitBook](https://www.gitbook.com) 與 PDF Book
+    - 可以拿來[寫論文](https://github.com/liao961120/ntuthesis)
+
+&lt;br&gt;
+
+![:scale 60%](img/gitbook.png)
+---
+
+background-image: url(img/twlangsurvey.gif)
+background-size: 65%
+background-position: 91% 88%
+
+## 網站: [R Markdown Websites](https://bookdown.org/yihui/rmarkdown/rmarkdown-site.html)
+
+- 適合製作**簡單**網站
+
+  - 單頁 .s[or] 少量頁面
+
+
+.footnote[.ms[
+&lt;https://twlangsurvey.github.io&gt;
+]]
 
 ---
 
-## 網站 (R Markdown Websites)
-
-- Multiple `.Rmd` files
-
-
----
+background-image: url(https://bookdown.org/yihui/blogdown/images/logo.png)
+background-position: 80% 20%
 
 ## 部落格 (blogdown)
 
-- GitHub + Netlify .ms[or] GitHub + GitHub Pages
+- [blogdown book](https://bookdown.org/yihui/blogdown) ([PDF](https://bookdown.org/yihui/blogdown/blogdown.pdf))
+  
 
-- Require: HTML/CSS
+- Why start a blog?
 
-- Collabin
+--
 
----
+- 架站太難？
 
-輸出一本書 (含 PDF 與 HTML) ([檢視](https://github.com/yihui/bookdown-crc), [下載](https://github.com/yihui/bookdown-crc/archive/master.zip))
+  .s[不會架站，也能[體驗用 R Markdown 寫部落格](https://collabin.netlify.com/info/about)]
 
-
+???
+Why Start a blog?
+- 整理、記錄自己做過什麼
+- 從寫作當中學習
 
 
 &lt;!-- Ending --&gt;
@@ -1191,6 +1300,7 @@ background-size: cover
 <script>var slideshow = remark.create({
 "ratio": "16:10",
 "highlightStyle": "github",
+"highlightSpans": false,
 "highlightLines": true,
 "countIncrementalSlides": false
 });
