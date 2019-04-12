@@ -2,5 +2,6 @@
 /*_files
 LiberationSerif*
 *.sh
+*.log
 docs/build_idx.R
 build_slide.R
