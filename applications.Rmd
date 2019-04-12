@@ -171,7 +171,7 @@ background-position: 91% 88%
 ---
 
 background-image: url(https://bookdown.org/yihui/blogdown/images/logo.png)
-background-position: 80% 20%
+background-position: 85% 75%
 
 ## 部落格 (blogdown)
 
