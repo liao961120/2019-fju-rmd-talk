@@ -25,6 +25,14 @@ class: inverse, center, middle
 
 ---
 
+class: center
+
+<br>
+
+![:scale 100%](img/server_model.png)
+
+---
+
 ## Updog
 
 <img src='img/updog.gif' style='float:right;width:65%;margin-right:-50px'>
@@ -68,7 +76,7 @@ class: inverse, center, middle
 
 - 許多軟體開發相關的實用、免費服務
 
-- 架設網頁
+- 架設網站
 
 - <s>世界最大男性社交網站</s>
 

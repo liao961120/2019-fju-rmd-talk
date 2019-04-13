@@ -135,6 +135,14 @@ class: inverse, center, middle
 
 ---
 
+class: center
+
+<br><br>
+
+![:scale 100%](img/rmd_eco.png)
+
+---
+
 background-image: url(https://bookdown.org/yihui/bookdown/images/cover.jpg)
 background-size: 20%
 background-position: 85% 40%

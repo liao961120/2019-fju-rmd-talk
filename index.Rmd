@@ -105,6 +105,13 @@ include_graphics('img/rmd_flow.png')
 
 ---
 
+# Part Ⅰ: Wrap Up
+
+
+
+
+---
+
 class: center, middle, inverse
 background-color: black
 
@@ -166,7 +173,7 @@ background-size: cover
 .s[
 ### .s[Questions]
 
-- File an issue at [![:scale 1em](img/GitHub-Mark.png) liao961120/2019-fju-rmd-talk](https://github.com/liao961120/2019-fju-rmd-talk/issues) (Prefered)
+- File an issue at [![:scale 1em](img/GitHub-Mark.png) liao961120/2019-fju-rmd-talk](https://github.com/liao961120/2019-fju-rmd-talk/issues) (Preferred)
 
 - Email
 
