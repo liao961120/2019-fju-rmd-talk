@@ -346,8 +346,8 @@ ggplot(data = iris) +
 將 `data.frame` 輸出成**表格**
 
 ```{r}
-code <- c('data <- iris[1:5, 1:3]',
-          'knitr::kable(data, align = "c", format = "markdown",',
+code <- c('data <- iris[1:4, 1:3]',
+          'knitr::kable(data, align = "c",',
           '             caption = "表格說明文字"')
 rmd_code_chunk <- c('````Rmd',
                     '```{r echo=FALSE}', code,
@@ -364,8 +364,8 @@ rmd_code_chunk <- toprint(rmd_code_chunk)
 **Output:**
 
 ```{r}
-data <- iris[1:5, 1:3]
-knitr::kable(data, align = 'c', format = 'markdown',
+data <- iris[1:4, 1:3]
+knitr::kable(data, align = 'c', format = 'html',
              caption = '表格說明文字')
 ```
 
