@@ -538,39 +538,24 @@ R Markdown 顧名思義就是 R 加上 Markdown。
 
 ## Structure of an R Markdown Document
 
+&lt;br&gt;
 
-
-
-.right-column[
-````md
----
-title: A minimal R Markdown Document
-author: John Doe
-output: bookdown::html_document2
----
-
-# Markdown
-
-I'm writing with *Markdown syntax*.
-
-```{r}
-today &lt;- Sys.Date()
-paste('Using R Markdown on', today)
-```
-
-## Inline R Code
-
-Variables computed in code chunks can be placed inline: `r today`
-````
-]
-
-???
-一份 R Markdown 文件是由 3 個部份所組成的。這邊大家看到的就是一份完整的 R Markdown 文件的內容。
-
+.center[![:scale 83%](img/rmd_struc.png)]
 
 ---
 
 ## Structure of an R Markdown Document
+
+&lt;br&gt;
+
+.center[![:scale 100%](img/rmd_struc2.png)]
+
+---
+
+## Structure of an R Markdown Document
+
+
+
 
 .left-column[
 ### .little-smaller[YAML Frontmatter&lt;br&gt;(Metadata)]
@@ -600,6 +585,8 @@ Variables computed in code chunks can be placed inline: `r today`
 ]
 
 ???
+一份 R Markdown 文件是由 3 個部份所組成的。這邊大家看到的就是一份完整的 R Markdown 文件的內容。
+
 文件的最上方叫做 YAML frontmatter。這邊主要是控制 R Markdown 輸出文件的樣式以及外觀的一些設定。
 
 ---
@@ -755,7 +742,17 @@ x &lt;- 1 + 1
 
 
 ???
-knitr code chunk 還可以有其它額外的選項可以進行設定。例如，你有時候想讓讀者看到跑出結果的程式碼但有時候不想，這時候，你就可以透過 knitr 的 chunk options 進行這些設定。
+knitr code chunk 有一個很重要的特徵是，它可以有許多選項可以進行設定。例如，你有時候想讓讀者看到跑出結果的程式碼但有時候不想，這時候，你就可以透過 knitr 的 chunk options 進行這些設定。
+
+那這些選項是設定在 knitr code chunk 第一行的大括弧之內。那這大括弧之內的結構大致是這樣：
+
+(手動反白操作)
+第一個 r 標明這個 code chunk 是個 R code chunk。  
+那事實上，除了 R 你也可以把它換成其它程式語言，例如 Python 和 bash。那前提是你的電腦已有安裝這些程式語言。
+
+第二個出現的是這個 code chunk 的 ID，那這個 ID 是 optional 的，可以不用寫。
+
+code chunk ID 之後出現的一律都是 knitr 的 code chunk options。這些 options 之間以逗點分隔。
 
 我這邊列出了幾個最常用的 knitr chunk options。至於完整的選項，大家可以在下方的 knitr 說明文件裡面看到。
 
@@ -842,8 +839,7 @@ ggplot(data = iris) +
 ````Rmd
 ```{r echo=FALSE}
 data &lt;- iris[1:4, 1:3]
-knitr::kable(data, align = "c",
-             caption = "表格說明文字"
+knitr::kable(data, align = "c", caption = "表格說明文字")
 ```
 ````
 ]
@@ -1006,10 +1002,13 @@ Windows 的檔案路徑是用反斜線 (`\`) 表示分隔，但所有非 Windows
 
 .pull-left[
 #### Pandoc 模板變項
-    
+
+
+
+
 ```yml
 title: 'A title'
-date: 'r Sys.Date()'
+date: '`r Sys.Date()`'  # ➛ '2019-04-14'
 author: 'Somebody'
 bibliography: ref.bib
 csl: apa.csl
@@ -1022,7 +1021,7 @@ csl: apa.csl
 
 - 可用**動態變項** (inline R Code) 作為輸入
     - 今天是 &amp;#96;&lt;code&gt;r Sys.Date()&lt;/code&gt;&amp;#96;  
-    今天是 2019-04-13
+    今天是 2019-04-14
 ]
 
 --
@@ -1077,6 +1076,14 @@ class: inverse, center, middle
 
 ---
 
+class: center
+
+&lt;br&gt;
+
+![:scale 100%](img/server_model.png)
+
+---
+
 ## Updog
 
 &lt;img src='img/updog.gif' style='float:right;width:65%;margin-right:-50px'&gt;
@@ -1120,7 +1127,7 @@ class: inverse, center, middle
 
 - 許多軟體開發相關的實用、免費服務
 
-- 架設網頁
+- 架設網站
 
 - &lt;s&gt;世界最大男性社交網站&lt;/s&gt;
 
@@ -1319,6 +1326,13 @@ background-size: contain, 100% 100%, cover
 
 ---
 
+# Part Ⅰ: Wrap Up
+
+
+
+
+---
+
 class: center, middle, inverse
 background-color: black
 
@@ -1448,6 +1462,14 @@ class: inverse, center, middle
 
 ---
 
+class: center
+
+&lt;br&gt;&lt;br&gt;
+
+![:scale 100%](img/rmd_eco.png)
+
+---
+
 background-image: url(https://bookdown.org/yihui/bookdown/images/cover.jpg)
 background-size: 20%
 background-position: 85% 40%
@@ -1552,7 +1574,7 @@ background-size: cover
 .s[
 ### .s[Questions]
 
-- File an issue at [![:scale 1em](img/GitHub-Mark.png) liao961120/2019-fju-rmd-talk](https://github.com/liao961120/2019-fju-rmd-talk/issues) (Prefered)
+- File an issue at [![:scale 1em](img/GitHub-Mark.png) liao961120/2019-fju-rmd-talk](https://github.com/liao961120/2019-fju-rmd-talk/issues) (Preferred)
 
 - Email
 
