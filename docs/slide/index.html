@@ -37,12 +37,49 @@ April 22, 2019
 ]
 ]
 
+???
+我今天要介紹的是 R Markdown。相信大家都對這個東西很陌生，不知道它是什麼東西。所以我就先從我自己的經驗以及我對於 R Markdown 的看法出發。
+
+
 ---
 
 
 
 
+
+???
+我從小到大花了很多時間在「讀書」上，從基測、學測到大一大二都是如此。但有時候我會感到很焦慮，可能是因為年紀大了所以開始會有些就業壓力。我常常會問自己，「我花了這麼多時間在學習上，但我真的有學『到』什麼嗎？今天如果我去申請研究所或是求職面試，我有真正**屬於自己的東西或能力**可以拿出來說嘴嗎？」
+
+我發現沒有
+
+我也發現我沒有真正學到東西的原因是因為，我從小到大的學習都只是在「被動餵食」，但我卻沒有學到一項真正重要的能力，那就是**創造**新事物的能力。簡單來說，我是個只會考試，但沒有任何創造力的人。
+
+這裡先偏題一下，「創造力」其實是一種複雜的東西，它在心理學裡面有很多人在研究，但心理學家對於「創造力」是什麼還在爭論不休。但有一點很確定的是，「創造力」不像智力或是運動天賦這種一出生就決定大半的**個人能力**。「創造力」是在一個系統中，很多因素長期彼此配合，逐漸**被孕育**出來的現象。
+
+就我自己所體悟到的，為何我自己在 21 歲之前是個沒什麼創造力的人，我發現只有一個關鍵的原因，那就是我**沒有動機去創造東西**。而且很微妙的一點是，這種**沒有動機**是沒辦法被直接解決的。因為它是一整個，孕育創造力的系統，的問題。  
+而且事實上，我當初甚至沒有意識到有這個問題需要被解決，我完全是在誤打誤撞之下，轉對了一個正確的旋鈕，讓這個所謂孕育創造力的系統能開始運行。
+
+這個系統在今天的脈絡下，大概能用這張圖表示：
+
+`--`
+
+--
+
 &lt;img src="img/creativity.png" width="90%" style="display: block; margin: auto 0 auto auto;" /&gt;
+
+
+???
+我覺得創造力的動機來源就是這張圖的左下角，也就是渴望將自己的想法或創造的事物分享給其他人的動機。這個動機是推動創造力產生的燃料。但這個動機不會自發產生，而最根本的原因是我們沒有工具以及能力，能輕鬆的達成這件事。
+
+就舉一個比較貼近學生生活的例子，像是學校的的期末報告。  在我們完成的期末報告當中，有多少是在學期末 報告當天之後，就塵封在電腦裡或是雲端硬碟的某處，再也沒人看過？  
+
+因為我們長久下來的習慣是用紙本報告以及 Powerpoint 的方式呈現成果，報告所能觸及的就是報告當天在場的那群人。所以基本上，有時我們在做期末報告時，會敷衍了事是很正常的，畢竟我們為什麼要花這麼多力氣在一個馬上就會被世界所遺忘的事情上呢？
+
+但如果我們能夠使用網頁去呈現我們的報告成果，那我們能觸及的就不只是報告當天的那群人，而是全世界。我們做的報告也會在報告當天結束後，繼續「活在網路上」。你不會確定有誰會去看它，但你很可能會意外的啟發或影響了看了你的報告的人。
+
+我覺得這就是，推動我去創造的動力來源。而這個動力之所以能這麼順暢地推動我，是因為我能夠隨心所欲的使用工具來幫助自己達成目標 -- 也就是能透過自己架設的網頁，將想法分享給他人。
+
+我今天要介紹的，就是這個幫助我輕鬆地在網頁上呈現自己的創作和想法的工具。這個工具就是 R Markdown。
 
 ---
 
@@ -51,6 +88,8 @@ April 22, 2019
 &lt;a href='https://twlangsurvey.github.io'&gt;&lt;img src='img/twlangsurvey.gif' style='display:inline;width:48%;float:left;'&gt;&lt;/a&gt;
 &lt;a href='https://rlads2017g1.github.io/presentation'&gt;&lt;img src='img/flexdashboard.gif' style='display:inline;width:50%;float:right;'&gt;&lt;/a&gt;
 
+???
+這邊這兩個網頁就是給大家一個 「R Markdown 能做到什麼事情」的概念。這兩個網頁百分之百使用 R Markdown 做成的，網頁裡面的圖則都是用 R 語言的繪圖函數畫成的。
 
 ---
 
@@ -59,6 +98,9 @@ background-color: black
 
 # Part Ⅰ
 # .larger[R Markdown Basics]
+
+???
+接下來，我要正式進入 R Markdown 的介紹了。透過今天對 R Markdown 的介紹，我希望能達成兩個目標：
 
 ---
 
@@ -74,7 +116,6 @@ background-color: black
 
 
 ???
-接下來，我要正式進入 R Markdown 的介紹了。透過今天對 R Markdown 的介紹，我希望能達成兩個目標：
 
 1. 第一，大家在今天結束前能夠透過 R Markdown 輸出網頁，並透過網址分享給別人。
 1. 第二，大家有能力以 R Markdown 取代 Word 撰寫紙本作業或報告，並且輸出成 PDF 檔。
@@ -97,9 +138,39 @@ class: inverse, center, middle
 
 ## 兩種媒介：紙本 vs. 網頁
 
+.pull-left[
+![:scale 70%](https://upload.wikimedia.org/wikipedia/commons/4/45/A_Specimen_by_William_Caslon.jpg)
+]
+
+.pull-right[
+![:scale 100%](https://upload.wikimedia.org/wikipedia/commons/b/bd/Web_Page.png)
+]
+
+
+???
+寫作的目的有一部分是要給人看的，因此排版自然而然就成為作者的工作之一。在文字普及後的絕大多數時間，排版僅需要考慮紙本印刷物。  
+但今天，我們生活在一個網路的時代，網路已成為最主流的資訊傳播管道，網頁因而成為與紙本同等 (甚至更加) 重要的文字承載媒介。
+
+這件事情對文字工作者造成了新的負擔，因為兩種不同的文字承載媒介 – 紙本與網頁，在歷史上各自衍生出兩種目的十分迥異的排版系統，  
+一種是為了輸出印刷物而生的排版系統，  
+另一種是為了輸出網頁而生的排版系統。  
+但這兩種系統彼此是無法輕易互相轉換的。
+
+譬如說，我們無法輕易地將網頁轉換成紙本印刷物，因為網頁頁面是連續的，而不像書本是用一頁當作顯示單位。  
+而且，顯示網頁的螢幕大小也不是固定的，不像紙張有固定尺寸。
+
+這件事情對文字工作者帶來了麻煩，因為在開始寫作之前，他必須先決定未來要以哪一種媒介呈現自己的作品。一旦決定之後，作品就永遠只能活在那個媒介上，除非作者另外再花力氣將內容複製到另一種媒介上。  
+換句話說，寫作者面臨的是一個「紙本與網頁的矛盾」。
+
 ---
 
 ## 兩種排版方式：WYSIWYM vs. WYSIWYG
+
+
+???
+除了承載作品的媒介，這世界上也存在兩種排版文字的方式。其中一種是以圖形化界面為基礎的排版系統，像是 Word 或是多數部落格的發文界面；
+
+--
 
 ### 標記式語言 (What You See Is What You .r[Mean], WYSIWY.r[M])
 
@@ -121,6 +192,16 @@ class: inverse, center, middle
 這是&lt;i&gt;斜體字&lt;/i&gt;
 ]
 
+
+???
+另一種是以純文字檔案為基礎的標記式語言排版系統，像是 HTML 或是 LaTeX。那大家可能對標記式語言是什麼不太清楚。簡單來說，標記式語言是一套用來告訴電腦說，「你要如何顯示這串文字的語法」。
+
+例如這張投影片的左邊是 HTML 的純文字。那瀏覽器在讀取 HTML 檔時，在看到某些關鍵字的時候，像是在這邊看到，包裹**粗體字**和*斜體字*的特殊標記，它就會將這些包裹在特殊標記裡面的文字，顯示成這些標記所要求的格式。  
+所以用 b tag 包裹的字就會以粗體顯示  
+用 i tag 包裹的字就會以斜體顯示
+
+那這種以標記式語言排版的方式又被稱作 What You see is what you **Mean**。
+
 ---
 
 ## 兩種排版方式：WYSIWYM vs. WYSIWYG
@@ -139,14 +220,28 @@ class: inverse, center, middle
 &lt;img src="img/medium_post.png" width="100%" style="display: block; margin: auto;" /&gt;
 ]
 
+
+???
+而圖形化界面的排版方式則稱為，What you see is what you **Get**。
+那這種排版方式就是大家比較熟悉的那種。
+
+像是，Word 或是，「投影片裡面的 medium 部落格平台」，基本上你在編輯的過程中就可以直接看到文件發表之後的樣子。
+
 ---
 
 ## 圖形化界面 vs. 標記式語言
 
 |    | 圖形化界面 | 標記式語言 |
 | -- | --- | --- |
-| 優點 | 易學易用 | 檔案管理容易 |
-| 缺點 | 檔案合併困難&lt;br&gt;檔案管理不便 | 語法過於複雜， &lt;br&gt;難以專心於寫作內容 |
+| 優點 | 易學易用 | 排版方式固定&lt;br&gt;檔案管理容易 |
+| 缺點 | 檔案合併困難&lt;br&gt;檔案管理不便 | 語法過於複雜， &lt;br&gt;難以專心寫作 |
+
+???
+圖形界面和標記式語言的排版方式各自有自己的優缺點。
+
+使用圖形化界面排版的好處是，它使用上非常**直覺**，使用者不需要經過什麼學習就能快速上手。但它有兩個比較嚴重的缺點。
+
+`--`
 
 --
 
@@ -158,6 +253,19 @@ class: inverse, center, middle
 「你做了什麼」被隱藏了
 
 ]
+
+???
+第一個是**檔案合併**的問題。  
+這邊有個問題想要問大家，就是你們在使用 Word 的時候，如果要為段落新增標題，你們會透過下面這張圖中「紅色框框」裡面的**樣式**去選擇「標題1」或「標題2」之類的嗎？  
+還是會將「要作為標題的文字」反白，直接使用粗體和調整它的大小？
+
+(我過去是直接使用後面那種方法)
+
+基本上你使用哪種方式並沒有什麼關係，但是當你要將不同的 Word 檔合併成一份的時候，如果兩份 Word 檔使用的是不同的方式，那你就必須手動把格式調整成一致
+
+那這種情況常會發生在小組報告的時候，每個人各自負責撰寫一部分的報告。總是要有個比較衰的人負責幫大家統一排版。
+
+`--`
 
 --
 
@@ -172,6 +280,14 @@ class: inverse, center, middle
     ```
 ]
 
+???
+圖形化界面排版的另一個缺點比較不明顯，但是當你有很多文件檔案就會比較明顯。  
+舉例來說，如果你想在好幾百份 Word 檔中找出內文有特定關鍵字的文件。  
+這件事會很困難，因為 Word 的檔案格式並非純文字檔，換句話說，這類的檔案只有使用特定軟體才能閱讀。
+
+但相反的，如果文件格式不是 Word 而是以標記式語言寫成的純文字檔，  
+那這個問題就變得很簡單，只要使用一條電腦內建的指令，就能找到這些檔案。
+
 
 ---
 background-image: url("https://liao961120.github.io/slides/img/emo/boredom-small.png")
@@ -183,9 +299,17 @@ background-position: 90% 8%
 &lt;img src='img/html_raw.png' style='display:inline;width:53%;align:left'&gt;
 &lt;img src='img/html_rendered.png' style='display:inline;width:46%;align:right'&gt;
 
+
+???
+至於標記式語言的缺點只有一個，那就是它太複雜了。  
+像是「這張投影片的左邊」是用來產生「右邊網頁的 HTML 語法」
+
+那我看到這個的時候，感覺只有一個：
+
 --
 
 &lt;img src='https://media.giphy.com/media/fy0gLJtIkZj8I/giphy.gif' style='display:block;position:absolute;top:0%;right:0;left:auto;width:100%'&gt;
+
 
 ---
 
@@ -193,6 +317,13 @@ background-position: 90% 8%
 
 &lt;img src="https://collabin.netlify.com/yongfu/write-in-rmd/md2html.png" style="display: block; margin: auto;" /&gt;
 
+???
+這就是 Markdown 出現的原因。  
+Markdown 與 HTML 一樣是一種標記式語言。它當初被發明的目的，就是為了解決 HTML 語法過於複雜的問題。
+
+簡單來說，Markdown 提供了一種更簡單的方式來撰寫網頁。它運作的方式就像這張圖片：
+
+寫作者能用非常簡略的 Markdown 語法撰寫文件。接著再透過特殊的工具，將 Markdown 翻譯成 HTML，如此就能透過瀏覽器顯示這份文件。
 
 ---
 
@@ -201,6 +332,16 @@ background-position: 90% 8%
 Copy Markdown example [here](https://raw.githubusercontent.com/liao961120/2019-fju-rmd-talk/master/md_syntax.txt)
 
 &lt;a href='https://jbt.github.io/markdown-editor'&gt;&lt;img src='img/markdown_demo.gif'&gt;&lt;/a&gt;
+
+
+???
+那 Markdown 語法真的很簡單，可以馬上學會。  
+這邊可以請大家點擊這張圖片，進入一個線上的 Markdown 編輯器。  
+然後，大家可以點進上方的連結去將 Markdown 語法複製貼上到這個線上編輯器。  
+可以實際的去修改或新增這些 Markdown 語法，應該就能很快的掌握 Markdown 的邏輯了。
+
+這邊給大家 5 分鐘玩玩看 Markdown。  
+如果有什麼問題，可以馬上提出，我在前面直接示範如何解決。
 
 ---
 
@@ -218,15 +359,16 @@ Copy Markdown example [here](https://raw.githubusercontent.com/liao961120/2019-f
 ???
 
 #### Two Solutions
-剛剛試用過 Markdown 的語法之後，你們可能會覺得 Markdown 太過於簡略，導致它無法應付需要更細緻排版的需求。Markdown 本身的語法確實無法應付這種情況，但有兩種方式可以解決這個問題。
+剛剛試用過 Markdown 的語法之後，大家可能會覺得 Markdown 太過於簡略，導致它無法應付更細緻的排版需求。Markdown 本身的語法確實無法應付這種情況，但有兩種方式可以解決這個問題。
 
 1. 第一就是 Markdown 可以與 HTML 的語法混用。這是完全沒有問題的，因為要在網頁上顯示 Markdown，本來就會先將它轉換成 HTML 語法。
 
-1. 第二就是擴充 Markdown 本身的語法。所以事實上，市面上有很多種 Markdown 語法在流通，各種 Markdown 之間語法上會有些微的差距。
+1. 第二就是擴充 Markdown 本身的語法。  
+所以其實市面上有很多種 Markdown 語法在流通，那各種 Markdown 之間語法上會有些微的差距。
 
 - 優缺點
 
-那這兩種解決 Markdown 語法過於簡略的方式，其實有各自的優缺點。第二項的缺點很明顯，就是，當一個東西有各種不同版本時，會造成使用上的麻煩。簡單來說，你無法用一致的 Markdown 語法，橫行於各個平台之上。
+這兩種解決 Markdown 語法過於簡略的方式，其實有各自的優缺點。第二項的缺點很明顯，就是，當一個東西有各種不同版本時，會造成使用上的麻煩。簡單來說，你無法用一致的 Markdown 語法，橫行於各個平台之上。
 
 至於第一項，在撰寫網頁的脈絡下，並沒有什麼缺點。但是如果回到前面所說的，關於「紙本與網頁」之間的矛盾這件事上，將 Markdown 與 HTML 混用基本上就是，放棄了「紙本」而選擇了「網頁」作為發表作品的媒介。
 
@@ -234,7 +376,7 @@ Markdown 作為一種極簡約的標記式語言，這點讓它有潛力解決�
 所以 Markdown 可以轉換成比較複雜、以**網頁呈現為目的**的 HTML；  
 那既然可以轉換成 HTML，為什麼不把 Markdown 轉換成**以紙本印刷為目的**的標記式語言呢？
 
-這正是 Pandoc 這個工具出現的原因
+這就是 Pandoc 這個工具出現的原因
 
 `--`
 
@@ -255,7 +397,7 @@ Markdown 作為一種極簡約的標記式語言，這點讓它有潛力解決�
 Pandoc 是一個用於「在各種標記式語言和文件格式之間」轉換的工具。  
 譬如說，它可以將 Markdown 轉換成 HTML, LaTeX 和 Word 文件。Pandoc 也可以將這些格式逆向轉換成 Markdown，但就像前面所說的，這種轉換並不完美，因為複雜的標記式語言要轉換成比較簡單的標記式語言，勢必要丟掉很多無法被轉換的資訊。
 
-至於 Pandoc Markdown 則是 Pandoc 自己定義的 Markdown 格式。它大幅的擴充 Markdown 語法，讓 Markdown 可用於撰寫排版更加精緻的文件。
+至於 Pandoc Markdown 則是 Pandoc 自己定義的 Markdown 語法。它大幅的擴充 Markdown 語法，讓 Markdown 可用於撰寫排版更加精緻的文件。
 
 ---
 
@@ -268,7 +410,7 @@ background-position: 93% 5%
 
 &lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
 
-|     | 所見即所得  | 所見即所思    |
+|     | 圖形化界面  | 標記式語言  |
 |-----|----------|----------|
 | **紙本** | MS Word | `\(\LaTeX\)`,&lt;br&gt;Markdown (近年目標)  |
 | **網頁** | 部落格文章撰寫後台&lt;br&gt;(e.g. WordPress, Medium) | HTML,&lt;br&gt;Markdown (初創目的) |
@@ -279,8 +421,8 @@ background-position: 93% 5%
 
 這個表格比較了幾種常見的排版工具的特性。我這邊總結一下。我認為 Markdown 是這些工具之中最好的排版工具，原因有兩點：
 
-1. 第一，做為一種「所見即所思」的排版工具，Markdown 沒有其它圖形化界面排版工具的缺點。同時，由於 Markdown 是非常簡約的標記式語言，它不像過去惡名昭彰的標記式語言擁有太過複雜的語法，干擾人們寫作的過程。
-1. 第二，使用 Markdown 可以解決紙本和網頁的矛盾
+1. 第一，做為一種標記式語言，Markdown 沒有其它圖形化界面排版工具的缺點。同時，由於 Markdown 是非常簡約的標記式語言，它不像過去惡名昭彰的標記式語言擁有太過複雜的語法，干擾人們寫作的過程。
+1. 第二，使用 Markdown，或更精確的說 是 Pandoc Markdown， 可以解決紙本和網頁的矛盾
 
 ---
 
@@ -295,13 +437,13 @@ background-position: 93% 5%
   
   - 
   ```latex
-  e^{ \frac{ -(x - \mu)^2 }{2 \sigma} }
+  e^{ \frac{ -(x - \mu)^2 }{2 \sigma^2} }
   ```
   
   - Wrap LaTeX math code in a pair of `$` or `$$`:
   
-      - `output: `\(e^{ \frac{ -(x - \mu)^2 }{2 \sigma} }\)``  
-      - output: `\(e^{ \frac{ -(x - \mu)^2 }{2 \sigma} }\)`
+      - `output: `\(e^{ \frac{ -(x - \mu)^2 }{2 \sigma^2} }\)``  
+      - output: `\(e^{ \frac{ -(x - \mu)^2 }{2 \sigma^2} }\)`
 
 .footnote[
 [1]: [R Markdown's Markdown Syntax](https://bookdown.org/yihui/rmarkdown/markdown-syntax.html) (Pandoc Markdown)
@@ -316,12 +458,12 @@ background-position: 93% 5%
 那這邊列出了一小部份 Pandoc Markdown 所提供的語法，  
 譬如說，它提供了「註解」的語法、  
 自動插入引用文獻的語法 (那這個功能對於學術報告的撰寫很重要)、  
-另外，還有提供 LaTeX 撰寫數學公式的語法 (基本上，我覺得 LaTeX 這套標記式語言太過複雜，沒什麼好處。那我能想到它唯一的好處，就是它撰寫數學公式非常的方便。舉個例子來說，你要用 Word 打出常態分配的公式，需要花上多少時間？那這對 LaTeX 來說，如果你熟悉它撰寫數學的邏輯的話，其實很快。)
+另外，它也提供了 LaTeX 撰寫數學公式的語法 
 
 這邊之所以會提到 Pandoc Markdown 的原因是因為，  
 R Markdown 所使用的 Markdown 語法其實就是 Pandoc Markdown。  
-那投影片下方的第一個連結是 Pandoc Markdown 的語法簡介。  
-第二個連結是，等一下會介紹的，一個擴充 R Markdown 的套件，所增加的 Markdown 語法
+那投影片下方的第一個連結是 R Markdown 的 Markdown 語法簡介。  
+第二個連結是，等一下會用到的 bookdown 套件，為 R Markdown 所增加的 Markdown 語法。
 
 ---
 
@@ -334,6 +476,9 @@ class: inverse, center, middle
 
 # Components of R Markdown
 
+???
+介紹完 Markdown 之後，接著就要正式進入 R Markdown 的介紹了。
+
 ---
 
 ## What is R Markdown?
@@ -345,14 +490,49 @@ R Markdown = knit**.r[r]**  +  Pandoc **.r[Markdown]**
 &lt;/code&gt;
 ]]
 
+- **`knitr`**: A tool for embedding R code &amp; execution results into a Markdown document.
+
+???
+R Markdown 顧名思義就是 R 加上 Markdown。  
+更精確的說，這邊 R 指的是 knitr 這個套件。knitr 這個套件讓「可以被執行的 R 語言」能夠直接嵌入在 Markdown 文件當中，讓每次輸出文件時，R 語言執行的結果，像是圖表或數值，能自動的被插入文件中。
+
 --
 
 &lt;br&gt;
 
-.larger[
-- **`knitr`**: A tool for embedding R code &amp; execution results into a Markdown document.
+.ml[**結合「寫作」與「分析」**]
+
+.pull-left[
+#### 傳統流程
+
+1. 統計分析 → SPSS, SAS, Excel
+
+1. 報告撰寫 → Word
+
+1. .s[啊！我發現統計分析時，用錯資料了...  
+→ .r[重複步驟 1, 2]]
+
+1. 輸出報告
 ]
 
+.pull-right[
+#### R Markdown 流程
+
+1. 統計分析 + 報告撰寫 → R Markdown
+
+1. .s[啊！我發現統計分析時，用錯資料了...  
+→ .r[修改資料輸入指令]]
+
+1. 輸出報告
+]
+
+???
+這讓 R Markdown 可以結合「分析」和「寫作」這兩種「原本在傳統統計報告準備流程中是分開」的兩件事。
+
+傳統的報告準備流程中，我們必須先在統計軟體裡面跑出分析結果，再手動的將這些結果複製進 Word 裡。  
+那這邊會造成一個問題是，如果我們在報告寫到一半的時候，發現我們之前分析階段出了問題，那我們就必須重新跑一次統計再手動將新的圖表和數值更新在 Word 中。
+
+但如果使用 R Markdown，因為統計分析的結果是自動插入文件的，我們只需要修改造成分析錯誤的 R 指令就好，並不需要再額外更新文件內容。
 
 ---
 
@@ -384,6 +564,8 @@ Variables computed in code chunks can be placed inline: `r today`
 ````
 ]
 
+???
+一份 R Markdown 文件是由 3 個部份所組成的。這邊大家看到的就是一份完整的 R Markdown 文件的內容。
 
 
 ---
@@ -391,7 +573,7 @@ Variables computed in code chunks can be placed inline: `r today`
 ## Structure of an R Markdown Document
 
 .left-column[
-### .little-smaller[YAML Frontmatter&lt;br&gt;(metadata)]
+### .little-smaller[YAML Frontmatter&lt;br&gt;(Metadata)]
 ]
 
 .right-column[
@@ -417,13 +599,16 @@ Variables computed in code chunks can be placed inline: `r today`
 ````
 ]
 
+???
+文件的最上方叫做 YAML frontmatter。這邊主要是控制 R Markdown 輸出文件的樣式以及外觀的一些設定。
+
 ---
 
 ## Structure of an R Markdown Document
 
 .left-column[
-### .little-smaller[YAML Frontmatter&lt;br&gt;(metadata)]
-### Markdown
+### .little-smaller[YAML Frontmatter&lt;br&gt;(Metadata)]
+### Markdown &lt;br&gt;.ls[(Static Content)]
 ]
 
 .right-column[
@@ -449,13 +634,16 @@ paste('Using R Markdown on', today)
 ````
 ]
 
+???
+第二個部份則是用 Markdown 撰寫的文件內容。
+
 ---
 
 ## Structure of an R Markdown Document
 
 .left-column[
-### .little-smaller[YAML Frontmatter&lt;br&gt;(metadata)]
-### Markdown
+### .little-smaller[YAML Frontmatter&lt;br&gt;(Metadata)]
+### Markdown &lt;br&gt;.ls[(Static Content)]
 ### .little-smaller[knitr Code Chunks&lt;br&gt;(Executable)]
 ]
 
@@ -483,6 +671,13 @@ I'm writing with *Markdown syntax*.
 &lt;/code&gt;&lt;/pre&gt;
 ]
 
+???
+第三個部份就是 R Markdown 插入可執行之 R 語言的部份。要在 R Markdown 裡面插入這種內容，可以使用兩種方式。
+
+第一種是右邊比較暗的黃色螢光標記的部份，這邊的語法與 Markdown 的 code chunk 語法類似，但與 Markdown 不同的是，這些 code chunk 在 3 個反引號之後，使用大括號將 r 包覆起來。
+
+第二種語法則是用來將 R 計算出來的數值直接插入在一行當中的某處。
+
 ---
 
 
@@ -504,11 +699,27 @@ print("This will be printed!")
 ````
 
 1. Inline R Code Chunk (Executable)
-
-  &lt;code class='hljs Rmd'&gt;
-  &amp;#96;r "This will be printed!"&amp;#96;
+  
+  ````Rmd
+```{r}
+ttest &lt;- t.test(1:10, y = c(7:20))
+pval &lt;- ttest[["p.value"]]
+```
+````
+  
+  &lt;code class='hljs'&gt;
+  T 檢定所得之 p 值為 &amp;#96;r pval&amp;#96;
   &lt;/code&gt;
 
+
+???
+所以，R Markdown 其實有 3 種 Code chunk。
+
+第一種就是剛剛提到的 Markdown 的 code chunk。這種 code chunk 就是 Markdown 語法的一部分，它本身並不會執行，多半是用來 highlight 文件當中的程式碼語法
+
+第二種就是類似 Markdown code chunk 但可以執行的程式碼區塊。這種 code chunk 會是 R Markdown 裡面最常出現的一種，也會是等一下介紹的重點。那我之後就把這種 code chunk 叫做 knitr code chunk。
+
+第三種是用來在行內插入數值的語法。這種 code chunk 很實用。舉例來說，你可以在前面的 code chunk 先計算出統計檢定的 p-value ，並將這個 p-value 儲存在某個變項裡面，然後再用這個語法將 p-value 插入 Markdown 內文中的某處。
 
 ---
 
@@ -542,6 +753,12 @@ x &lt;- 1 + 1
 [`knitr` 說明文件](https://yihui.name/knitr/options/)
 ]]
 
+
+???
+knitr code chunk 還可以有其它額外的選項可以進行設定。例如，你有時候想讓讀者看到跑出結果的程式碼但有時候不想，這時候，你就可以透過 knitr 的 chunk options 進行這些設定。
+
+我這邊列出了幾個最常用的 knitr chunk options。至於完整的選項，大家可以在下方的 knitr 說明文件裡面看到。
+
 ---
 
 ## knitr Code Chunk
@@ -565,6 +782,11 @@ knitr::opts_chunk$set(echo = FALSE)
 &lt;img src="img/global_chunk_opts.gif" width="95%" style="display: block; margin: auto;" /&gt;
 
 ]
+
+???
+那有時後，你不想每次都為新的 code chunk 重複設定一樣的選項。這個時候，你就可以用 global chunk option 去設定。
+
+global chunk option 通常是在 R Markdown 裡面的第一個 code chunk 進行設定。RStudio 也提供了方便的圖形化界面，讓你不用去記下這語法也能進行設定。
 
 ---
 
@@ -599,7 +821,7 @@ ggplot(data = iris) +
 .right-column[
 **Output:**
 
-&lt;img src="index_files/figure-html/unnamed-chunk-22-1.png" width="35%" style="display: block; margin: auto;" /&gt;
+&lt;img src="index_files/figure-html/unnamed-chunk-23-1.png" width="35%" style="display: block; margin: auto;" /&gt;
 ]
 
 ---
@@ -776,7 +998,7 @@ csl: apa.csl
 
 - 可用**動態變項** (inline R Code) 作為輸入
     - 今天是 &amp;#96;&lt;code&gt;r Sys.Date()&lt;/code&gt;&amp;#96;  
-    今天是 2019-04-12
+    今天是 2019-04-13
 ]
 
 --
@@ -794,12 +1016,11 @@ output:
     number_sections: no
 ```
 
-&lt;br&gt;
 
 - **.r[縮排]**結構必須一致: 每層皆使用 **2 格空白**
 
 - 可同時設定多個輸出格式  
-![:scale 65%](img/knit_multiple.gif)
+![:scale 75%](img/knit_multiple.gif)
 
 
 ]

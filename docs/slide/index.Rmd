@@ -43,6 +43,10 @@ April 22, 2019
 ]
 ]
 
+???
+我今天要介紹的是 R Markdown。相信大家都對這個東西很陌生，不知道它是什麼東西。所以我就先從我自己的經驗以及我對於 R Markdown 的看法出發。
+
+
 ---
 
 ```{r child='opening.Rmd'}
@@ -55,6 +59,9 @@ background-color: black
 
 # Part Ⅰ
 # .larger[R Markdown Basics]
+
+???
+接下來，我要正式進入 R Markdown 的介紹了。透過今天對 R Markdown 的介紹，我希望能達成兩個目標：
 
 ---
 
@@ -72,7 +79,6 @@ include_graphics('img/rmd_flow.png')
 
 
 ???
-接下來，我要正式進入 R Markdown 的介紹了。透過今天對 R Markdown 的介紹，我希望能達成兩個目標：
 
 1. 第一，大家在今天結束前能夠透過 R Markdown 輸出網頁，並透過網址分享給別人。
 1. 第二，大家有能力以 R Markdown 取代 Word 撰寫紙本作業或報告，並且輸出成 PDF 檔。

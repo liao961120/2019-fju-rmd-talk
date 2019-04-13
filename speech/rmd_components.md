@@ -1,1 +1,0 @@
-介紹完 Markdown 之後，接著就要進入 R Markdown 了。

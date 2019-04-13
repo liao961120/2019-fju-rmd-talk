@@ -29,6 +29,9 @@ class: inverse, center, middle
 
 # Components of R Markdown
 
+???
+介紹完 Markdown 之後，接著就要正式進入 R Markdown 的介紹了。
+
 ---
 
 ## What is R Markdown?
@@ -40,14 +43,49 @@ R Markdown = knit**.r[r]**  +  Pandoc **.r[Markdown]**
 </code>
 ]]
 
+- **`knitr`**: A tool for embedding R code & execution results into a Markdown document.
+
+???
+R Markdown 顧名思義就是 R 加上 Markdown。  
+更精確的說，這邊 R 指的是 knitr 這個套件。knitr 這個套件讓「可以被執行的 R 語言」能夠直接嵌入在 Markdown 文件當中，讓每次輸出文件時，R 語言執行的結果，像是圖表或數值，能自動的被插入文件中。
+
 --
 
 <br>
 
-.larger[
-- **`knitr`**: A tool for embedding R code & execution results into a Markdown document.
+.ml[**結合「寫作」與「分析」**]
+
+.pull-left[
+#### 傳統流程
+
+1. 統計分析 → SPSS, SAS, Excel
+
+1. 報告撰寫 → Word
+
+1. .s[啊！我發現統計分析時，用錯資料了...  
+→ .r[重複步驟 1, 2]]
+
+1. 輸出報告
 ]
 
+.pull-right[
+#### R Markdown 流程
+
+1. 統計分析 + 報告撰寫 → R Markdown
+
+1. .s[啊！我發現統計分析時，用錯資料了...  
+→ .r[修改資料輸入指令]]
+
+1. 輸出報告
+]
+
+???
+這讓 R Markdown 可以結合「分析」和「寫作」這兩種「原本在傳統統計報告準備流程中是分開」的兩件事。
+
+傳統的報告準備流程中，我們必須先在統計軟體裡面跑出分析結果，再手動的將這些結果複製進 Word 裡。  
+那這邊會造成一個問題是，如果我們在報告寫到一半的時候，發現我們之前分析階段出了問題，那我們就必須重新跑一次統計再手動將新的圖表和數值更新在 Word 中。
+
+但如果使用 R Markdown，因為統計分析的結果是自動插入文件的，我們只需要修改造成分析錯誤的 R 指令就好，並不需要再額外更新文件內容。
 
 ---
 
@@ -76,6 +114,8 @@ rmd_structuremd <- toprint(rmd_structuremd)
 `r asis_output(rmd_structure)`
 ]
 
+???
+一份 R Markdown 文件是由 3 個部份所組成的。這邊大家看到的就是一份完整的 R Markdown 文件的內容。
 
 
 ---
@@ -83,33 +123,39 @@ rmd_structuremd <- toprint(rmd_structuremd)
 ## Structure of an R Markdown Document
 
 .left-column[
-### .little-smaller[YAML Frontmatter<br>(metadata)]
+### .little-smaller[YAML Frontmatter<br>(Metadata)]
 ]
 
 .right-column[
 `r asis_output(rmd_structure1)`
 ]
 
+???
+文件的最上方叫做 YAML frontmatter。這邊主要是控制 R Markdown 輸出文件的樣式以及外觀的一些設定。
+
 ---
 
 ## Structure of an R Markdown Document
 
 .left-column[
-### .little-smaller[YAML Frontmatter<br>(metadata)]
-### Markdown
+### .little-smaller[YAML Frontmatter<br>(Metadata)]
+### Markdown <br>.ls[(Static Content)]
 ]
 
 .right-column[
 `r asis_output(rmd_structuremd)`
 ]
 
+???
+第二個部份則是用 Markdown 撰寫的文件內容。
+
 ---
 
 ## Structure of an R Markdown Document
 
 .left-column[
-### .little-smaller[YAML Frontmatter<br>(metadata)]
-### Markdown
+### .little-smaller[YAML Frontmatter<br>(Metadata)]
+### Markdown <br>.ls[(Static Content)]
 ### .little-smaller[knitr Code Chunks<br>(Executable)]
 ]
 
@@ -130,6 +176,13 @@ rmd_structure <- toprint(rmd_structure)
 `r asis_output(rmd_structure)`
 ]
 
+???
+第三個部份就是 R Markdown 插入可執行之 R 語言的部份。要在 R Markdown 裡面插入這種內容，可以使用兩種方式。
+
+第一種是右邊比較暗的黃色螢光標記的部份，這邊的語法與 Markdown 的 code chunk 語法類似，但與 Markdown 不同的是，這些 code chunk 在 3 個反引號之後，使用大括號將 r 包覆起來。
+
+第二種語法則是用來將 R 計算出來的數值直接插入在一行當中的某處。
+
 ---
 
 ```{r}
@@ -137,7 +190,9 @@ md_code_chunk <- c('````Rmd', '*```r', 'print("This will NOT be printed!")', '``
 md_code_chunk <- toprint(md_code_chunk)
 
 rmd_code_chunk <- c('````Rmd', '*```{r}', 'print("This will be printed!")', '```', '````')
+rmd_code_chunk2 <- c('````Rmd', '```{r}', 'ttest <- t.test(1:10, y = c(7:20))', 'pval <- ttest[["p.value"]]', '```', '````')
 rmd_code_chunk <- toprint(rmd_code_chunk)
+rmd_code_chunk2 <- toprint(rmd_code_chunk2)
 ```
 
 ## 3 種 Code Chunks
@@ -149,11 +204,22 @@ rmd_code_chunk <- toprint(rmd_code_chunk)
   `r rmd_code_chunk`
 
 1. Inline R Code Chunk (Executable)
-
-  <code class='hljs Rmd'>
-  &#96;r "This will be printed!"&#96;
+  
+  `r rmd_code_chunk2`
+  
+  <code class='hljs'>
+  T 檢定所得之 p 值為 &#96;r pval&#96;
   </code>
 
+
+???
+所以，R Markdown 其實有 3 種 Code chunk。
+
+第一種就是剛剛提到的 Markdown 的 code chunk。這種 code chunk 就是 Markdown 語法的一部分，它本身並不會執行，多半是用來 highlight 文件當中的程式碼語法
+
+第二種就是類似 Markdown code chunk 但可以執行的程式碼區塊。這種 code chunk 會是 R Markdown 裡面最常出現的一種，也會是等一下介紹的重點。那我之後就把這種 code chunk 叫做 knitr code chunk。
+
+第三種是用來在行內插入數值的語法。這種 code chunk 很實用。舉例來說，你可以在前面的 code chunk 先計算出統計檢定的 p-value ，並將這個 p-value 儲存在某個變項裡面，然後再用這個語法將 p-value 插入 Markdown 內文中的某處。
 
 ---
 
@@ -186,6 +252,12 @@ rmd_code_chunk <- toprint(rmd_code_chunk)
 [`knitr` 說明文件](https://yihui.name/knitr/options/)
 ]]
 
+
+???
+knitr code chunk 還可以有其它額外的選項可以進行設定。例如，你有時候想讓讀者看到跑出結果的程式碼但有時候不想，這時候，你就可以透過 knitr 的 chunk options 進行這些設定。
+
+我這邊列出了幾個最常用的 knitr chunk options。至於完整的選項，大家可以在下方的 knitr 說明文件裡面看到。
+
 ---
 
 ## knitr Code Chunk
@@ -211,6 +283,11 @@ include_graphics('img/global_chunk_opts.gif')
 ```
 
 ]
+
+???
+那有時後，你不想每次都為新的 code chunk 重複設定一樣的選項。這個時候，你就可以用 global chunk option 去設定。
+
+global chunk option 通常是在 R Markdown 裡面的第一個 code chunk 進行設定。RStudio 也提供了方便的圖形化界面，讓你不用去記下這語法也能進行設定。
 
 ---
 
@@ -443,12 +520,11 @@ output:
     number_sections: no
 ```
 
-<br>
 
 - **.r[縮排]**結構必須一致: 每層皆使用 **2 格空白**
 
 - 可同時設定多個輸出格式  
-![:scale 65%](img/knit_multiple.gif)
+![:scale 75%](img/knit_multiple.gif)
 
 
 ]

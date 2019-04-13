@@ -4,11 +4,12 @@
 
 ### Paragraphs & New Lines
 
-This is the first paragraph. You can **switch to a new line without starting a new paragraph** by ending the line with two white spaces.  
-This is a new line in the same paragraph.
-Only switching to the new line won't work. Remember to leave two white spaces at the end of the previous line.
+這是第一行。
+這不會是第二行。想要開啟新的一行，得在每行**最後面留下兩格空白**  
+這才是新的一行。
 
-This is the second paragraph. You can use footnote syntax.
+段落之間要留下一個空行。這是第二段。這是第二段。這是第二段。這是第二段。這是第二段。這是第二段。這是第二段。這是第二段。這是第二段。
+
 
 ### Text formatting
 
