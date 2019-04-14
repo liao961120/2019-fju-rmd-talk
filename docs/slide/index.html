@@ -1077,10 +1077,9 @@ Windows 的檔案路徑是用反斜線 (`\`) 表示分隔，但所有非 Windows
 1. 修改 `code_chunk_prac.Rmd` 中的內容，  
 使輸出&lt;sup&gt;\*&lt;/sup&gt;結果與[此網頁](https://bit.ly/2FUQPvP)相同
 
-1. 參考答案寫在 `code_chunk_prac_solution.Rmd`
+1. 參考答案寫在 [`code_chunk_prac_solution.Rmd`](https://github.com/liao961120/2019-fju-rmd-talk/blob/master/code_chunk_prac/code_chunk_prac_solution.Rmd)
 
 ]
-
 
 .footnote[
 [\*]: 以 RStudio 開啟 `.Rmd` ➜ 點擊 &lt;img src='img/knitr.png' style='display:inline;height:1em;'&gt; (`Knit`) or  
@@ -1094,6 +1093,12 @@ Windows 的檔案路徑是用反斜線 (`\`) 表示分隔，但所有非 Windows
 
 先用另一個檔案練習，看看能不能依照裡面的指示修改 knitr code chunk ，讓輸出後的文件 跟投影片中的網頁長的一模一樣。
 
+(示範 RStudio Knit，同時輸出 **2 種**格式)
+那這裡我先示範如何在 RStudio 裡面輸出 R Markdown
+
+--
+
+&lt;iframe src="https://liao961120.github.io/2019-fju-rmd-talk/code_chunk_prac_solu.html" width="50%" height="37%" style="position:absolute;left:50%;top:0%"&gt;&lt;/iframe&gt;
 
 ---
 
@@ -1123,6 +1128,15 @@ csl: apa.csl
     今天是 2019-04-14
 ]
 
+???
+最後，這裡要告訴大家 YAML Frontmatter 的設定。
+
+YAML 是控制 R Markdown 輸出文件外觀的地方。那 R Markdown 輸出的外觀是由預先寫好的 pandoc 模板所決定，而不同的輸出格式會套用不同的模板。
+
+所以，YAML 裡面的變項會依據所選擇的輸出格式而有些微的不同。當然，多設了模板所沒有提供的變項，並不會導致輸出錯誤，只會被直接忽略。
+
+`--`
+
 --
 
 .pull-right[
@@ -1143,9 +1157,12 @@ output:
 
 - 可同時設定多個輸出格式  
 ![:scale 75%](img/knit_multiple.gif)
-
-
 ]
+
+???
+那這邊只有一個重點要提醒，就是在設定 YAML 時，有時候會有巢狀結構的出現，例如，投影片右邊的輸出格式。
+
+在撰寫有階層結構的 YAML 時，每個階層之間的縮排間隔要固定。我是建議使用**兩格空白**作為縮排的固定距離。當然你也可以用 1 個 tab 或是 4 格空白。但一定要確定整個 YAML 都是使用同樣縮排，輸出文件時會出錯。
 
 ---
 
@@ -1162,6 +1179,12 @@ output:
 - 輸出 PDF 文件 ([檢視](https://github.com/liao961120/2019-fju-rmd-talk/tree/master/minimal_pdf), [下載](https://liao961120.github.io/2019-fju-rmd-talk/minimal_pdf.zip))
 
 
+???
+YAML 是個有點麻煩的東西，因為它的選項太多了，基本上沒有人會記得。
+
+所以，只要用複製貼上的就好，  
+或是更好的方式，是使用 Rstudio 直接匯入 R Markdown 模板。那這部份我等一下會講到。
+
 ---
 
 
@@ -1173,6 +1196,7 @@ class: inverse, center, middle
 
 # Hosting HTML Files on Web
 
+
 ---
 
 class: center
@@ -1180,6 +1204,14 @@ class: center
 &lt;br&gt;
 
 ![:scale 100%](img/server_model.png)
+
+???
+大家剛剛已經學會將 R Markdown 輸出成 HTML 的文件了。那現在有了 HTML，我們需要一個方式讓我們分享這個 HTML 檔。
+
+如果直接把 HTML 檔傳給別人會很奇怪，想想看自己有收到過 HTML 檔嗎？  
+我們當然希望能夠直接給人家一個網址，讓他點進去就可以看到我們用 R Markdown 輸出的 HTML。
+
+那要做到這件事，我們需要一個 24 小時持續運作的伺服器，幫我們儲存 HTML 檔，讓知道網址的人可以閱讀我們放在伺服器上的 HTML。
 
 ---
 
@@ -1194,47 +1226,76 @@ class: center
 1. `Sign in with Google / Dropbox`
 1. 輸入 `site name`
 
---
 
 #### R Markdown ➜ HTML ➜ Updog 網頁
 
-1. 使用剛剛練習的 `code_chunk_prac.Rmd`
-
-1. RStudio 輸出 HTML:   
-.smaller[`code_chunk_prac.Rmd` ➜ `code_chunk_prac.html`]
+1. 使用剛剛的 `code_chunk_prac.Rmd`
 
 1. 將 `code_chunk_prac.html` 上傳至  
-雲端硬碟: `Updog/&lt;site-name&gt;`
+雲端硬碟的 `Updog/&lt;site-name&gt;`
 
 1. 等 30 秒左右，就可以在  
 .smaller[[https://`&lt;site-name&gt;`.updog.co/html_article.html]()]  
 看到輸出的 HTML 了
 
+???
+Updog 就是一個提供靜態網頁伺服器的服務。它讓使用者能把雲端硬碟當成伺服器使用。
 
+換句話說，你只要將 HTML 上傳到雲端硬碟裡的某個資料夾，那你之後就可以透過網址瀏覽這個 HTML 所形成的網頁。
+
+(使用 liao961120)
+這邊大家可以用 Dropbox 或是 Google drive 的帳號直接註冊 Updog。我在這邊實際示範一次從註冊 Updog 到上傳 HTML 檔。
 
 ---
 
-
-## [GitHub](https://github.com) &lt;img src='img/GitHub-Mark.png' style='display:inline;width:0.7em;'&gt; (A Better Option)
+## [GitHub](https://github.com) &lt;img src='img/GitHub-Mark.png' style='display:inline;width:0.7em;'&gt; .s[(A Better Option)]
 
 
 &lt;img src='https://octodex.github.com/images/vinyltocat.png' style='float:right;width:42%'&gt;
 
-- 原始碼版本控制 (備份)、專案規劃與管理、合作開發
-    - 轉個彎之後 ...  
-    [寫論文](https://github.com/sih4sing5hong5/huan1-ik8_lun7-bun5)、[課程管理](https://happygitwithr.com/classroom-overview.html)
+
+- &lt;s&gt;世界最大男性社交網站&lt;/s&gt;
+
+- 原始碼[版本控制](https://zh.wikipedia.org/zh-tw/版本控制) (備份)、專案規劃與管理、合作開發
 
 - 許多軟體開發相關的實用、免費服務
 
 - 架設網站
 
-- &lt;s&gt;世界最大男性社交網站&lt;/s&gt;
+- 轉個彎之後 ...  
+  .ms[[寫論文](https://github.com/sih4sing5hong5/huan1-ik8_lun7-bun5)、[課程管理](https://happygitwithr.com/classroom-overview.html)]
 
 
-.footnote[
-[透過 GitHub 架設靜態網頁](https://liao961120.github.io/2018/04/20/gsheet_survey.html#靜態網頁-設置)  
-學習資源：[Happy Git and GitHub for the useR](https://happygitwithr.com)
+.footnote[.ms[
+快速上手：[透過 GitHub 架設靜態網頁](https://liao961120.github.io/2018/04/20/gsheet_survey.html#靜態網頁-設置)  
+
+學習資源：
+  - https://lab.github.com
+  - [Happy Git and GitHub for the useR](https://happygitwithr.com)
+]]
+
+???
+剛剛介紹的 Updog 是個能快速上手的服務。
+
+但是日後，如果你們還有持續使用 R 或是 R Markdown，你們電腦裡的檔案數量應該會開始倍增。這種情況下，檔案管理和備份就開始變得很重要。而雲端硬碟並不是一個適合檔案管理的工具。
+
+我這邊要推薦 GitHub 這套服務。那有個笑話是說，GitHub 是號稱全世界最大的男性社交網站，因為上面的使用者很大比例都是從事軟體開發相關工作的男性。
+
+其實 GitHub 是一個提供軟體開發時，程式碼版本控制的服務。那版本控制是什麼？這一時說不清楚，但你們可以把它想像成一種非常可靠的備份程式碼的方式。
+
+那除了備份程式碼，GitHub 也提供了軟體開發過程中 會用到的其它服務，包含網頁的架設。簡單來說，GitHub 就是一個減輕軟體開發負擔的綜合服務。
+
+
+那因為 GitHub 的服務是免費的，而且它也沒規定你一定要把它用在軟體開發。  
+所以轉個彎之後，我們可以把 GitHub 拿來做很多事情。譬如說，很多研究人員，是使用 GitHub 來管理自己的研究的。更不用說，有很多碩博士生是使用 GitHub 來管理他的論文的。GitHub 甚至可以用在課程教學上。
+
+--
+
+.l[
+&gt; ***The only limit is your imagination!***
+
 ]
+
 
 ---
 
@@ -1246,6 +1307,12 @@ class: center
 class: inverse, center, middle
 
 # 輸出 PDF 文件
+
+
+???
+接下來，要進入第一部份的最後一個主題，也就是用 R Markdown 輸出成 PDF 文件。
+
+這個部份是今天的**大魔王**。
 
 ---
 
@@ -1261,15 +1328,31 @@ background-size: contain, 100% 100%, cover
 ![:scale 80%](img/html_v_pdf.png)
 ]
 
-- 安裝 `\(\LaTeX\)`
+???
+那為什麼用 R Markdown 輸出 PDF 是大魔王呢？
 
-- 麻煩的中文字 (xelatex, 字體檔)
+大家可以看到這張 R Markdown 輸出文件的流程圖。上面那一排是 R Markdown 輸出 HTML 的過程。而下面那排是 R Markdown 輸出 PDF 的過程。
+
+輸出 PDF 的過程，比起 HTML 多出了兩個兩個過程。而這兩個過程會造成輸出 PDF 非常容易出錯，因為過程中會使用到 LaTeX 這個工具。
+
+前面有講到，LaTeX 是一個標記式語言。同時它也是一個用來將這種標記式語言生成 PDF 的工具。LaTeX 非常的複雜，而且它的要求非常嚴苛，所以在生成 PDF 的過程中常常會噴錯。
+
 
 --
 
-- 2018 之後的人生比較輕鬆 
+- 麻煩的中文字 (xelatex, 字體檔)
+
+- 安裝 `\(\LaTeX\)`: 2018 之後的人生比較輕鬆 
 
 &lt;img src='https://d33wubrfki0l68.cloudfront.net/15c2850da53a2f8d8a1a30aa003bda21155e16ec/db869/images/logo-tinytex.png' style='position:absolute;width:14%;left:75%;top:68%'&gt;
+
+
+???
+再加上我們比較衰，我們寫的是中文不是英文。而中文字因為有編碼的問題，在用 R Markdown 輸出 PDF 之前，需要一些額外的步驟。
+
+不過好事情是，去年有一個 R 套件叫做 `tinytex`，讓 LaTeX 使用起來容易許多。
+
+那接下來，我就帶大家一起走過這條崎嶇的道路。
 
 ---
 
@@ -1277,7 +1360,9 @@ background-size: contain, 100% 100%, cover
 
 .pull-left[
 
-1. .s[(**Windows 7/10**)] 下載並解壓縮 TinyTeX:  
+#### **Windows 7/8/10**
+
+1. 下載並解壓縮 TinyTeX:  
 .s[[TinyTeX-win10.7z](http://bit.ly/TinyTeX-win10-7z) (72 MB) 或   
 [TinyTeX-win10.zip](http://bit.ly/TinyTeX-win10-zip) (108 MB)]
 
@@ -1302,10 +1387,12 @@ tinytex::use_tinytex()
 [＊]: 解壓縮之後，如果有兩個 `TinyTeX` 資料夾，選擇**內層**的那個。
 ]]
 
---
 
 .pull-right[
-1. .s[(**Mac** .ms[or] 步驟 4. 失敗)] 直接安裝 TinyTeX
+
+#### **Mac** .ms[or] 步驟 4. 失敗
+
+1. 直接安裝 TinyTeX
   
   ```r
   install.packages('tinytex')
@@ -1320,7 +1407,19 @@ tinytex::use_tinytex()
 ]
 
 ???
-如果不想每次用新電腦都重新安裝一次，可以參考這篇文章，說明將 TinyTeX 儲存於隨身碟
+我這邊先講投影片右邊，比較簡單，但是安裝過程中需要等待相當久的方式。如果你的電腦是 Mac 或是你比較不喜歡冒險的話，那你可以先用這種方式。
+
+左邊那種方式，只有 Windows 的電腦可以使用。 那我只在 Windows 7 和 10 上測試過，所以並不保證一定能成功。當然失敗也沒關係，只要再用右邊那種方式就好。
+
+
+### Mac
+
+那左邊那種方式非常簡單，只要把那兩行指令複製貼上到你的 Rstudio 裡面就好。那過程中應該會跳出一些警告的視窗，那這些視窗並不會影響安裝，只要按確定就好。
+
+
+### Windows 7/8/10
+
+那左邊這種方式，大家需要先下載步驟 1 的壓縮檔。那如果你的電腦可以解壓縮 `.7z 壓縮檔` 就下載第一個，那如果不行就請下載 `.zip 檔`。
 
 ---
 
@@ -1346,6 +1445,16 @@ output:
 *     in_header: header.tex
 ```
 ]
+
+
+???
+這張投影片是給大家看看輸出中文 PDF 需要的額外步驟。
+
+首先，在 R Markdown 的 YAML frontmatter 中，我們一定要加上黃色螢光標記的這 3 行，否則一定會出錯。
+
+那大家可以看到最下方有個 `header.tex` 的檔案，這個檔案就是設定額外設定 LaTeX 中文相關選項的地方。
+
+`--`
 
 --
 
@@ -1379,6 +1488,10 @@ output:
 ```
 ]
 
+
+???
+右邊這個就是部份 `header.tex` 的內容。那大家不用擔心，這裡可以不用去管它。那告訴大家這個東西，只是讓大家知道有時候，如果你想要輸出的 PDF 有特定的外觀，必須要去修改 `header.tex` 的內容。
+
 ---
 
 ## 更簡單的方式：.s[R Markdown .s[模板]]
@@ -1395,20 +1508,30 @@ rmdtk::download_fonts()
 #### 2. 匯入模板
 
 
-##### 指令
-```r
-rmarkdown::draft('my_new_doc',
-  template = 'CJKdocument', package = 'rmdtk')
-```
+- 指令
+
+  ```r
+  rmarkdown::draft('my_new_doc', template = 'CJKdocument', package = 'rmdtk')
+  ```
 
 
-##### RStuido GUI .ms[(見右)]:
-
-.ms[File → New File → R Markdown → From Template → **Portable CJK Document for HTML &amp; PDF**] 
+- RStuido GUI .ms[(見右)]:
+  
+  .ms[File → New File → R Markdown → From Template →  
+  **Portable CJK Document for HTML &amp; PDF**] 
 
 ]
 
 &lt;img src='img/import_template.gif' style='display:block;position:absolute;top:28%;right:-30px;width:55%'&gt;
+
+
+???
+那事實上，RStudio 提供了一個方常方便的功能。你可以透過 Rstudio 匯入 R Markdown 的模板。那這些模板是由 R 套件所提供的。
+
+那為了減輕大家還有我自己 設定 PDF 的麻煩，我自己快速寫了一個 R Markdown 模板。這個模板幫使用者預先設定好了一些選項，也幫使用者解決 LaTeX 常會遇到的字體問題。所以基本上，你只要下載下來之後，就可以直接將這個 R Markdown 輸出成 PDF。
+
+
+那我這邊示範一次給大家看看
 
 ---
 
