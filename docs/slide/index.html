@@ -538,7 +538,9 @@ R Markdown 顧名思義就是 R 加上 Markdown。
 ]
 
 ???
-這讓 R Markdown 可以結合「分析」和「寫作」這兩種「原本在傳統統計報告準備流程中是分開」的兩件事。
+**結合「寫作」與「分析」**
+
+這讓 R Markdown 可以結合「寫作」和「分析」這兩種「原本在傳統的 統計報告準備流程中」是分開的兩件事。
 
 傳統的報告準備流程中，我們必須先在統計軟體裡面跑出分析結果，再手動的將這些結果複製進 Word 裡。  
 那這邊會造成一個問題是，如果我們在報告寫到一半的時候，發現我們之前分析階段出了問題，那我們就必須重新跑一次統計再手動將新的圖表和數值更新在 Word 中。
@@ -553,6 +555,14 @@ R Markdown 顧名思義就是 R 加上 Markdown。
 
 .center[![:scale 83%](img/rmd_struc.png)]
 
+
+???
+這張圖是一個 R Markdown 文件的結構。其實，R Markdown 基本上就像 Markdown 文件一樣，
+
+差別只在於，
+除了 Markdown 的內文之外，R Markdown 還多出了**控制輸出文件外觀的 YAML** 以及 
+讓 R Markdown 可以自動嵌入 R 語言執行結果的 knitr code chunk。
+
 ---
 
 ## Structure of an R Markdown Document
@@ -560,6 +570,9 @@ R Markdown 顧名思義就是 R 加上 Markdown。
 &lt;br&gt;
 
 .center[![:scale 100%](img/rmd_struc2.png)]
+
+???
+那這張圖和上一張幾乎是一樣的，只是更詳細的將 YAML 和 knitr code chunk 的組成畫進圖裡，讓大家能有個比較好的概念連結。
 
 ---
 
@@ -596,9 +609,9 @@ Variables computed in code chunks can be placed inline: `r today`
 ]
 
 ???
-一份 R Markdown 文件是由 3 個部份所組成的。這邊大家看到的就是一份完整的 R Markdown 文件的內容。
+這邊大家看到的就是一份完整的 R Markdown 文件的內容。
 
-文件的最上方叫做 YAML frontmatter。這邊主要是控制 R Markdown 輸出文件的樣式以及外觀的一些設定。
+文件的最上方就是剛剛講到的 YAML frontmatter。這邊主要是控制 R Markdown 輸出文件的樣式以及外觀的一些設定。
 
 ---
 
@@ -633,7 +646,7 @@ paste('Using R Markdown on', today)
 ]
 
 ???
-第二個部份則是用 Markdown 撰寫的文件內容。
+第二個部份則是用 Markdown 撰寫的內文。
 
 ---
 
@@ -682,21 +695,37 @@ I'm writing with *Markdown syntax*.
 
 ## 3 種 Code Chunks
 
-1. Markdown (不會執行)
+
+???
+所以，R Markdown 其實有 3 種 Code chunk。
+
+--
+
+- Markdown (不會執行)
   ````Rmd
 *```r
 print("This will NOT be printed!")
 ```
 ````
 
-1. knitr Code Chunk (Executable)
+???
+**第一種**就是剛剛提到的 Markdown code chunk。這種 code chunk 就是 Markdown 語法的一部分，它本身並不會執行，多半是用來 highlight 文件當中的程式碼語法
+
+--
+
+- knitr Code Chunk (Executable)
   ````Rmd
 *```{r}
 print("This will be printed!")
 ```
 ````
 
-1. Inline R Code Chunk (Executable)
+???
+**第二種**就是類似 Markdown code chunk，但是 是可以執行的程式碼區塊。這種 code chunk 會是 R Markdown 裡面最常出現的一種，也會是等一下介紹的重點。那我之後就把這種 code chunk 叫做 knitr code chunk。
+
+--
+
+- Inline R Code Chunk (Executable)
   
   ````Rmd
 ```{r}
@@ -709,15 +738,8 @@ pval &lt;- ttest[["p.value"]]
   T 檢定所得之 p 值為 &amp;#96;r pval&amp;#96;
   &lt;/code&gt;
 
-
 ???
-所以，R Markdown 其實有 3 種 Code chunk。
-
-第一種就是剛剛提到的 Markdown 的 code chunk。這種 code chunk 就是 Markdown 語法的一部分，它本身並不會執行，多半是用來 highlight 文件當中的程式碼語法
-
-第二種就是類似 Markdown code chunk 但可以執行的程式碼區塊。這種 code chunk 會是 R Markdown 裡面最常出現的一種，也會是等一下介紹的重點。那我之後就把這種 code chunk 叫做 knitr code chunk。
-
-第三種是用來在行內插入數值的語法。這種 code chunk 很實用。舉例來說，你可以在前面的 code chunk 先計算出統計檢定的 p-value ，並將這個 p-value 儲存在某個變項裡面，然後再用這個語法將 p-value 插入 Markdown 內文中的某處。
+**第三種**是用來在行內插入數值的語法。這種 code chunk 很實用。舉例來說，你可以在前面的 knitr code chunk 先計算出統計檢定的 p-value ，並將這個 p-value 儲存在某個變項裡面，然後再用這個語法將 p-value 插入 Markdown 內文中的某處。
 
 ---
 
@@ -753,7 +775,7 @@ x &lt;- 1 + 1
 
 
 ???
-knitr code chunk 有一個很重要的特徵是，它可以有許多選項可以進行設定。例如，你有時候想讓讀者看到跑出結果的程式碼但有時候不想，這時候，你就可以透過 knitr 的 chunk options 進行這些設定。
+knitr code chunk 有一個很重要的特徵是，它有許多選項可以進行設定。例如，你有時候想讓讀者看到跑出結果的程式碼但有時候不想，這時候，你就可以透過 knitr 的 chunk options 進行這些設定。
 
 那這些選項是設定在 knitr code chunk 第一行的大括弧之內。那這大括弧之內的結構大致是這樣：
 
@@ -794,7 +816,7 @@ knitr::opts_chunk$set(echo = FALSE)
 ???
 那有時後，你不想每次都為新的 code chunk 重複設定一樣的選項。這個時候，你就可以用 global chunk option 去設定。
 
-global chunk option 通常是在 R Markdown 裡面的第一個 code chunk 進行設定。RStudio 也提供了方便的圖形化界面，讓你不用去記下這語法也能進行設定。
+global chunk option 是在 R Markdown 裡面的第一個 code chunk 進行設定。RStudio 也提供了方便的圖形化界面，讓你不用去記下這語法也能進行設定。
 
 ---
 
@@ -816,13 +838,29 @@ global chunk option 通常是在 R Markdown 裡面的第一個 code chunk 進行
 
 
 ````Rmd
-```{r iris-plot, echo=FALSE, out.width="35%", fig.dim=c(7, 3.5)}
+```{r iris-plot, echo=FALSE, out.width="35%", fig.dim=c(6, 4)}
 library(ggplot2)
 ggplot(data = iris) +
   geom_point(aes(Sepal.Length, Petal.Width, color = Species))
 ```
 ````
 ]
+
+???
+接下來，我這邊提供大家 3 個使用 knitr code chunk 的實例。
+
+第一個例子是用 knitr code chunk 在 R Markdown 裡面直接繪製統計圖。那這邊的 data 是使用 R 內建的 iris data 為例。實務上，你們會需要先在前面進行資料的前處理。
+
+那我希望輸出的文件當中
+
+1. 不要顯示繪製這張圖的 R 程式碼，  
+所以我就用了 `echo=FALSE` 這個選項。
+2. 統計圖的寬度是文件寬度的 35%，  
+所以我就用了 `out.width="35%"` 這個選項。
+3. 我希望圖片的**寬高比**是 **6:4**，  
+所以我就用了 `fig.dim` 這個選項。那 `fig.dim` 吃的是一個 **numeric vector**，這個 vector 的第一個數值是寬高比中的寬，第二個是寬高比中的高。
+
+`--`
 
 --
 
@@ -854,6 +892,14 @@ knitr::kable(data, align = "c", caption = "表格說明文字")
 ```
 ````
 ]
+
+
+???
+第二個例子是用 knitr code chunk，將 `data.frame` 以表格的形式 顯示於輸出文件。
+
+R Markdown 做到這點的方式是依靠 `knitr 套件` 所提供的 `kable 函數`。那在 kable 函數裡面，你甚至可以丟給它一個叫做 `caption` 的參數，讓輸出的表格會有說明文字。
+
+`--`
 
 --
 
@@ -921,6 +967,16 @@ knitr::include_graphics("img/world_night.jpg")
 ````
 ]
 
+???
+最後一個例子，有時候你需要使用外部，而不是 R 生成的圖片。
+
+那剛剛在練習 Markdown 時，比較仔細的人可能會發現可以直接使用 Markdown 語法插入圖片。  
+但我這邊要介紹的是 knitr 的 `include_graphics()` 這個函數，原因是 Markdown 插入圖片的語法功能比較受限，譬如說，你不容易去控制圖片的大小和說明文字。
+
+如果使用的是 `include_graphics()` 這個函數，就能夠透過 knitr chunk options 去控制這些事情。例如，我這邊就用 `fig.cap` 這個 chunk option 幫圖片加入說明文字。另外，我這邊也把 `echo` 設為 `TRUE`
+
+`--`
+
 --
 
 .right-column[
@@ -937,6 +993,9 @@ knitr::include_graphics('img/world_night.jpg')
 &lt;/div&gt;
 
 ]
+
+???
+所以文件的輸出也會同時顯示插入這張圖片的 R 程式碼。
 
 ---
 
@@ -958,23 +1017,43 @@ knitr::include_graphics('img/world_night.jpg')
 - **盡量使用相對路徑**：外部檔案路徑都是.r[**相對 `.Rmd` 而言**]
 
     ```yml
-    slide.Rmd 所在之資料夾/
+    投影片/    # slide.Rmd 所在之資料夾
     │
-    ├── slide.Rmd
+    ├── doc.Rmd
+    *├── cover.jpg
     └── img/
-    *    └── world_night.jpg
+    *    └── foo.jpg
     ```
 
 ```r
-include_graphics('img/world_night.jpg')            # Good
+include_graphics('cover.jpg')              # Good
+include_graphics('img/foo.jpg')            # Good
 
-include_graphics('img\\world_night.jpg')           # Bad !!!
-include_graphics('C:/.../img/world_night.jpg')     # Bad !!!
-include_graphics('C:\\...\\img\\world_night.jpg')  # Worst !!!
+# Bad Practices !!!
+include_graphics('img\\fig.jpg')           # Works only on Windows
+include_graphics('C:/.../img/foo.jpg')     # Works only on YOUR Windows
+include_graphics('C:\\...\\img\\foo.jpg')  # Works only on YOUR Windows
 ```
 ]
 
 ???
+在使用外部檔案的時候，必須要知道的一個概念是相對路徑和絕對路徑。  
+(這邊老師有講過嗎？)
+
+「相對路徑」指的是相對於某個檔案的路徑。所以，在 R Markdown 裡面使用相對路徑，就是使用相對於這份 `Rmd 檔` 的路徑。
+
+那因為時間上的關係，我這邊沒辦法很詳細的解釋絕對路徑和相對路徑的概念。所以我就用一個比較具體的例子說明如何使用相對路徑。
+
+
+這邊這個是 `投影片` 這個資料夾的內部結構。這個資料夾裡面有 1 個 `Rmd 檔` (doc.Rmd)、1 個 `jpg 檔` (cover.jpg) 和一個資料夾 `img`。而 `img` 這個資料夾裡面還有另一個 `jpg 檔` (foo.jpg)。
+
+那今天，如果我想在 `doc.Rmd` 裡面插入 `cover.jpg` 和 `img` 資料夾中的 `foo.jpg` 這張圖片。那與 `doc.Rmd` 在同一層結構的 `cover.jpg`，它的相對路徑就是它的檔名，也就是 `cover.jpg`。`img` 資料夾裡的 `foo.jpg`，它相對於 `doc.Rmd` 的路徑就是 `img/foo.jpg`。
+
+
+至於最下方 3 個例子是「不好的例子」，原因是因為世界上只有 Windows 的作業系統是使用反斜線作為檔案路徑的分隔。而在 R 語言裡面，檔案路徑是使用正斜線作為分隔。雖然在 Windows 的電腦裡面使用 R 的時候，仍然可以用兩條反斜線來代表檔案路徑的分隔，但是這在非 windows 的電腦就無法運作了。
+
+而使用絕對路徑的缺點，是當你把檔案傳給別人的時候，因為其它人的電腦 檔案位置一定和你的不一樣，所以電腦無法依據絕對路徑找到檔案。
+
 Windows 的檔案路徑是用反斜線 (`\`) 表示分隔，但所有非 Windows 的電腦是用正斜線表示。在 R 當中使用正協線表示路徑能在所有作業系統下運行。
 
 ---
@@ -998,7 +1077,7 @@ Windows 的檔案路徑是用反斜線 (`\`) 表示分隔，但所有非 Windows
 1. 修改 `code_chunk_prac.Rmd` 中的內容，  
 使輸出&lt;sup&gt;\*&lt;/sup&gt;結果與[此網頁](https://bit.ly/2FUQPvP)相同
 
-1. 參考答案寫在 `code_chunk_prac_solu.Rmd`
+1. 參考答案寫在 `code_chunk_prac_solution.Rmd`
 
 ]
 
@@ -1007,6 +1086,15 @@ Windows 的檔案路徑是用反斜線 (`\`) 表示分隔，但所有非 Windows
 [\*]: 以 RStudio 開啟 `.Rmd` ➜ 點擊 &lt;img src='img/knitr.png' style='display:inline;height:1em;'&gt; (`Knit`) or  
 `rmarkdown::render('path/to/code_chunk_prac.Rmd')`
 ]
+
+???
+好，那接下來就換大家實際進行操作了
+
+大家可以點進連結下載這個壓縮檔。壓縮檔裡面有兩個 `Rmd 檔`，以 `_solution` 結尾的是參考答案，大家先不要打開這個檔案，
+
+先用另一個檔案練習，看看能不能依照裡面的指示修改 knitr code chunk ，讓輸出後的文件 跟投影片中的網頁長的一模一樣。
+
+
 ---
 
 ## YAML Frontmatter
@@ -1110,12 +1198,12 @@ class: center
 
 #### R Markdown ➜ HTML ➜ Updog 網頁
 
-1. 下載 [`minimal_html`](https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/liao961120/2019-fju-rmd-talk/tree/master/minimal_html)
+1. 使用剛剛練習的 `code_chunk_prac.Rmd`
 
-1. RStudio:   
-.smaller[`html_article.Rmd` ➜ `html_article.html`]
+1. RStudio 輸出 HTML:   
+.smaller[`code_chunk_prac.Rmd` ➜ `code_chunk_prac.html`]
 
-1. 將 `html_article.html` 上傳至  
+1. 將 `code_chunk_prac.html` 上傳至  
 雲端硬碟: `Updog/&lt;site-name&gt;`
 
 1. 等 30 秒左右，就可以在  
