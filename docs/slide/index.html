@@ -340,10 +340,21 @@ Copy Markdown example [here](https://raw.githubusercontent.com/liao961120/2019-f
 然後，大家可以點進上方的連結去將 Markdown 語法複製貼上到這個線上編輯器。  
 可以實際的去修改或新增這些 Markdown 語法，應該就能很快的掌握 Markdown 的邏輯了。
 
-這邊給大家 5 分鐘玩玩看 Markdown。  
-如果有什麼問題，可以馬上提出，我在前面直接示範如何解決。
+---
+
+.center[![:scale 80%](img/md_prac.png)]
+
+???
+那大家在手動玩過 Markdown 之後，這邊有個挑戰要給大家。
+
+這邊給大家 5 分鐘的時間去用 Markdown 寫出和這張圖片一樣的結果
+
+[md_prac_answer.txt](https://github.com/liao961120/2019-fju-rmd-talk/blob/master/md_prac_answer.txt)
+
+
 
 ---
+
 
 ## Markdown: Too simplified?
 
@@ -417,7 +428,11 @@ background-position: 93% 5%
 
 
 ???
-更重要的是，Pandoc Markdown 多數的語法能夠同時完美地轉換成 HTML 和 LaTeX 這兩種標記式語言。這基本上解決了「網頁與紙本的矛盾」，因為寫作者可以只用 Pandoc Markdown 撰寫文件，需要**發布在網路**上時就將文件輸出成 HTML，需要**列印**時就將文件輸出成 LaTeX 再生成 PDF。
+更重要的是，Pandoc Markdown 多數的語法能夠同時完美地轉換成 HTML 和 LaTeX 這兩種標記式語言。
+
+LaTeX 是另一種標記式語言。它是以生成 PDF 為目標的標記式語言。
+
+這基本上解決了「紙本與網頁的矛盾」，因為寫作者可以只用 Pandoc Markdown 撰寫文件，需要**發布在網路**上時就將文件輸出成 HTML，需要**列印**時就將文件輸出成 LaTeX 再生成 PDF。
 
 這個表格比較了幾種常見的排版工具的特性。我這邊總結一下。我認為 Markdown 是這些工具之中最好的排版工具，原因有兩點：
 
@@ -447,9 +462,6 @@ background-position: 93% 5%
 
 .footnote[
 [1]: [R Markdown's Markdown Syntax](https://bookdown.org/yihui/rmarkdown/markdown-syntax.html) (Pandoc Markdown)
-
-[2]: [Markdown extensions by bookdown](https://bookdown.org/yihui/bookdown/markdown-extensions-by-bookdown.html)
-
 ]
 
 
@@ -462,8 +474,7 @@ background-position: 93% 5%
 
 這邊之所以會提到 Pandoc Markdown 的原因是因為，  
 R Markdown 所使用的 Markdown 語法其實就是 Pandoc Markdown。  
-那投影片下方的第一個連結是 R Markdown 的 Markdown 語法簡介。  
-第二個連結是，等一下會用到的 bookdown 套件，為 R Markdown 所增加的 Markdown 語法。
+那投影片下方的第一個連結是 R Markdown 的 Markdown 語法簡介。 
 
 ---
 
@@ -1158,10 +1169,9 @@ background-size: contain, 100% 100%, cover
 
 ## 一條崎嶇的道路
 
-.center[.much-larger[
-`.Rmd` ➜ knitr ➜ `.md` ➜ Pandoc ➜ `.tex` ➜
-`\(\color{red}{\LaTeX}\)` ➜ `.pdf`
-]]
+.center[
+![:scale 80%](img/html_v_pdf.png)
+]
 
 - 安裝 `\(\LaTeX\)`
 
@@ -1169,9 +1179,9 @@ background-size: contain, 100% 100%, cover
 
 --
 
-- 2018 之後的人生比較輕鬆
+- 2018 之後的人生比較輕鬆 
 
-&lt;img src='https://d33wubrfki0l68.cloudfront.net/15c2850da53a2f8d8a1a30aa003bda21155e16ec/db869/images/logo-tinytex.png' style='display:inline;float:right;width:10em;padding-right:70px;'&gt;
+&lt;img src='https://d33wubrfki0l68.cloudfront.net/15c2850da53a2f8d8a1a30aa003bda21155e16ec/db869/images/logo-tinytex.png' style='position:absolute;width:14%;left:75%;top:68%'&gt;
 
 ---
 
@@ -1216,7 +1226,7 @@ tinytex::use_tinytex()
 
 - 這種方式比較耗費時間
 
-    - 參考 [Using TinyTeX from a Flash Drive](https://yihui.name/en/2018/08/tinytex-flash-drive) 打包 TinyTeX
+  - 參考 .s[[Using TinyTeX from a Flash Drive](https://yihui.name/en/2018/08/tinytex-flash-drive)] 打包 TinyTeX
 .s[(左欄方式)]
 
 ]
@@ -1513,7 +1523,7 @@ background-position: 85% 75%
 - [blogdown book](https://bookdown.org/yihui/blogdown) ([PDF](https://bookdown.org/yihui/blogdown/blogdown.pdf))
   
 
-- Why start a blog?
+- [Why start a blog?](http://varianceexplained.org/r/start-blog)
 
 --
 
