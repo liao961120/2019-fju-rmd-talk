@@ -33,10 +33,9 @@ background-size: contain, 100% 100%, cover
 
 ## 一條崎嶇的道路
 
-.center[.much-larger[
-`.Rmd` ➜ knitr ➜ `.md` ➜ Pandoc ➜ `.tex` ➜
-$\color{red}{\LaTeX}$ ➜ `.pdf`
-]]
+.center[
+![:scale 80%](img/html_v_pdf.png)
+]
 
 - 安裝 $\LaTeX$
 
@@ -44,9 +43,9 @@ $\color{red}{\LaTeX}$ ➜ `.pdf`
 
 --
 
-- 2018 之後的人生比較輕鬆
+- 2018 之後的人生比較輕鬆 
 
-<img src='https://d33wubrfki0l68.cloudfront.net/15c2850da53a2f8d8a1a30aa003bda21155e16ec/db869/images/logo-tinytex.png' style='display:inline;float:right;width:10em;padding-right:70px;'>
+<img src='https://d33wubrfki0l68.cloudfront.net/15c2850da53a2f8d8a1a30aa003bda21155e16ec/db869/images/logo-tinytex.png' style='position:absolute;width:14%;left:75%;top:68%'>
 
 ---
 
@@ -91,7 +90,7 @@ tinytex::use_tinytex()
 
 - 這種方式比較耗費時間
 
-    - 參考 [Using TinyTeX from a Flash Drive](https://yihui.name/en/2018/08/tinytex-flash-drive) 打包 TinyTeX
+  - 參考 .s[[Using TinyTeX from a Flash Drive](https://yihui.name/en/2018/08/tinytex-flash-drive)] 打包 TinyTeX
 .s[(左欄方式)]
 
 ]

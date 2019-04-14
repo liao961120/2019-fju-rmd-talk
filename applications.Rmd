@@ -186,7 +186,7 @@ background-position: 85% 75%
 - [blogdown book](https://bookdown.org/yihui/blogdown) ([PDF](https://bookdown.org/yihui/blogdown/blogdown.pdf))
   
 
-- Why start a blog?
+- [Why start a blog?](http://varianceexplained.org/r/start-blog)
 
 --
 
