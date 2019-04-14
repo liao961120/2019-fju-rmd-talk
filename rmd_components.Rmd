@@ -565,10 +565,9 @@ Windows 的檔案路徑是用反斜線 (`\`) 表示分隔，但所有非 Windows
 1. 修改 `code_chunk_prac.Rmd` 中的內容，  
 使輸出<sup>\*</sup>結果與[此網頁](https://bit.ly/2FUQPvP)相同
 
-1. 參考答案寫在 `code_chunk_prac_solution.Rmd`
+1. 參考答案寫在 [`code_chunk_prac_solution.Rmd`](https://github.com/liao961120/2019-fju-rmd-talk/blob/master/code_chunk_prac/code_chunk_prac_solution.Rmd)
 
 ]
-
 
 .footnote[
 [\*]: 以 RStudio 開啟 `.Rmd` ➜ 點擊 `r knitr_ico` (`Knit`) or  
@@ -582,6 +581,12 @@ Windows 的檔案路徑是用反斜線 (`\`) 表示分隔，但所有非 Windows
 
 先用另一個檔案練習，看看能不能依照裡面的指示修改 knitr code chunk ，讓輸出後的文件 跟投影片中的網頁長的一模一樣。
 
+(示範 RStudio Knit，同時輸出 **2 種**格式)
+那這裡我先示範如何在 RStudio 裡面輸出 R Markdown
+
+--
+
+<iframe src="https://liao961120.github.io/2019-fju-rmd-talk/code_chunk_prac_solu.html" width="50%" height="37%" style="position:absolute;left:50%;top:0%"></iframe>
 
 ---
 
@@ -613,6 +618,15 @@ csl: apa.csl
     今天是 `r Sys.Date()`
 ]
 
+???
+最後，這裡要告訴大家 YAML Frontmatter 的設定。
+
+YAML 是控制 R Markdown 輸出文件外觀的地方。那 R Markdown 輸出的外觀是由預先寫好的 pandoc 模板所決定，而不同的輸出格式會套用不同的模板。
+
+所以，YAML 裡面的變項會依據所選擇的輸出格式而有些微的不同。當然，多設了模板所沒有提供的變項，並不會導致輸出錯誤，只會被直接忽略。
+
+`--`
+
 --
 
 .pull-right[
@@ -633,9 +647,12 @@ output:
 
 - 可同時設定多個輸出格式  
 ![:scale 75%](img/knit_multiple.gif)
-
-
 ]
+
+???
+那這邊只有一個重點要提醒，就是在設定 YAML 時，有時候會有巢狀結構的出現，例如，投影片右邊的輸出格式。
+
+在撰寫有階層結構的 YAML 時，每個階層之間的縮排間隔要固定。我是建議使用**兩格空白**作為縮排的固定距離。當然你也可以用 1 個 tab 或是 4 格空白。但一定要確定整個 YAML 都是使用同樣縮排，輸出文件時會出錯。
 
 ---
 
@@ -651,3 +668,9 @@ output:
 
 - 輸出 PDF 文件 ([檢視](https://github.com/liao961120/2019-fju-rmd-talk/tree/master/minimal_pdf), [下載](https://liao961120.github.io/2019-fju-rmd-talk/minimal_pdf.zip))
 
+
+???
+YAML 是個有點麻煩的東西，因為它的選項太多了，基本上沒有人會記得。
+
+所以，只要用複製貼上的就好，  
+或是更好的方式，是使用 Rstudio 直接匯入 R Markdown 模板。那這部份我等一下會講到。
