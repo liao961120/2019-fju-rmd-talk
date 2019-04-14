@@ -18,11 +18,11 @@ library(knitr)
 
 請調整 `{r}` 以及 `knitr::kable()` 中的選項，使輸出結果：
 
-1. 顯示原始碼
+1. 隱藏原始碼
 1. 將表格內文字置中
 1. 為表格加上說明文字
 
-```{r echo=TRUE}
+```{r echo=FALSE}
 table_data <- iris[1:5, 1:3]
 kable(x = table_data, align = 'c', caption = 'R 內建資料 iris')
 ```

@@ -48,12 +48,12 @@ class: center
 
 #### R Markdown ➜ HTML ➜ Updog 網頁
 
-1. 下載 [`minimal_html`](https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/liao961120/2019-fju-rmd-talk/tree/master/minimal_html)
+1. 使用剛剛練習的 `code_chunk_prac.Rmd`
 
-1. RStudio:   
-.smaller[`html_article.Rmd` ➜ `html_article.html`]
+1. RStudio 輸出 HTML:   
+.smaller[`code_chunk_prac.Rmd` ➜ `code_chunk_prac.html`]
 
-1. 將 `html_article.html` 上傳至  
+1. 將 `code_chunk_prac.html` 上傳至  
 雲端硬碟: `Updog/<site-name>`
 
 1. 等 30 秒左右，就可以在  
