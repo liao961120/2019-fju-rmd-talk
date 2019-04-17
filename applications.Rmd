@@ -20,112 +20,35 @@ knitr::opts_chunk$set(echo = FALSE)
 library(knitr)
 ```
 
+background-image: url(https://pbs.twimg.com/media/DDzY0_BXcAA1xQw.png)
+background-position: 50% 65%
+background-size: 80%
 
-## Objectives
+## Ecosystem of R Packages
 
 
-- 純概念、不實際操作
+.footnote[.ms[.ms[
+https://twitter.com/drob/status/881818094011854848
+]]]
 
-- 放輕鬆
+???
+pick one ecosystem you love > R friendly enviroment provides scaffolding > growth
+
+I can provide scaffolding here for R Markdown
+
+- R Markdown Ecosystem
 
 - 學習資源
 
---
-
-<img src='img/jump-off.gif' style='display:block;position:absolute;left:25%;top:32%;width:75%'>
-
-
 
 ---
 
-class: inverse, center, middle
+background-image: url(https://imgy.netlify.com/gif/jump-off.gif)
+background-position: center
+background-size: 100%
+background-color: black
+count: false
 
-# Advanced Topic: <br>.s[Bibliographies & Citations]
-
----
-
-## Bibliographies & Citations
-
-.pull-left[
-
-#### .l[Prerequisites]
-
-1. BibTeX: `ref.bib` .ms[(1 entry)]
-
-    <pre><code class='bib hljs nix remark-code'>@article{<span class="remark-code-span-highlighted">leung2008</span>,
-      title = {Multicultural Experience Enhances Creativity},
-      year = {2008},
-      journal = {American Psychologist},
-      author = {Leung, Angela Ka-yee and Maddux, William W.},
-    }
-    </code></pre>
-
-1. 文獻引用格式: `apa.csl`
-
-  .s[下載：[Official CSL Repo](https://github.com/citation-style-language/styles), [Zotero Style Repo](https://www.zotero.org/styles)]
-]
-
-
---
-
-.pull-right[
-
-#### .l[Workflow]
-
-1. **書目管理軟體**整理文獻  
-.s[
-(推薦 [Zotero](https://www.zotero.org) + [Better BibTeX extension](https://retorque.re/zotero-better-bibtex)<sup>＊</sup>)
-]
-
-1. 透過**書目管理軟體**匯出 `.bib` 檔
-
-1. 使用 [Citation Syntax](https://rmarkdown.rstudio.com/authoring_bibliographies_and_citations.html#citation_syntax) 插入引用文獻  
-(or 使用 [`citr` 套件](https://github.com/crsh/citr) 幫助你)
-    
-  <pre><code class='md hljs markdown remark-code'>Leung says blah blah <span class="remark-code-span-highlighted">[-@leung2008]</span>.
-  </code></pre>
-
-.footnote[.s[
-[.s[＊]]: .s[(就我所知)] Zotero 是目前唯二[可控制 `.bib` 檔之 citekey pattern](https://retorque.re/zotero-better-bibtex/citation-keys) 的免費書目管理軟體。
-
-[Zotero + R Markdown Tutorial](https://ikashnitsky.github.io/2019/zotero)
-]]
-
-]
-
----
-
-## Bibliographies & Citations .ms[(Cont.)]
-
-### Two Systems .ms[(again)]
-
-.pull-left[
-
-- [Pandoc citeproc](https://github.com/jgm/pandoc-citeproc)
-    - Support: HTML & PDF (LaTeX)
-    
-    - YAML Frontmatter
-    
-    ```yml
-    *bibliography: ref.bib
-    *csl: apa.csl
-    output: bookdown::html_document2
-    ```
-]
-
-.pull-right[
-- $\LaTeX$ citation package (`biblatex` or `natbib`)
-    - Support: PDF (LaTeX) only
-    
-    - YAML Frontmatter  
-    
-    ```yml
-    *bibliography: ref.bib
-    output:
-      bookdown::pdf_document2:
-    *   citation_package: natbib
-    ```
-]
 
 ---
 
@@ -135,11 +58,10 @@ class: inverse, center, middle
 
 ---
 
-class: center
+class: center,middle
 
-<br><br>
 
-![:scale 100%](img/rmd_eco.png)
+![:scale 100%](img/rmd_eco.svg)
 
 ---
 

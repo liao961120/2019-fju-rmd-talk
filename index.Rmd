@@ -121,19 +121,21 @@ class: center
 
 ---
 
+```{r child = 'citation.Rmd'}
+```
+
+---
+
 class: center, middle, inverse
 background-color: black
 
 # Part Ⅱ
-# .l[Applications <br>.s[.ms[(Advanced Topics)]]]
+# .l[Applications]
 
 ---
 
-
-
 ```{r child='applications.Rmd'}
 ```
-
 
 <!-- Ending -->
 
