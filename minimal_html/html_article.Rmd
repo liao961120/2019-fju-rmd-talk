@@ -77,9 +77,6 @@ knitr::kable(iris[1:5, 1:3], caption = '(ref:iris-table-caption)')
 
 # 參考資料 {-}
 
-- https://bookdown.org/yihui/bookdown/markdown-extensions-by-bookdown.html
-
-- https://bookdown.org/yihui/bookdown/cross-references.html
 
 
 [^reference]: 此外，`bookdown` 還提供了[數學公式與定理的引用](https://bookdown.org/yihui/bookdown/markdown-extensions-by-bookdown.html#equations)。

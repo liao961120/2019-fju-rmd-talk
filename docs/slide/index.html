@@ -1112,7 +1112,7 @@ Windows 的檔案路徑是用反斜線 (`\`) 表示分隔，但所有非 Windows
 
 ```yml
 title: 'A title'
-date: '`r Sys.Date()`'  # ➛ '2019-04-14'
+date: '`r Sys.Date()`'  # ➛ '2019-04-17'
 author: 'Somebody'
 bibliography: ref.bib
 csl: apa.csl
@@ -1125,7 +1125,7 @@ csl: apa.csl
 
 - 可用**動態變項** (inline R Code) 作為輸入
     - 今天是 &amp;#96;&lt;code&gt;r Sys.Date()&lt;/code&gt;&amp;#96;  
-    今天是 2019-04-14
+    今天是 2019-04-17
 ]
 
 ???
@@ -1363,8 +1363,8 @@ background-size: contain, 100% 100%, cover
 #### **Windows 7/8/10**
 
 1. 下載並解壓縮 TinyTeX:  
-.s[[TinyTeX-win10.7z](http://bit.ly/TinyTeX-win10-7z) (72 MB) 或   
-[TinyTeX-win10.zip](http://bit.ly/TinyTeX-win10-zip) (108 MB)]
+.s[[TinyTeX-win10.7z](https://www.space.ntu.edu.tw/navigate/s/58982B896253450A8BC2D87B26174229QQY) (72 MB) 或   
+[TinyTeX-win10.zip](https://www.space.ntu.edu.tw/navigate/s/C8CCDD374E474DAC8DB8782B0A1B264CQQY) (108 MB)]
 
 2. 
 ```r
@@ -1802,7 +1802,7 @@ background-size: cover
 .s[
 ### .s[Questions]
 
-- File an issue at [![:scale 1em](img/GitHub-Mark.png) liao961120/2019-fju-rmd-talk](https://github.com/liao961120/2019-fju-rmd-talk/issues) (Preferred)
+- File an issue at [![:scale 1em](img/GitHub-Mark.png) liao961120/2019-fju-rmd-talk](https://github.com/liao961120/2019-fju-rmd-talk/blob/master/README.md) (Preferred)
 
 - Email
 
@@ -1817,7 +1817,10 @@ background-size: cover
 "highlightStyle": "github",
 "highlightSpans": false,
 "highlightLines": true,
-"countIncrementalSlides": false
+"countIncrementalSlides": false,
+"navigation": {
+"scroll": false
+}
 });
 if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
   window.dispatchEvent(new Event('resize'));
