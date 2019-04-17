@@ -78,8 +78,8 @@ background-size: contain, 100% 100%, cover
 #### **Windows 7/8/10**
 
 1. 下載並解壓縮 TinyTeX:  
-.s[[TinyTeX-win10.7z](http://bit.ly/TinyTeX-win10-7z) (72 MB) 或   
-[TinyTeX-win10.zip](http://bit.ly/TinyTeX-win10-zip) (108 MB)]
+.s[[TinyTeX-win10.7z](https://www.space.ntu.edu.tw/navigate/s/58982B896253450A8BC2D87B26174229QQY) (72 MB) 或   
+[TinyTeX-win10.zip](https://www.space.ntu.edu.tw/navigate/s/C8CCDD374E474DAC8DB8782B0A1B264CQQY) (108 MB)]
 
 2. 
 ```r
