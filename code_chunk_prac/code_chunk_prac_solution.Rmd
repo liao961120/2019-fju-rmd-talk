@@ -7,7 +7,6 @@ output:
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
-library(ggplot2)
 library(knitr)
 ```
 
@@ -40,10 +39,7 @@ kable(x = table_data, align = 'c', caption = 'R 內建資料 iris')
 1. 為圖片加上說明文字 (figure caption)
 
 ```{r echo=TRUE, out.width='50%', fig.cap='ggplot2 與 iris 數據'}
-ggplot(data = iris) +
-  geom_point(aes(x = Sepal.Length,
-                 y = Petal.Width,
-                 color = Species))
+plot(iris$Sepal.Length, iris$Petal.Width)
 ```
 
 
@@ -98,11 +94,8 @@ knitr::opts_chunk$set(echo = TRUE)
 1. 並列顯示兩張圖片
 
 ```{r fig.show='hold', out.width=c('48%', '48%')}
-plot1 <- ggplot(data = iris) +
-  geom_point(aes(Sepal.Length, Petal.Width, color = Species))
-
-plot2 <- ggplot(data = iris) +
-  geom_point(aes(Sepal.Length, Sepal.Width, color = Species))
+plot1 <- plot(iris$Sepal.Length, iris$Petal.Width)
+plot2 <- plot(iris$Sepal.Length, iris$Sepal.Width)
 
 plot1
 plot2

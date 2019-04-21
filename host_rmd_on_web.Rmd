@@ -62,7 +62,7 @@ class: center
 雲端硬碟的 `Updog/<site-name>`
 
 1. 等 30 秒左右，就可以在  
-.smaller[[https://`<site-name>`.updog.co/html_article.html]()]  
+.s[[https://`<site-name>`.updog.co/code_chunk_prac.html]()]  
 看到輸出的 HTML 了
 
 ???

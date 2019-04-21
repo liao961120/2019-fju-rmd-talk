@@ -32,6 +32,10 @@ class: inverse, center, middle
 ???
 介紹完 Markdown 之後，接著就要正式進入 R Markdown 的介紹了。
 
+前面介紹的是 Markdown 在歷史上發展的脈絡。那 R Markdown 它其實自己也有另一個發展的脈絡。
+
+大家都知道 R 是一個為了統計計算而生的程式語言，所以 R Markdown 也是在這個脈絡裡發展出來的。事實上，R Markdown 之所以會誕生，是因為有個統計學的博士生，他為了減輕自己寫統計學作業的負擔而創造了一個 R 套件。而這個套件就是 R Markdown 誕生的關鍵。
+
 ---
 
 ## What is R Markdown?
@@ -47,7 +51,9 @@ R Markdown = knit**.r[r]**  +  Pandoc **.r[Markdown]**
 
 ???
 R Markdown 顧名思義就是 R 加上 Markdown。  
-更精確的說，這邊 R 指的是 knitr 這個套件。knitr 這個套件讓「可以被執行的 R 語言」能夠直接嵌入在 Markdown 文件當中，讓每次輸出文件時，R 語言執行的結果，像是圖表或數值，能自動的被插入文件中。
+更精確的說，這邊 R 指的是 knitr 這個套件。knitr 這個套件讓「可以被執行的 R 語言」能夠直接嵌入在 Markdown 文件當中。
+
+這讓每次在輸出 R Markdown 的時候，R 語言執行的結果，像是圖表或數值，能自動的被插入生成的文件中。
 
 --
 
@@ -226,7 +232,7 @@ rmd_code_chunk2 <- toprint(rmd_code_chunk2)
   `r md_code_chunk`
 
 ???
-**第一種**就是剛剛提到的 Markdown code chunk。這種 code chunk 就是 Markdown 語法的一部分，它本身並不會執行，多半是用來 highlight 文件當中的程式碼語法
+**第一種**就是前面在介紹 Markdown 時，提到的 Markdown code chunk。這種 code chunk 就是 Markdown 語法的一部分，它本身並不會執行，多半是用來 highlight 文件當中的程式碼語法
 
 --
 
@@ -362,7 +368,7 @@ rmd_code_chunk <- toprint(rmd_code_chunk)
 
 第一個例子是用 knitr code chunk 在 R Markdown 裡面直接繪製統計圖。那這邊的 data 是使用 R 內建的 iris data 為例。實務上，你們會需要先在前面進行資料的前處理。
 
-那我希望輸出的文件當中
+那在這個例子當中，我希望能夠輸出統計圖，並且在輸出的文件裡...
 
 1. 不要顯示繪製這張圖的 R 程式碼，  
 所以我就用了 `echo=FALSE` 這個選項。
@@ -462,7 +468,7 @@ rmd_code_chunk <- toprint(rmd_code_chunk)
 ]
 
 ???
-最後一個例子，有時候你需要使用外部，而不是 R 生成的圖片。
+最後一個例子，有時候你需要使用外部的圖片，而不是 R 自動生成的圖片。
 
 那剛剛在練習 Markdown 時，比較仔細的人可能會發現可以直接使用 Markdown 語法插入圖片。  
 但我這邊要介紹的是 knitr 的 `include_graphics()` 這個函數，原因是 Markdown 插入圖片的語法功能比較受限，譬如說，你不容易去控制圖片的大小和說明文字。
@@ -498,30 +504,25 @@ knitr::include_graphics('img/world_night.jpg')
 
 .right-column[
 
-#### .larger[相對路徑 vs. 絕對路徑]
+.ll[**相對路徑 vs. 絕對路徑**]
 
 - Current Working Directory：**`.Rmd` 所在的資料夾**
 
 - **盡量使用相對路徑**：外部檔案路徑都是.r[**相對 `.Rmd` 而言**]
 
     ```yml
-    投影片/    # slide.Rmd 所在之資料夾
+    my-folder/    # slide.Rmd 所在之資料夾
     │
     ├── doc.Rmd
     *├── cover.jpg
     └── img/
     *    └── foo.jpg
     ```
-
-```r
-include_graphics('cover.jpg')              # Good
-include_graphics('img/foo.jpg')            # Good
-
-# Bad Practices !!!
-include_graphics('img\\fig.jpg')           # Works only on Windows
-include_graphics('C:/.../img/foo.jpg')     # Works only on YOUR Windows
-include_graphics('C:\\...\\img\\foo.jpg')  # Works only on YOUR Windows
-```
+    
+    ```r
+    include_graphics('cover.jpg')              # Good
+    include_graphics('img/foo.jpg')            # Good
+    ```
 ]
 
 ???
@@ -533,16 +534,29 @@ include_graphics('C:\\...\\img\\foo.jpg')  # Works only on YOUR Windows
 那因為時間上的關係，我這邊沒辦法很詳細的解釋絕對路徑和相對路徑的概念。所以我就用一個比較具體的例子說明如何使用相對路徑。
 
 
-這邊這個是 `投影片` 這個資料夾的內部結構。這個資料夾裡面有 1 個 `Rmd 檔` (doc.Rmd)、1 個 `jpg 檔` (cover.jpg) 和一個資料夾 `img`。而 `img` 這個資料夾裡面還有另一個 `jpg 檔` (foo.jpg)。
+那大家可以看到投影片裡面，這個「檔案結構」的樹狀圖。這個例子是用一個叫做 `my-folder` 的資料夾。這個資料夾裡面有 1 個 `Rmd 檔` (doc.Rmd)、1 個 `jpg 檔` (cover.jpg) 和一個資料夾 `img`。而 `img` 這個資料夾裡面還有另一個 `jpg 檔` (foo.jpg)。
 
 那今天，如果我想在 `doc.Rmd` 裡面插入 `cover.jpg` 和 `img` 資料夾中的 `foo.jpg` 這張圖片。那與 `doc.Rmd` 在同一層結構的 `cover.jpg`，它的相對路徑就是它的檔名，也就是 `cover.jpg`。`img` 資料夾裡的 `foo.jpg`，它相對於 `doc.Rmd` 的路徑就是 `img/foo.jpg`。
 
+`--`
 
-至於最下方 3 個例子是「不好的例子」，原因是因為世界上只有 Windows 的作業系統是使用反斜線作為檔案路徑的分隔。而在 R 語言裡面，檔案路徑是使用正斜線作為分隔。雖然在 Windows 的電腦裡面使用 R 的時候，仍然可以用兩條反斜線來代表檔案路徑的分隔，但是這在非 windows 的電腦就無法運作了。
+--
 
-而使用絕對路徑的缺點，是當你把檔案傳給別人的時候，因為其它人的電腦 檔案位置一定和你的不一樣，所以電腦無法依據絕對路徑找到檔案。
+.right-column[.ms[
+```r
+# Bad Practices !!!
+include_graphics('img\\fig.jpg')           # Works only on Windows
+include_graphics('C:/.../img/foo.jpg')     # Works only on YOUR Windows
+include_graphics('C:\\...\\img\\foo.jpg')  # Works only on YOUR Windows
+```
+]]
 
-Windows 的檔案路徑是用反斜線 (`\`) 表示分隔，但所有非 Windows 的電腦是用正斜線表示。在 R 當中使用正協線表示路徑能在所有作業系統下運行。
+???
+至於最下方的程式碼，是「不好的檔案路徑使用例子」。
+
+簡單來說，不要在檔案路徑裡面使用 反斜線，因為這只對 Windows 的電腦有用。
+
+也不要使用絕對路徑，因為其它人的電腦，檔案結構一定和你的不一樣。所以如過你使用絕對路徑，其它人的電腦就一定會找不到檔案。
 
 ---
 
