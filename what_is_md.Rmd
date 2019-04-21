@@ -29,7 +29,7 @@ class: inverse, center, middle
 
 基本上，R Markdown 就是一套寫作的工具，你可以用它來寫筆記、寫書、寫論文，甚至，像剛剛提到的，你可以用 R Markdown 製作網頁。事實上，現在大家看到的投影片，也是用 R Markdown 做出來的。當然，這些比較 fancy 的 R Markdown 功能不是今天的重點，今天的重點是最基礎的 R Markdown。
 
-那在了解 R Markdown 是什麼之前，我們需要先知道 Markdown 是什麼。所以我就先從一點點，關於「人類寫作工具」的歷史開始。
+那在了解 R Markdown 是什麼之前，我們需要先知道 Markdown 是什麼。所以我就先從一點點，Markdown 發展的脈絡以及，「人類寫作工具」的歷史開始。
 
 ---
 
@@ -86,7 +86,7 @@ class: inverse, center, middle
 
 
 ???
-除了承載作品的媒介，這世界上也存在兩種排版文字的方式。其中一種是以圖形化界面為基礎的排版系統，像是 Word；
+除了承載文字的媒介，這世界上也存在兩種排版文字的方式。其中一種是以圖形化界面為基礎的排版系統，像是 Word；
 
 另一種是以純文字檔案為基礎的標記式語言排版系統，像是 HTML 或是 LaTeX。那大家可能對標記式語言是什麼不太清楚。簡單來說，標記式語言是一套用來告訴電腦說，「你要如何顯示這串文字的語法」。
 
@@ -249,6 +249,11 @@ Copy Markdown example [here](https://raw.githubusercontent.com/liao961120/2019-f
 ---
 
 .center[![:scale 80%](img/md_prac.png)]
+
+
+.footnote[.s[
+[Markdown Practice](https://github.com/liao961120/2019-fju-rmd-talk/blob/master/md_prac.txt)
+]]
 
 ???
 那大家在手動玩過 Markdown 之後，這邊有個挑戰要給大家。
