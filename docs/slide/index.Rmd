@@ -46,8 +46,10 @@ April 22, 2019
 ]
 
 ???
-我今天要介紹的是 R Markdown。相信大家都對這個東西很陌生，不知道它是什麼東西。所以我就先從我自己的經驗以及我對於 R Markdown 的看法出發。
+(提醒大家**投影片連結**)
 
+
+我今天要介紹的是 R Markdown。相信大家都對這個東西很陌生，不知道它是什麼東西。所以我就先從我自己的經驗以及我對於 R Markdown 的看法出發。
 
 ---
 
@@ -125,14 +127,6 @@ class: center
 
 ---
 
-class: center, middle, inverse
-background-color: black
-
-# Part Ⅱ
-# .l[Applications]
-
----
-
 ```{r child='applications.Rmd'}
 ```
 
@@ -180,12 +174,11 @@ background-size: cover
 
 
 .footnote[
-.s[
 ### .s[Questions]
 
 - File an issue at [![:scale 1em](img/GitHub-Mark.png) liao961120/2019-fju-rmd-talk](https://github.com/liao961120/2019-fju-rmd-talk/blob/master/README.md) (Preferred)
 
 - Email
 
-]]
+]
 

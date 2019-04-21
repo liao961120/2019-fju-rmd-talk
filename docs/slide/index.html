@@ -38,8 +38,10 @@ April 22, 2019
 ]
 
 ???
-我今天要介紹的是 R Markdown。相信大家都對這個東西很陌生，不知道它是什麼東西。所以我就先從我自己的經驗以及我對於 R Markdown 的看法出發。
+(提醒大家**投影片連結**)
 
+
+我今天要介紹的是 R Markdown。相信大家都對這個東西很陌生，不知道它是什麼東西。所以我就先從我自己的經驗以及我對於 R Markdown 的看法出發。
 
 ---
 
@@ -132,7 +134,11 @@ class: inverse, center, middle
 # What is Markdown?
 
 ???
-所以 R Markdown 是什麼？基本上，R Markdown 就是一套寫作的工具。那在了解 R Markdown 是什麼之前，我們需要先知道 Markdown 是什麼。所以我就先從一點點，關於「人類寫作工具」的歷史開始。
+所以 R Markdown 是什麼？
+
+基本上，R Markdown 就是一套寫作的工具，你可以用它來寫筆記、寫書、寫論文，甚至，像剛剛提到的，你可以用 R Markdown 製作網頁。事實上，現在大家看到的投影片，也是用 R Markdown 做出來的。當然，這些比較 fancy 的 R Markdown 功能不是今天的重點，今天的重點是最基礎的 R Markdown。
+
+那在了解 R Markdown 是什麼之前，我們需要先知道 Markdown 是什麼。所以我就先從一點點，關於「人類寫作工具」的歷史開始。
 
 ---
 
@@ -1108,8 +1114,8 @@ include_graphics('C:\\...\\img\\foo.jpg')  # Works only on YOUR Windows
 
 先用另一個檔案練習，看看能不能依照裡面的指示修改 knitr code chunk ，讓輸出後的文件 跟投影片中的網頁長的一模一樣。
 
-(示範 RStudio Knit，同時輸出 **2 種**格式)
-那這裡我先示範如何在 RStudio 裡面輸出 R Markdown
+(示範 RStudio Knit)  
+前面還沒講過如何在 RStudio 裡面將 R Markdown 輸出。我這邊先示範一下。
 
 --
 
@@ -1296,9 +1302,10 @@ Updog 就是一個提供靜態網頁伺服器的服務。它讓使用者能把�
 
 我這邊要推薦 GitHub 這套服務。那有個笑話是說，GitHub 是號稱全世界最大的男性社交網站，因為上面的使用者很大比例都是從事軟體開發相關工作的男性。
 
+**所以 GitHub 到底是什麼呢？**  
 其實 GitHub 是一個提供軟體開發時，程式碼版本控制的服務。那版本控制是什麼？這一時說不清楚，但你們可以把它想像成一種非常可靠的備份程式碼的方式。
 
-那除了備份程式碼，GitHub 也提供了軟體開發過程中 會用到的其它服務，包含網頁的架設。簡單來說，GitHub 就是一個減輕軟體開發負擔的綜合服務。
+那除了備份程式碼，GitHub 也提供了軟體開發過程中 會用到的其它服務，**包含網站的架設**。簡單來說，GitHub 就是一個減輕軟體開發負擔的綜合服務。
 
 
 那因為 GitHub 的服務是免費的，而且它也沒規定你一定要把它用在軟體開發。  
@@ -1352,6 +1359,7 @@ background-size: contain, 100% 100%, cover
 
 前面有講到，LaTeX 是一個標記式語言。同時它也是一個用來將這種標記式語言生成 PDF 的工具。LaTeX 非常的複雜，而且它的要求非常嚴苛，所以在生成 PDF 的過程中常常會噴錯。
 
+`--`
 
 --
 
@@ -1365,9 +1373,9 @@ background-size: contain, 100% 100%, cover
 ???
 再加上我們比較衰，我們寫的是中文不是英文。而中文字因為有編碼的問題，在用 R Markdown 輸出 PDF 之前，需要一些額外的步驟。
 
-不過好事情是，去年有一個 R 套件叫做 `tinytex`，讓 LaTeX 使用起來容易許多。
+不過好事情是，去年有一個 R 套件叫做 `tinytex`，它的出現讓我們在 R Markdown 裡面輸出 PDF 變得容易很多。
 
-那接下來，我就帶大家一起走過這條崎嶇的道路。
+那接下來，我們就一起走過這條崎嶇的道路。
 
 ---
 
@@ -1429,7 +1437,7 @@ tinytex::use_tinytex()
 
 ### Mac
 
-那左邊那種方式非常簡單，只要把那兩行指令複製貼上到你的 Rstudio 裡面就好。那過程中應該會跳出一些警告的視窗，那這些視窗並不會影響安裝，只要按確定就好。
+那右邊這種方式非常簡單，只要把那兩行指令複製貼上到你的 Rstudio 裡面就好。那過程中應該會跳出一些警告的視窗，那這些視窗並不會影響安裝，只要按確定就好。
 
 
 ### Windows 7/8/10
@@ -1467,7 +1475,7 @@ output:
 
 首先，在 R Markdown 的 YAML frontmatter 中，我們一定要加上黃色螢光標記的這 3 行，否則一定會出錯。
 
-那大家可以看到最下方有個 `header.tex` 的檔案，這個檔案就是設定額外設定 LaTeX 中文相關選項的地方。
+那大家可以看到最後一行有個 `header.tex` 的檔案，這個檔案就是額外設定 LaTeX 中文相關選項的地方。
 
 `--`
 
@@ -1543,9 +1551,10 @@ rmdtk::download_fonts()
 ???
 那事實上，RStudio 提供了一個方常方便的功能。你可以透過 Rstudio 匯入 R Markdown 的模板。那這些模板是由 R 套件所提供的。
 
-那為了減輕大家還有我自己 設定 PDF 的麻煩，我自己快速寫了一個 R Markdown 模板。這個模板幫使用者預先設定好了一些選項，也幫使用者解決 LaTeX 常會遇到的字體問題。所以基本上，你只要下載下來之後，就可以直接將這個 R Markdown 輸出成 PDF。
+為了減少我自己以及大家在設定時的麻煩，我快速寫了一個 R Markdown 模板。這個模板幫使用者預先設定好了一些選項，也幫使用者解決 LaTeX 常會遇到的字體問題。所以基本上，你只要下載這個模板之後，就可以直接將 R Markdown 輸出成 PDF，而不用擔心額外的設定。
 
 
+(記得提醒：能同時輸出 **2 種**格式)  
 那我這邊示範一次給大家看看
 
 ---
@@ -1587,6 +1596,21 @@ class: inverse, center, middle
 
 ---
 
+background-image: url(https://imgy.netlify.com/bg/road-straight.jpg)
+background-position: center
+background-size: cover
+class: center, ml, inverse, bottom
+
+自行閱讀: [Zotero + R Markdown Tutorial](https://ikashnitsky.github.io/2019/zotero)
+
+
+???
+關於如何在 R Markdown 插入文獻引用，因為設定和使用上比較複雜，也不見得每個人都有使用需求，所以這部份我今天不講。
+
+如果你有使用上的需求，我建議你可以閱讀這張投影片連結裡的文章。那閱讀完這篇文章之後，下面兩張投影片你就能看懂了。
+
+---
+
 ## Bibliographies &amp; Citations
 
 .pull-left[
@@ -1609,8 +1633,6 @@ class: inverse, center, middle
 ]
 
 
---
-
 .pull-right[
 
 #### .l[Workflow]
@@ -1630,8 +1652,6 @@ class: inverse, center, middle
 
 .footnote[.s[
 [.s[＊]]: .s[(就我所知)] Zotero 是目前唯二[可控制 `.bib` 檔之 citekey pattern](https://retorque.re/zotero-better-bibtex/citation-keys) 的免費書目管理軟體。
-
-[Zotero + R Markdown Tutorial](https://ikashnitsky.github.io/2019/zotero)
 ]]
 
 ]
@@ -1640,37 +1660,47 @@ class: inverse, center, middle
 
 ## Bibliographies &amp; Citations .ms[(Cont.)]
 
-### Two Systems .ms[(again)]
+### Two Systems
 
 .pull-left[
 
-- [Pandoc citeproc](https://github.com/jgm/pandoc-citeproc)
-    - Support: HTML &amp; PDF (LaTeX)
-    
-    - YAML Frontmatter
-    
-    ```yml
-    *bibliography: ref.bib
-    *csl: apa.csl
-    output: bookdown::html_document2
-    ```
+.l[**[Pandoc citeproc](https://github.com/jgm/pandoc-citeproc)**]
+
+- Support: HTML &amp; PDF (LaTeX)
+
+- YAML Frontmatter
+
+```yml
+*bibliography: ref.bib
+*csl: apa.csl
+output: bookdown::html_document2
+```
 ]
 
 .pull-right[
-- `\(\LaTeX\)` citation package (`biblatex` or `natbib`)
-    - Support: PDF (LaTeX) only
-    
-    - YAML Frontmatter  
-    
-    ```yml
-    *bibliography: ref.bib
-    output:
-      bookdown::pdf_document2:
-    *   citation_package: natbib
-    ```
+
+.l[**LaTeX Citation Package**]  
+(`biblatex` or `natbib`)
+
+- Support: PDF (LaTeX) only
+
+- YAML Frontmatter  
+
+```yml
+*bibliography: ref.bib
+output:
+  bookdown::pdf_document2:
+*   citation_package: natbib
+```
+
 ]
 
 ---
+
+
+
+
+
 
 class: center, middle, inverse
 background-color: black
@@ -1678,11 +1708,14 @@ background-color: black
 # Part Ⅱ
 # .l[Applications]
 
+
+???
+接下來要進入今天的尾聲了。
+
+這部份不會有實際的操作，大家就輕鬆的聽聽就好。  
+它的目的只是提供一些學習資源，讓想要更深入學習 R Markdown 的人，知道要從哪裡開始。
+
 ---
-
-
-
-
 
 background-image: url(https://pbs.twimg.com/media/DDzY0_BXcAA1xQw.png)
 background-position: 50% 65%
@@ -1696,14 +1729,16 @@ https://twitter.com/drob/status/881818094011854848
 ]]]
 
 ???
-pick one ecosystem you love &gt; R friendly enviroment provides scaffolding &gt; growth
+這張圖是 R 套件所組成的一個網絡圖。那從這張圖，你大概可以看出來 R 套件形成了一個個的子領域，
 
-I can provide scaffolding here for R Markdown
+譬如說最中間、最大的那個就是「資料前處理」的相關套件，在「資料前處理」的正下方，是以 ggplot2 為主而形成的「資料視覺化」的相關套件。
 
-- R Markdown Ecosystem
+那大家可以看到這邊還有非常多的子領域，而每個人有興趣的領域可能會不一樣。像我自己就很喜歡 R Markdown，所以我就一直在這領域裡面打滾、把 R Markdown 相關的套件都玩的很熟。這在不知不覺中，大幅的提昇了我 R 語言的功力。
 
-- 學習資源
+我這邊想要鼓勵大家去探索 R 套件的生態圈。  
+在這個過程中你可能會發現一個你很感興趣的套件。那這個套件就會是你的好夥伴，它會讓你在學習 R 語言上變得非常有動力。那隨著你越來越熟悉這個套件，你也會開始認識到周圍的、其它相關的套件。這些套件或許會更有趣，那你可能就會更進一步的去探索這些套件。
 
+這個反覆的過程能夠讓你很快樂的學習 R 語言，同時也會讓你 R 語言的功力快速成長。
 
 ---
 
@@ -1713,6 +1748,36 @@ background-size: 100%
 background-color: black
 count: false
 
+???
+那在探索未知的套件的時候，你常常會需要接觸完全陌生的東西。這看起來還蠻困難的，有時候你甚至會不敢去嘗試。但是常常在你真的踏出第第一步去嘗試看看之後，你會發現其實沒有像想像中的那麼困難。
+
+但有時候，我們就是需要一個開頭、一個引子，好讓我們知道要如何跨出第一步。那我這邊，就提供一些，我覺得相當不錯的學習資源給大家參考。
+
+
+---
+
+## bookdown.org .ms[.ms[(https://bookdown.org)]]
+
+
+### R Basics
+
+- [Hands-On Programming with R](https://rstudio-education.github.io/hopr)
+
+- [R for Data Science](https://r4ds.had.co.nz)
+
+### Special Domain
+
+- [Text Mining with R](https://www.tidytextmining.com)
+
+- [Geocomputation with R](https://geocompr.robinlovelace.net/)
+
+&lt;iframe src='https://bookdown.org/' style='position:absolute;left:38%;top:20%;width:63%;height:450px'&gt;&lt;/iframe&gt;
+
+
+???
+bookdown 是一個 R Markdown 生態圈裡的套件，它讓 R Markdown 可以用來寫書。bookdown.org 是一個收錄這些使用 bookdown 套件撰寫的書籍。那你可以在這裡看到很多介紹 R 語言裡面，某個領域的書籍，這當中有不少相當不錯的書。
+
+我這邊列出的四本是我看過，而且我覺得寫得相當好的書。那前面兩本是關於 R 語言本身的介紹。後面兩本就是特殊的領域，像這邊是文字探勘還有地理資訊的領域。
 
 ---
 
@@ -1720,12 +1785,26 @@ class: inverse, center, middle
 
 # R Markdown Ecosystem
 
+???
+剛剛是比較 general 的 R 套件生態圈的學習資源。那如果你的興趣和我一樣都是 R Markdown 的話，我這裡可以提供一些關於 R Markdown 的建議。
+
 ---
 
 class: center,middle
 
 
 ![:scale 100%](img/rmd_eco.svg)
+
+???
+前面講過，R Markdown 能夠輸出成很多種格式。那依據不同的目的，你會需要使用不同的套件。
+
+1. 如果使用 R Markdown 的目的就和今天介紹的主軸一樣，也就是，你希望用 R Markdown 寫筆記、寫文件或是寫作業這類比較「傳統」的文書處理，那你應該探索的是 bookdown 這個套件。
+
+2. 如果你對網頁比較有興趣，而且想架設一個個人網站，那你可以從 blogdown 這個套件開始探索。
+
+3. 最後，是 R Markdown Websites。這個不是一個套件，它是 rmarkdown 所提供的一種輸出格式。那它跟 blogdown 不同的地方在於， R Markdown Websites 適合做的是比較簡單的網站，像是只有一個頁面的那種網站。所以，譬如說，你可以用 R Markdown Websites 來呈現資料視覺化專案的成果。
+
+之後的幾張投影片就是這些 R Markdown 相關套件的學習資源。那大家可以依據自己的興趣和需求，去更深入的了解這些套件。
 
 ---
 
@@ -1736,8 +1815,6 @@ background-position: 85% 40%
 ## 書籍撰寫 (bookdown)
 
 - [bookdown book](https://bookdown.org/yihui/bookdown) ([PDF](https://bookdown.org/yihui/bookdown/bookdown.pdf)): 學習 R Markdown 的好資源
-
---
 
 - 同時輸出 [GitBook](https://www.gitbook.com) 與 PDF Book
     - 可以拿來[寫論文](https://github.com/liao961120/ntuthesis)
@@ -1774,11 +1851,9 @@ background-position: 85% 75%
 
 - [Why start a blog?](http://varianceexplained.org/r/start-blog)
 
---
-
 - 架站太難？
 
-  .s[不會架站，也能[體驗用 R Markdown 寫部落格](https://collabin.netlify.com/info/about)]
+  .s[不會架站？先[體驗用 R Markdown 寫部落格](https://collabin.netlify.com/info/about)]
 
 ???
 Why Start a blog?
@@ -1829,14 +1904,13 @@ background-size: cover
 
 
 .footnote[
-.s[
 ### .s[Questions]
 
 - File an issue at [![:scale 1em](img/GitHub-Mark.png) liao961120/2019-fju-rmd-talk](https://github.com/liao961120/2019-fju-rmd-talk/blob/master/README.md) (Preferred)
 
 - Email
 
-]]
+]
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
