@@ -81,9 +81,8 @@ include_graphics('img/rmd_flow.png')
 
 
 ???
-
 1. 第一，大家在今天結束前能夠透過 R Markdown 輸出網頁，並透過網址分享給別人。
-1. 第二，大家有能力以 R Markdown 取代 Word 撰寫紙本作業或報告，並且輸出成 PDF 檔。
+1. 第二，大家有能力以 R Markdown 取代 Word。換句話說，你可以將 R Markdown 輸出成 PDF 檔，用來繳交學校作業或報告。
 
 ---
 

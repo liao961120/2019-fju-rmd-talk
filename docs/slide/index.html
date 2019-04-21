@@ -63,7 +63,7 @@ April 22, 2019
 
 `--`
 
---
+---
 
 &lt;img src="img/creativity.png" width="90%" style="display: block; margin: auto 0 auto auto;" /&gt;
 
@@ -73,11 +73,12 @@ April 22, 2019
 
 就舉一個比較貼近學生生活的例子，像是學校的的期末報告。  在我們完成的期末報告當中，有多少是在學期末 報告當天之後，就塵封在電腦裡或是雲端硬碟的某處，再也沒人看過？  
 
-因為我們長久下來的習慣是用紙本報告以及 Powerpoint 的方式呈現成果，報告所能觸及的就是報告當天在場的那群人。所以基本上，有時我們在做期末報告時，會敷衍了事是很正常的，畢竟我們為什麼要花這麼多力氣在一個馬上就會被世界所遺忘的事情上呢？
+因為我們長久下來的習慣是用 PDF 和 Powerpoint 的方式呈現期末報告成果，報告所能觸及的就是報告當天在場的那群人。所以基本上，有時我們在做期末報告會敷衍了事是很正常的，畢竟我們為什麼要花這麼多力氣在一個馬上就會被世界所遺忘的事情上呢？
 
-但如果我們能夠使用網頁去呈現我們的報告成果，那我們能觸及的就不只是報告當天的那群人，而是全世界。我們做的報告也會在報告當天結束後，繼續「活在網路上」。你不會確定有誰會去看它，但你很可能會意外的啟發或影響了看了你的報告的人。
+但是..想想看  
+今天如果我們能夠使用 「**網頁**」 去呈現我們的報告成果，那我們能觸及的就不只是報告當天的那群人，而是全世界。我們做的報告也會在報告當天結束後，繼續「活在網路上」。你不會確定有誰會去看它，但你很可能會意外的啟發或影響了看了你的報告的人。
 
-我覺得這就是，推動我去創造的動力來源。而這個動力之所以能這麼順暢地推動我，是因為我能夠隨心所欲的使用工具來幫助自己達成目標 -- 也就是能透過自己架設的網頁，將想法分享給他人。
+我覺得這就是，推動我去創造的動力來源。而這個動力之所以能這麼順暢地推動我，是因為我能夠隨心所欲的使用工具來幫助自己達成目標 -- 也就是能透過自己架設的網頁，將想法分享其他人。
 
 我今天要介紹的，就是這個幫助我輕鬆地在網頁上呈現自己的創作和想法的工具。這個工具就是 R Markdown。
 
@@ -116,9 +117,8 @@ background-color: black
 
 
 ???
-
 1. 第一，大家在今天結束前能夠透過 R Markdown 輸出網頁，並透過網址分享給別人。
-1. 第二，大家有能力以 R Markdown 取代 Word 撰寫紙本作業或報告，並且輸出成 PDF 檔。
+1. 第二，大家有能力以 R Markdown 取代 Word。換句話說，你可以將 R Markdown 輸出成 PDF 檔，用來繳交學校作業或報告。
 
 ---
 
@@ -132,7 +132,7 @@ class: inverse, center, middle
 # What is Markdown?
 
 ???
-所以 R Markdown 是什麼？基本上，R Markdown 就是一套寫作的工具。那在了解 R Markdown 是什麼之前，我們需要先知道 Markdown 是什麼。所以我就先從一點點，關於人類寫作工具的歷史開始。
+所以 R Markdown 是什麼？基本上，R Markdown 就是一套寫作的工具。那在了解 R Markdown 是什麼之前，我們需要先知道 Markdown 是什麼。所以我就先從一點點，關於「人類寫作工具」的歷史開始。
 
 ---
 
@@ -148,31 +148,26 @@ class: inverse, center, middle
 
 
 ???
-寫作的目的有一部分是要給人看的，因此排版自然而然就成為作者的工作之一。在文字普及後的絕大多數時間，排版僅需要考慮紙本印刷物。  
-但今天，我們生活在一個網路的時代，網路已成為最主流的資訊傳播管道，網頁因而成為與紙本同等 (甚至更加) 重要的文字承載媒介。
+寫作的目的有一部分是要給人看的，因此排版自然而然就成為作者的工作之一。
+
+在文字普及後的絕大多數時間，排版僅需要考慮紙本印刷物。但今天，我們生活在一個網路的時代，網路已成為最主流的資訊傳播管道。因此，網頁變成和紙本同等 (甚至更加) 重要的文字承載媒介。
 
 這件事情對文字工作者造成了新的負擔，因為兩種不同的文字承載媒介 – 紙本與網頁，在歷史上各自衍生出兩種目的十分迥異的排版系統，  
-一種是為了輸出印刷物而生的排版系統，  
-另一種是為了輸出網頁而生的排版系統。  
+一種是為了輸出印刷物而生的排版系統，另一種是為了輸出網頁而生的排版系統。  
 但這兩種系統彼此是無法輕易互相轉換的。
 
-譬如說，我們無法輕易地將網頁轉換成紙本印刷物，因為網頁頁面是連續的，而不像書本是用一頁當作顯示單位。  
-而且，顯示網頁的螢幕大小也不是固定的，不像紙張有固定尺寸。
+譬如說，我們無法輕易地將網頁轉換成紙本印刷物，因為網頁頁面是連續的，不像書本是用一頁當作顯示單位。  
+另外，顯示網頁的螢幕大小也不是固定的，不像紙張有固定尺寸。
 
 這件事情對文字工作者帶來了麻煩，因為在開始寫作之前，他必須先決定未來要以哪一種媒介呈現自己的作品。一旦決定之後，作品就永遠只能活在那個媒介上，除非作者另外再花力氣將內容複製到另一種媒介上。  
+
 換句話說，寫作者面臨的是一個「紙本與網頁的矛盾」。
 
 ---
 
-## 兩種排版方式：WYSIWYM vs. WYSIWYG
+## 兩種排版方式：標記式語言 vs. 圖形化界面
 
-
-???
-除了承載作品的媒介，這世界上也存在兩種排版文字的方式。其中一種是以圖形化界面為基礎的排版系統，像是 Word 或是多數部落格的發文界面；
-
---
-
-### 標記式語言 (What You See Is What You .r[Mean], WYSIWY.r[M])
+### 標記式語言
 
 .pull-left[
 #### 編輯 (純文字)
@@ -194,19 +189,20 @@ class: inverse, center, middle
 
 
 ???
+除了承載作品的媒介，這世界上也存在兩種排版文字的方式。其中一種是以圖形化界面為基礎的排版系統，像是 Word；
+
 另一種是以純文字檔案為基礎的標記式語言排版系統，像是 HTML 或是 LaTeX。那大家可能對標記式語言是什麼不太清楚。簡單來說，標記式語言是一套用來告訴電腦說，「你要如何顯示這串文字的語法」。
 
-例如這張投影片的左邊是 HTML 的純文字。那瀏覽器在讀取 HTML 檔時，在看到某些關鍵字的時候，像是在這邊看到，包裹**粗體字**和*斜體字*的特殊標記，它就會將這些包裹在特殊標記裡面的文字，顯示成這些標記所要求的格式。  
+例如這張投影片的左邊是 HTML 的純文字。那瀏覽器在讀取這段文字的時候，在看到某些關鍵字，像是在這邊看到的，包裹**粗體字**和*斜體字*的特殊標記，它就會將這些包裹在特殊標記裡面的文字，顯示成這些標記所要求的格式。  
+
 所以用 b tag 包裹的字就會以粗體顯示  
 用 i tag 包裹的字就會以斜體顯示
 
-那這種以標記式語言排版的方式又被稱作 What You see is what you **Mean**。
-
 ---
 
-## 兩種排版方式：WYSIWYM vs. WYSIWYG
+## 兩種排版方式：標記式語言 vs. 圖形化界面
 
-### 圖形化界面 (What You See Is What You .r[Get], WYSIWY.r[G])
+### 圖形化界面
 
 .pull-left[
 #### 編輯 (圖形化界面)
@@ -222,10 +218,11 @@ class: inverse, center, middle
 
 
 ???
-而圖形化界面的排版方式則稱為，What you see is what you **Get**。
-那這種排版方式就是大家比較熟悉的那種。
+至於圖形化界面的排版方式，就是大家比較熟悉的那種。
 
-像是，Word 或是，「投影片裡面的 medium 部落格平台」，基本上你在編輯的過程中就可以直接看到文件發表之後的樣子。
+像是，Word 或是，「投影片裡面的 medium 部落格平台」。
+
+這種排版方式的特色，是讓使用者在編輯的過程中就可以直接看到文件發表之後的樣子。
 
 ---
 
@@ -250,20 +247,17 @@ class: inverse, center, middle
 
 &lt;img src="img/MSword.png" width="1743" style="display: block; margin: auto;" /&gt;
 
-「你做了什麼」被隱藏了
-
 ]
 
 ???
 第一個是**檔案合併**的問題。  
 這邊有個問題想要問大家，就是你們在使用 Word 的時候，如果要為段落新增標題，你們會透過下面這張圖中「紅色框框」裡面的**樣式**去選擇「標題1」或「標題2」之類的嗎？  
-還是會將「要作為標題的文字」反白，直接使用粗體和調整它的大小？
+還是會將「要作為標題的文字」反白，粗體和調整字體大小，讓它「**看起來**」像是標題就好？
 
 (我過去是直接使用後面那種方法)
 
-基本上你使用哪種方式並沒有什麼關係，但是當你要將不同的 Word 檔合併成一份的時候，如果兩份 Word 檔使用的是不同的方式，那你就必須手動把格式調整成一致
+基本上你使用哪種方式並沒有什麼關係，但是當你要將不同的 Word 檔合併成一份的時候，(譬如說，小組報告時，每個人各自負責撰寫一部分的報告) ，這時候如果每份 Word 檔使用的是不同的方式，那你就必須手動把格式調整成一致
 
-那這種情況常會發生在小組報告的時候，每個人各自負責撰寫一部分的報告。總是要有個比較衰的人負責幫大家統一排版。
 
 `--`
 
@@ -301,15 +295,22 @@ background-position: 90% 8%
 
 
 ???
-至於標記式語言的缺點只有一個，那就是它太複雜了。  
+至於標記式語言的缺點只有一個，(Next Page: GIF)
+
+它太複雜了
+
+(Back to this page)
+
 像是「這張投影片的左邊」是用來產生「右邊網頁的 HTML 語法」
 
-那我看到這個的時候，感覺只有一個：
+---
 
---
+background-image: url(https://imgy.netlify.com/gif/too-complicated.gif)
+background-size: cover
+count: false
 
-&lt;img src='https://media.giphy.com/media/fy0gLJtIkZj8I/giphy.gif' style='display:block;position:absolute;top:0%;right:0;left:auto;width:100%'&gt;
-
+???
+(Back to previous slide)
 
 ---
 
@@ -470,7 +471,7 @@ LaTeX 是另一種標記式語言。它是以生成 PDF 為目標的標記式語
 那這邊列出了一小部份 Pandoc Markdown 所提供的語法，  
 譬如說，它提供了「註解」的語法、  
 自動插入引用文獻的語法 (那這個功能對於學術報告的撰寫很重要)、  
-另外，它也提供了 LaTeX 撰寫數學公式的語法 
+另外，它也提供了撰寫數學公式的語法 
 
 這邊之所以會提到 Pandoc Markdown 的原因是因為，  
 R Markdown 所使用的 Markdown 語法其實就是 Pandoc Markdown。  
@@ -490,6 +491,10 @@ class: inverse, center, middle
 ???
 介紹完 Markdown 之後，接著就要正式進入 R Markdown 的介紹了。
 
+前面介紹的是 Markdown 在歷史上發展的脈絡。那 R Markdown 它其實自己也有另一個發展的脈絡。
+
+大家都知道 R 是一個為了統計計算而生的程式語言，所以 R Markdown 也是在這個脈絡裡發展出來的。事實上，R Markdown 之所以會誕生，是因為有個統計學的博士生，他為了減輕自己寫統計學作業的負擔而創造了一個 R 套件。而這個套件就是 R Markdown 誕生的關鍵。
+
 ---
 
 ## What is R Markdown?
@@ -505,7 +510,9 @@ R Markdown = knit**.r[r]**  +  Pandoc **.r[Markdown]**
 
 ???
 R Markdown 顧名思義就是 R 加上 Markdown。  
-更精確的說，這邊 R 指的是 knitr 這個套件。knitr 這個套件讓「可以被執行的 R 語言」能夠直接嵌入在 Markdown 文件當中，讓每次輸出文件時，R 語言執行的結果，像是圖表或數值，能自動的被插入文件中。
+更精確的說，這邊 R 指的是 knitr 這個套件。knitr 這個套件讓「可以被執行的 R 語言」能夠直接嵌入在 Markdown 文件當中。
+
+這讓每次在輸出 R Markdown 的時候，R 語言執行的結果，像是圖表或數值，能自動的被插入生成的文件中。
 
 --
 
@@ -709,7 +716,7 @@ print("This will NOT be printed!")
 ````
 
 ???
-**第一種**就是剛剛提到的 Markdown code chunk。這種 code chunk 就是 Markdown 語法的一部分，它本身並不會執行，多半是用來 highlight 文件當中的程式碼語法
+**第一種**就是前面在介紹 Markdown 時，提到的 Markdown code chunk。這種 code chunk 就是 Markdown 語法的一部分，它本身並不會執行，多半是用來 highlight 文件當中的程式碼語法
 
 --
 
@@ -851,7 +858,7 @@ ggplot(data = iris) +
 
 第一個例子是用 knitr code chunk 在 R Markdown 裡面直接繪製統計圖。那這邊的 data 是使用 R 內建的 iris data 為例。實務上，你們會需要先在前面進行資料的前處理。
 
-那我希望輸出的文件當中
+那在這個例子當中，我希望能夠輸出統計圖，並且在輸出的文件裡...
 
 1. 不要顯示繪製這張圖的 R 程式碼，  
 所以我就用了 `echo=FALSE` 這個選項。
@@ -968,7 +975,7 @@ knitr::include_graphics("img/world_night.jpg")
 ]
 
 ???
-最後一個例子，有時候你需要使用外部，而不是 R 生成的圖片。
+最後一個例子，有時候你需要使用外部的圖片，而不是 R 自動生成的圖片。
 
 那剛剛在練習 Markdown 時，比較仔細的人可能會發現可以直接使用 Markdown 語法插入圖片。  
 但我這邊要介紹的是 knitr 的 `include_graphics()` 這個函數，原因是 Markdown 插入圖片的語法功能比較受限，譬如說，你不容易去控制圖片的大小和說明文字。
@@ -1010,30 +1017,25 @@ knitr::include_graphics('img/world_night.jpg')
 
 .right-column[
 
-#### .larger[相對路徑 vs. 絕對路徑]
+.ll[**相對路徑 vs. 絕對路徑**]
 
 - Current Working Directory：**`.Rmd` 所在的資料夾**
 
 - **盡量使用相對路徑**：外部檔案路徑都是.r[**相對 `.Rmd` 而言**]
 
     ```yml
-    投影片/    # slide.Rmd 所在之資料夾
+    my-folder/    # slide.Rmd 所在之資料夾
     │
     ├── doc.Rmd
     *├── cover.jpg
     └── img/
     *    └── foo.jpg
     ```
-
-```r
-include_graphics('cover.jpg')              # Good
-include_graphics('img/foo.jpg')            # Good
-
-# Bad Practices !!!
-include_graphics('img\\fig.jpg')           # Works only on Windows
-include_graphics('C:/.../img/foo.jpg')     # Works only on YOUR Windows
-include_graphics('C:\\...\\img\\foo.jpg')  # Works only on YOUR Windows
-```
+    
+    ```r
+    include_graphics('cover.jpg')              # Good
+    include_graphics('img/foo.jpg')            # Good
+    ```
 ]
 
 ???
@@ -1045,16 +1047,29 @@ include_graphics('C:\\...\\img\\foo.jpg')  # Works only on YOUR Windows
 那因為時間上的關係，我這邊沒辦法很詳細的解釋絕對路徑和相對路徑的概念。所以我就用一個比較具體的例子說明如何使用相對路徑。
 
 
-這邊這個是 `投影片` 這個資料夾的內部結構。這個資料夾裡面有 1 個 `Rmd 檔` (doc.Rmd)、1 個 `jpg 檔` (cover.jpg) 和一個資料夾 `img`。而 `img` 這個資料夾裡面還有另一個 `jpg 檔` (foo.jpg)。
+那大家可以看到投影片裡面，這個「檔案結構」的樹狀圖。這個例子是用一個叫做 `my-folder` 的資料夾。這個資料夾裡面有 1 個 `Rmd 檔` (doc.Rmd)、1 個 `jpg 檔` (cover.jpg) 和一個資料夾 `img`。而 `img` 這個資料夾裡面還有另一個 `jpg 檔` (foo.jpg)。
 
 那今天，如果我想在 `doc.Rmd` 裡面插入 `cover.jpg` 和 `img` 資料夾中的 `foo.jpg` 這張圖片。那與 `doc.Rmd` 在同一層結構的 `cover.jpg`，它的相對路徑就是它的檔名，也就是 `cover.jpg`。`img` 資料夾裡的 `foo.jpg`，它相對於 `doc.Rmd` 的路徑就是 `img/foo.jpg`。
 
+`--`
 
-至於最下方 3 個例子是「不好的例子」，原因是因為世界上只有 Windows 的作業系統是使用反斜線作為檔案路徑的分隔。而在 R 語言裡面，檔案路徑是使用正斜線作為分隔。雖然在 Windows 的電腦裡面使用 R 的時候，仍然可以用兩條反斜線來代表檔案路徑的分隔，但是這在非 windows 的電腦就無法運作了。
+--
 
-而使用絕對路徑的缺點，是當你把檔案傳給別人的時候，因為其它人的電腦 檔案位置一定和你的不一樣，所以電腦無法依據絕對路徑找到檔案。
+.right-column[.ms[
+```r
+# Bad Practices !!!
+include_graphics('img\\fig.jpg')           # Works only on Windows
+include_graphics('C:/.../img/foo.jpg')     # Works only on YOUR Windows
+include_graphics('C:\\...\\img\\foo.jpg')  # Works only on YOUR Windows
+```
+]]
 
-Windows 的檔案路徑是用反斜線 (`\`) 表示分隔，但所有非 Windows 的電腦是用正斜線表示。在 R 當中使用正協線表示路徑能在所有作業系統下運行。
+???
+至於最下方的程式碼，是「不好的檔案路徑使用例子」。
+
+簡單來說，不要在檔案路徑裡面使用 反斜線，因為這只對 Windows 的電腦有用。
+
+也不要使用絕對路徑，因為其它人的電腦，檔案結構一定和你的不一樣。所以如過你使用絕對路徑，其它人的電腦就一定會找不到檔案。
 
 ---
 
@@ -1112,7 +1127,7 @@ Windows 的檔案路徑是用反斜線 (`\`) 表示分隔，但所有非 Windows
 
 ```yml
 title: 'A title'
-date: '`r Sys.Date()`'  # ➛ '2019-04-17'
+date: '`r Sys.Date()`'  # ➛ '2019-04-21'
 author: 'Somebody'
 bibliography: ref.bib
 csl: apa.csl
@@ -1125,7 +1140,7 @@ csl: apa.csl
 
 - 可用**動態變項** (inline R Code) 作為輸入
     - 今天是 &amp;#96;&lt;code&gt;r Sys.Date()&lt;/code&gt;&amp;#96;  
-    今天是 2019-04-17
+    今天是 2019-04-21
 ]
 
 ???
@@ -1235,7 +1250,7 @@ class: center
 雲端硬碟的 `Updog/&lt;site-name&gt;`
 
 1. 等 30 秒左右，就可以在  
-.smaller[[https://`&lt;site-name&gt;`.updog.co/html_article.html]()]  
+.s[[https://`&lt;site-name&gt;`.updog.co/code_chunk_prac.html]()]  
 看到輸出的 HTML 了
 
 ???
