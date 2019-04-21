@@ -120,6 +120,12 @@ class: center
 
 ![:scale 100%](img/part1_wrapup_lr.png)
 
+???
+這張流程圖是把剛剛講過的重點整理在一起。
+
+如果你之後什麼都忘記了，至少要看得懂這張流程圖。看得懂這張流程圖，就代表你會使用 R Markdown。
+
+
 ---
 
 ```{r child = 'citation.Rmd'}
