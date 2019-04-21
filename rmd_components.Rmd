@@ -595,8 +595,8 @@ include_graphics('C:\\...\\img\\foo.jpg')  # Works only on YOUR Windows
 
 先用另一個檔案練習，看看能不能依照裡面的指示修改 knitr code chunk ，讓輸出後的文件 跟投影片中的網頁長的一模一樣。
 
-(示範 RStudio Knit，同時輸出 **2 種**格式)
-那這裡我先示範如何在 RStudio 裡面輸出 R Markdown
+(示範 RStudio Knit)  
+前面還沒講過如何在 RStudio 裡面將 R Markdown 輸出。我這邊先示範一下。
 
 --
 

@@ -27,6 +27,21 @@ class: inverse, center, middle
 
 ---
 
+background-image: url(https://imgy.netlify.com/bg/road-straight.jpg)
+background-position: center
+background-size: cover
+class: center, ml, inverse, bottom
+
+自行閱讀: [Zotero + R Markdown Tutorial](https://ikashnitsky.github.io/2019/zotero)
+
+
+???
+關於如何在 R Markdown 插入文獻引用，因為設定和使用上比較複雜，也不見得每個人都有使用需求，所以這部份我今天不講。
+
+如果你有使用上的需求，我建議你可以閱讀這張投影片連結裡的文章。那閱讀完這篇文章之後，下面兩張投影片你就能看懂了。
+
+---
+
 ## Bibliographies & Citations
 
 .pull-left[
@@ -49,8 +64,6 @@ class: inverse, center, middle
 ]
 
 
---
-
 .pull-right[
 
 #### .l[Workflow]
@@ -70,8 +83,6 @@ class: inverse, center, middle
 
 .footnote[.s[
 [.s[＊]]: .s[(就我所知)] Zotero 是目前唯二[可控制 `.bib` 檔之 citekey pattern](https://retorque.re/zotero-better-bibtex/citation-keys) 的免費書目管理軟體。
-
-[Zotero + R Markdown Tutorial](https://ikashnitsky.github.io/2019/zotero)
 ]]
 
 ]
@@ -80,32 +91,37 @@ class: inverse, center, middle
 
 ## Bibliographies & Citations .ms[(Cont.)]
 
-### Two Systems .ms[(again)]
+### Two Systems
 
 .pull-left[
 
-- [Pandoc citeproc](https://github.com/jgm/pandoc-citeproc)
-    - Support: HTML & PDF (LaTeX)
-    
-    - YAML Frontmatter
-    
-    ```yml
-    *bibliography: ref.bib
-    *csl: apa.csl
-    output: bookdown::html_document2
-    ```
+.l[**[Pandoc citeproc](https://github.com/jgm/pandoc-citeproc)**]
+
+- Support: HTML & PDF (LaTeX)
+
+- YAML Frontmatter
+
+```yml
+*bibliography: ref.bib
+*csl: apa.csl
+output: bookdown::html_document2
+```
 ]
 
 .pull-right[
-- $\LaTeX$ citation package (`biblatex` or `natbib`)
-    - Support: PDF (LaTeX) only
-    
-    - YAML Frontmatter  
-    
-    ```yml
-    *bibliography: ref.bib
-    output:
-      bookdown::pdf_document2:
-    *   citation_package: natbib
-    ```
+
+.l[**LaTeX Citation Package**]  
+(`biblatex` or `natbib`)
+
+- Support: PDF (LaTeX) only
+
+- YAML Frontmatter  
+
+```yml
+*bibliography: ref.bib
+output:
+  bookdown::pdf_document2:
+*   citation_package: natbib
+```
+
 ]

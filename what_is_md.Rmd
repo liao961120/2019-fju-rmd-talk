@@ -25,7 +25,11 @@ class: inverse, center, middle
 # What is Markdown?
 
 ???
-所以 R Markdown 是什麼？基本上，R Markdown 就是一套寫作的工具。那在了解 R Markdown 是什麼之前，我們需要先知道 Markdown 是什麼。所以我就先從一點點，關於「人類寫作工具」的歷史開始。
+所以 R Markdown 是什麼？
+
+基本上，R Markdown 就是一套寫作的工具，你可以用它來寫筆記、寫書、寫論文，甚至，像剛剛提到的，你可以用 R Markdown 製作網頁。事實上，現在大家看到的投影片，也是用 R Markdown 做出來的。當然，這些比較 fancy 的 R Markdown 功能不是今天的重點，今天的重點是最基礎的 R Markdown。
+
+那在了解 R Markdown 是什麼之前，我們需要先知道 Markdown 是什麼。所以我就先從一點點，關於「人類寫作工具」的歷史開始。
 
 ---
 
