@@ -1,5 +1,5 @@
 graph LR
-rmdtk(rmdtk) -->|匯入模板| rmdtemp[CJK document for HTML & PDF<br>fa:fa-file mydoc.Rmd] 
+RStudio(RStudio) -->|匯入模板| rmdtemp["Portable CJK document for HTML & PDF {rmdtk}<br>fa:fa-file mydoc.Rmd"] 
 rmdtemp --> C{輸出格式?}
 C -->|HTML| html[fa:fa-file-code mydoc.html]
 C -->|PDF| pdf[fa:fa-file-pdf mydoc.pdf]
@@ -7,7 +7,7 @@ C -->|PDF| pdf[fa:fa-file-pdf mydoc.pdf]
 html --> updog(fab:fa-google-drive + Updog)
 updog --> H[fab:fa-chrome]
 
-style rmdtk fill:#75AADB;
+style RStudio fill:#75AADB;
 style updog fill:#bc96ff;
 style pdf fill:#f77e7e;
 style html fill:#ffa57f;
