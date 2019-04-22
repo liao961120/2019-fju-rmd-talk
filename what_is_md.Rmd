@@ -252,7 +252,7 @@ Copy Markdown example [here](https://raw.githubusercontent.com/liao961120/2019-f
 
 
 .footnote[.s[
-[Markdown Practice](https://github.com/liao961120/2019-fju-rmd-talk/blob/master/md_prac.txt)
+[Markdown Practice](https://raw.githubusercontent.com/liao961120/2019-fju-rmd-talk/master/md_prac.txt)
 ]]
 
 ???
@@ -285,8 +285,7 @@ Copy Markdown example [here](https://raw.githubusercontent.com/liao961120/2019-f
 
 1. 第一就是 Markdown 可以與 HTML 的語法混用。這是完全沒有問題的，因為要在網頁上顯示 Markdown，本來就會先將它轉換成 HTML 語法。
 
-1. 第二就是擴充 Markdown 本身的語法。  
-所以其實市面上有很多種 Markdown 語法在流通，那各種 Markdown 之間語法上會有些微的差距。
+1. 第二就是擴充 Markdown 本身的語法。事實上，已經有很多人在做這件事了，所以市面上其實有很多種 Markdown 語法在流通。那這些 Markdown 之間語法上會有些微的差距。
 
 - 優缺點
 

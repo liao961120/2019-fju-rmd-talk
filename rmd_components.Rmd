@@ -202,7 +202,7 @@ rmd_structure <- toprint(rmd_structure)
 ]
 
 ???
-第三個部份就是 R Markdown 插入可執行之 R 語言的部份。要在 R Markdown 裡面插入這種內容，可以使用兩種方式。
+第三個部份就是 R Markdown 可以執行 R 語言的部份。要在 R Markdown 裡面插入這種內容，可以使用兩種方式。
 
 第一種是右邊比較暗的黃色螢光標記的部份，這邊的語法與 Markdown 的 code chunk 語法類似，但與 Markdown 不同的是，這些 code chunk 在 3 個反引號之後，使用大括號將 r 包覆起來。
 
@@ -288,6 +288,8 @@ rmd_code_chunk <- toprint(rmd_code_chunk)
 
 
 ???
+接下來，我要比較詳細的介紹 knitr code chunk
+
 knitr code chunk 有一個很重要的特徵是，它有許多選項可以進行設定。例如，你有時候想讓讀者看到跑出結果的程式碼但有時候不想，這時候，你就可以透過 knitr 的 chunk options 進行這些設定。
 
 那這些選項是設定在 knitr code chunk 第一行的大括弧之內。那這大括弧之內的結構大致是這樣：
@@ -329,7 +331,8 @@ include_graphics('img/global_chunk_opts.gif')
 ]
 
 ???
-那有時後，你不想每次都為新的 code chunk 重複設定一樣的選項。這個時候，你就可以用 global chunk option 去設定。
+剛剛講的是，一個單獨的 knitr code chunk 的選項設定。  
+但有時候，你不想每次都為新的 code chunk 重複設定一樣的選項。這個時候，你就可以設定 global chunk options。
 
 global chunk option 是在 R Markdown 裡面的第一個 code chunk 進行設定。RStudio 也提供了方便的圖形化界面，讓你不用去記下這語法也能進行設定。
 
